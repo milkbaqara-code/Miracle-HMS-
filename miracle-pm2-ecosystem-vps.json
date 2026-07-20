@@ -1,0 +1,50 @@
+{
+  "apps": [
+    {
+      "name": "miracle-hms-backend",
+      "script": "/home/vigilantitsolution-hms/htdocs/hms.vigilantitsolution.com/.venv/bin/python3",
+      "args": "-m uvicorn backend_api.app.main:app --host 0.0.0.0 --port 8095",
+      "cwd": "/home/vigilantitsolution-hms/htdocs/hms.vigilantitsolution.com",
+      "autorestart": true,
+      "watch": false,
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONPATH": "backend_api"
+      },
+      "log_file": "logs/backend.log",
+      "error_file": "logs/backend-error.log",
+      "time": true
+    },
+    {
+      "name": "miracle-hms-frontend",
+      "script": "node",
+      "args": "node_modules/.bin/next start -p 3002",
+      "cwd": "/home/vigilantitsolution-hms/htdocs/hms.vigilantitsolution.com",
+      "autorestart": true,
+      "watch": false,
+      "log_file": "logs/frontend.log",
+      "error_file": "logs/frontend-error.log",
+      "time": true
+    },
+    {
+      "name": "miracle-hms-sentinel",
+      "script": "/home/vigilantitsolution-hms/htdocs/hms.vigilantitsolution.com/.venv/bin/python",
+      "args": "backend_api/app/core/ops_sentinel.py",
+      "cwd": "/home/vigilantitsolution-hms/htdocs/hms.vigilantitsolution.com",
+      "interpreter": "none",
+      "autorestart": true,
+      "restart_delay": 10000,
+      "max_restarts": 20,
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONPATH": "backend_api"
+      },
+      "log_file": "logs/sentinel.log",
+      "error_file": "logs/sentinel-error.log",
+      "time": true,
+      "description": "Self-questioning AI brain. Scans audit logs, asks self-questions, validates DB consistency. Never sleeps. 0 LLM tokens."
+    }
+  ]
+}

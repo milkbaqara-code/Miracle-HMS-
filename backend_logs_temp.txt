@@ -1,0 +1,205 @@
+[TAILING] Tailing last 100 lines for [miracle-backend] process (change the value with --lines option)
+/root/.pm2/logs/miracle-backend-error.log last 100 lines:
+2|miracle- |     await self.app(scope, receive, self.send_with_compression)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 96, in __call__
+2|miracle- |     await self.simple_response(scope, receive, send, request_headers=headers)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+2|miracle- |     await self.app(scope, receive, send)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+2|miracle- |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2|miracle- |     raise exc
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2|miracle- |     await app(scope, receive, sender)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+2|miracle- |     await self.app(scope, receive, send)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/routing.py", line 660, in __call__
+2|miracle- |     await self.middleware_stack(scope, receive, send)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/routing.py", line 680, in app
+2|miracle- |     await route.handle(scope, receive, send)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+2|miracle- |     await self.app(scope, receive, send)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/fastapi/routing.py", line 134, in app
+2|miracle- |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2|miracle- |     raise exc
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2|miracle- |     await app(scope, receive, sender)
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/fastapi/routing.py", line 120, in app
+2|miracle- |     response = await f(request)
+2|miracle- |                ^^^^^^^^^^^^^^^^
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/fastapi/routing.py", line 674, in app
+2|miracle- |     raw_response = await run_endpoint_function(
+2|miracle- |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/venv/lib/python3.12/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+2|miracle- |     return await dependant.call(**values)
+2|miracle- |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2|miracle- |   File "/home/vigilantitsolution-api/htdocs/api.vigilantitsolution.com/backend_api/app/routers/bot_router_v2.py", line 156, in miracle_query_v2
+2|miracle- |     response_data = await execute_executive_synthesis(
+2|miracle- |                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2|miracle- | TypeError: execute_executive_synthesis() got an unexpected keyword argument 'wisdom_context'
+2|miracle- | INFO:     127.0.0.1:50554 - "WebSocket /ws/grid-sync" [accepted]
+2|miracle- | 2026-05-05 23:06:38 | 🛡️ KERNEL | INFO | 📡 WEBSOCKET CONNECTED: Total Nodes: 1
+2|miracle- | INFO:     connection open
+2|miracle- | INFO:     Shutting down
+2|miracle- | 2026-05-05 23:06:52 | 🛡️ KERNEL | INFO | 🔌 WEBSOCKET DISCONNECTED: Total Nodes: 0
+2|miracle- | INFO:     connection closed
+2|miracle- | INFO:     Waiting for connections to close. (CTRL+C to force quit)
+2|miracle- | INFO:     Waiting for application shutdown.
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | INITIATING CLEAN SHUTDOWN: Severing Vault links.
+2|miracle- | INFO:     Application shutdown complete.
+2|miracle- | INFO:     Finished server process [238993]
+2|miracle- | INFO:     Started server process [239224]
+2|miracle- | INFO:     Waiting for application startup.
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | =========================================================
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO |    VIGILANT MASTER OS - BACKEND KERNEL [CDO CONTROL]     
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO |    STATUS: INITIATING SOVEREIGN HANDSHAKE                
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | =========================================================
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | 🛡️ KERNEL: Executing Master Genesis Sequence...
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | 🛡️ KERNEL: INITIATING MASTER GENESIS SEQUENCE...
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | Step 1: Reflecting Blueprints and building Physical Vaults...
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | ✅ Physical Vaults Verified and Surgically Patched.
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | Step 2: Auditing Master Ledger Integrity...
+2|miracle- | 2026-05-05 23:06:53 | 🛡️ KERNEL | INFO | Step 3: Verifying Administrative Credentials...
+2|miracle- | 2026-05-05 23:06:54 | 🛡️ KERNEL | INFO | Step 4: Seeding Physical Asset Grid (30 Rooms)...
+2|miracle- | 2026-05-05 23:06:54 | 🛡️ KERNEL | INFO | ✨ GENESIS: Physical Asset Grid already locked.
+2|miracle- | 2026-05-05 23:06:54 | 🛡️ KERNEL | INFO | 👑 GENESIS COMPLETE: MASTER OS IS OPERATIONAL.
+2|miracle- | 2026-05-05 23:06:54 | 🛡️ KERNEL | INFO | ✅ GENESIS COMPLETE: Asset Grid & System Config Locked.
+2|miracle- | 2026-05-05 23:06:54 | 🛡️ KERNEL | INFO | 🏛️ ACCOUNTING KERNEL: Chart of Accounts Synchronized.
+2|miracle- | INFO:     Application startup complete.
+2|miracle- | INFO:     Uvicorn running on http://0.0.0.0:8090 (Press CTRL+C to quit)
+2|miracle- | INFO:     127.0.0.1:49694 - "WebSocket /ws/grid-sync" [accepted]
+2|miracle- | 2026-05-05 23:06:56 | 🛡️ KERNEL | INFO | 📡 WEBSOCKET CONNECTED: Total Nodes: 1
+2|miracle- | INFO:     connection open
+2|miracle- | INFO:     Shutting down
+2|miracle- | 2026-05-05 23:15:25 | 🛡️ KERNEL | INFO | 🔌 WEBSOCKET DISCONNECTED: Total Nodes: 0
+2|miracle- | INFO:     connection closed
+2|miracle- | INFO:     Waiting for application shutdown.
+2|miracle- | 2026-05-05 23:15:25 | 🛡️ KERNEL | INFO | INITIATING CLEAN SHUTDOWN: Severing Vault links.
+2|miracle- | INFO:     Application shutdown complete.
+2|miracle- | INFO:     Finished server process [239224]
+2|miracle- | INFO:     Started server process [240134]
+2|miracle- | INFO:     Waiting for application startup.
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | =========================================================
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO |    VIGILANT MASTER OS - BACKEND KERNEL [CDO CONTROL]     
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO |    STATUS: INITIATING SOVEREIGN HANDSHAKE                
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | =========================================================
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | 🛡️ KERNEL: Executing Master Genesis Sequence...
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | 🛡️ KERNEL: INITIATING MASTER GENESIS SEQUENCE...
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | Step 1: Reflecting Blueprints and building Physical Vaults...
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | ✅ Physical Vaults Verified and Surgically Patched.
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | Step 2: Auditing Master Ledger Integrity...
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | Step 3: Verifying Administrative Credentials...
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | Step 4: Seeding Physical Asset Grid (30 Rooms)...
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | ✨ GENESIS: Physical Asset Grid already locked.
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | 👑 GENESIS COMPLETE: MASTER OS IS OPERATIONAL.
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | ✅ GENESIS COMPLETE: Asset Grid & System Config Locked.
+2|miracle- | 2026-05-05 23:15:26 | 🛡️ KERNEL | INFO | 🏛️ ACCOUNTING KERNEL: Chart of Accounts Synchronized.
+2|miracle- | INFO:     Application startup complete.
+2|miracle- | INFO:     Uvicorn running on http://0.0.0.0:8090 (Press CTRL+C to quit)
+2|miracle- | INFO:     127.0.0.1:57698 - "WebSocket /ws/grid-sync" [accepted]
+2|miracle- | 2026-05-05 23:15:30 | 🛡️ KERNEL | INFO | 📡 WEBSOCKET CONNECTED: Total Nodes: 1
+2|miracle- | INFO:     connection open
+
+/root/.pm2/logs/miracle-backend-out.log last 100 lines:
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 404 Not Found
+2|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+

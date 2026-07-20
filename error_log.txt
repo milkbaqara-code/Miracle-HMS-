@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\Vigilant IT Solutions\Miracle_Os_Master\scripts\../backend_api\app\routers\accounting_engine.py", line 57, in post_double_entry
+    raise ValueError(f"CRITICAL: Account {line['code']} missing from CoA.")
+ValueError: CRITICAL: Account 521000 missing from CoA.
+

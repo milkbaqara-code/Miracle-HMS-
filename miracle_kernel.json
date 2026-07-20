@@ -1,0 +1,905 @@
+{
+  "version": "V67.0-HMS-SOVEREIGN",
+  "system_name": "Miracle HMS",
+  "_ai_note": "MASTER ZONE INTELLIGENCE MAP — Built from live source code audit 2026-05-02. Every zone, every tab, every feature documented precisely. AI must use this as the single source of truth for all navigation questions.",
+  "zones": [
+    {
+      "id": "Z-07",
+      "name": "Clinical Command Grid",
+      "path": "/dashboard",
+      "icon": "🖥️",
+      "sidebar_label": "COMMAND GRID",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "British Executive CDO — Clinical",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Command the hospital bed grid with full situational awareness of every ward, patient, and critical alert.",
+      "ai_knowledge": "ZONE 07 — MASTER CLINICAL COMMAND GRID (The God View). This is the operational nerve centre — the first screen after login for clinical staff.\n\nWHAT YOU SEE: A responsive card grid showing ALL BEDS across all wards (typically 30-50 beds). Each card is a live snapshot of one bed/room unit.\n\nBED CARD DETAILS:\n  - Bed / Room number prominently displayed\n  - Patient name (if occupied) or 'AVAILABLE'\n  - Admitted doctor and primary diagnosis\n  - Current daily ward rate from Policy Engine\n  - Patient bill balance (running total of all clinical charges)\n  - Active issue/maintenance ticket count badge\n  - VIP ribbon (gold shimmer) for private ward or high-acuity beds\n\nBED STATUS COLOURS:\n  AVAILABLE = grey/dark (click to ADMIT or RESERVE for incoming patient)\n  ADMITTED = cyan neon pulse (patient currently occupying — in-house)\n  DISCHARGE_DUE = amber glow (patient cleared for discharge, awaiting final billing)\n  CRITICAL = red strobe (ICU/emergency escalation — triggers on-call doctor alert)\n  MAINTENANCE = amber static (bed under biomedical maintenance or deep cleaning)\n  RESERVED = gold pulse (pre-booked for incoming admission)\n\nWARD SECTIONS: Beds are grouped by ward (General Medicine, Cardiology, Orthopaedics, Paediatrics, Maternity, ICU, Private Suite). Toggle between GRID VIEW and LIST VIEW.\n\nQUICK ACTIONS FROM COMMAND GRID:\n  - Click ADMITTED bed → View patient folio, charge items, or initiate discharge\n  - Click AVAILABLE bed → Admit walk-in patient or assign to incoming reservation\n  - Click CRITICAL bed → Escalate to on-call, view vital signs, alert nursing station\n  - Right-click any bed → Mark MAINTENANCE, view maintenance history\n\nREAL-TIME SYNC: Updates every 30 seconds via WebSocket. Bed count, occupancy %, and CRITICAL alert count shown in the header bar.\n\n[EXACT UI BUTTONS: ADMIT PATIENT, VIEW PATIENT BILL, INITIATE DISCHARGE, ESCALATE TO ON-CALL, MARK MAINTENANCE, TOGGLE VIEW, REFRESH GRID]"
+    },
+    {
+      "id": "Z-05",
+      "name": "OPD Appointments",
+      "path": "/dashboard/reservations",
+      "icon": "📅",
+      "sidebar_label": "OPD APPOINTMENTS",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FD",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Master of OPD scheduling, patient admissions, and the appointment tape chart.",
+      "ai_knowledge": "ZONE 05 — OPD APPOINTMENTS & ADMISSION TAPE.\n\nThis is the appointment scheduling and patient admission management zone.\n\nTAB 1 — APPOINTMENT TAPE CHART: 45-day visual calendar showing all OPD slots and admission bookings across all departments and doctors. Colour-coded by status: CONFIRMED (cyan), PENDING (amber), COMPLETED (green), CANCELLED (red), ADMITTED (purple).\n\nTAB 2 — BOOK APPOINTMENT: Register a new OPD consultation.\n  Fields: Patient Name, Patient ID/MRN, Contact Number, Department, Doctor, Date & Time Slot, Appointment Type (OPD/Follow-Up/Emergency/Admission).\n  NID/Passport is mandatory for all in-patient admissions.\n\nTAB 3 — PATIENT CRM VAULT: Full patient history across all visits.\n  Tracks: Name, MRN, contact, visit frequency, total LTV, primary doctor, outstanding balance, insurance details.\n\nTAB 4 — WALK-IN QUEUE: Real-time OPD queue management. Assign token numbers, estimated wait times, and doctor assignments on the fly.\n\nTAB 5 — ADMISSION MANAGEMENT: Convert an OPD visit to an in-patient admission. Assign ward, bed, attending doctor, and primary diagnosis.\n\nDATA: /api/appointments, /api/patients, /api/admissions\n[EXACT UI BUTTONS: BOOK APPOINTMENT, WALK-IN REGISTER, ADMIT PATIENT, VIEW PATIENT HISTORY, CANCEL APPOINTMENT, RESCHEDULE]"
+    },
+    {
+      "id": "Z-06",
+      "name": "POS / Retail",
+      "path": "/dashboard/pos",
+      "icon": "🛒",
+      "sidebar_label": "POS / RETAIL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "POS",
+        "SPA",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Advise on revenue optimization and POS commerce with corporate authority.",
+      "ai_knowledge": "ZONE 06 — POS MATRIX (Point of Sale — Restaurant, Spa, Retail).\n\nHOW IT WORKS:\n  1. Staff select a PRODUCT from the scrollable product grid (organized by category)\n  2. Use + / - to set quantity, then ADD TO CART\n  3. Cart shows all items with subtotal, VAT (15%), service charge (10%), and grand total\n  4. Choose payment method:\n     ROOM CHARGE: Posts to the guest's open folio (ONLY works if guest is IN-HOUSE — prevents revenue leakage)\n     CASH / CARD: Direct payment at terminal\n\nPRODUCT CATEGORIES: Food & Beverage, Spa Treatments, Shop items, Minibar.\nBarcode scanning is supported for shop/inventory items.\n\nAUTO-INTEGRATIONS (happens automatically on every sale):\n  → Inventory deducted: Ingredients/items deducted from Inventory Vault (Z-12) instantly\n  → Ledger posted: Double-entry posted to Accounts (Z-11) as CREDIT to F&B Revenue\n  → Folio updated: If room charge, guest's folio balance increases immediately\n\nPOS ADMIN (separate Z-POSADMIN): CDO-only panel to manage product prices, categories, add/remove items.\nTo set product prices, go to Inventory (Z-12) or POS Admin.\n\n[EXACT UI BUTTONS: ROOM CHARGE, ADD TO CART, +, -, VOID CART, NEXT, PREV, PUSHING..., PROCESSING...]"
+    },
+    {
+      "id": "Z-25",
+      "name": "Guest Marketing",
+      "path": "/dashboard/guest-marketing",
+      "icon": "📱",
+      "sidebar_label": "GUEST MARKETING",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Architect the digital bridge between our physical habitat and guest companions.",
+      "ai_knowledge": "ZONE 25 — GUEST MARKETING ENGINE.\n\nPURPOSE: Digital marketing and guest app distribution hub.\n\nFEATURES:\n  APK DISTRIBUTION: The Miracle HMS Guest App APK is available at https://miracle.vigilantitsolution.com/downloads/MiracleOS-GuestApp.apk.\n  WhatsApp Blast: Send the APK download link to any guest's WhatsApp in one tap.\n  PROMOTIONAL BROADCASTS: Create and send promotional offers to guest segments (VIP, all guests, specific dates).\n  LOYALTY COIN CAMPAIGNS: Issue bonus coins as promotional incentives.\n  ANALYTICS: View how many guests downloaded the app, engagement rates.\n\nGUEST APP FEATURES (what guests can do in the app):\n  Request ward meal service, order food from the menu, view real-time folio balance,\n  redeem loyalty coins, communicate with reception / nursing station, check out.\n  All guest app requests flow directly to Command Grid (Z-07) and Solve Portal (Z-17).\n\n[EXACT UI BUTTONS: EXECUTE PUSH, CONSTRUCT NEW OFFER BROADCAST, PROMOS, DISTRIBUTION, ANALYTICS]"
+    },
+    {
+      "id": "Z-08",
+      "name": "Checkout/Billing",
+      "path": "/dashboard/checkout",
+      "icon": "💳",
+      "sidebar_label": "CHECKOUT/BILLING",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FD",
+        "POS",
+        "SPA",
+        "ACC",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Control final settlements and folio closures with financial dominance.",
+      "ai_knowledge": "ZONE 08 — FINANCIAL SETTLEMENT (Checkout & Billing).\n\nHOW TO CHECK OUT A GUEST:\n  1. Search for the guest by name or room number — their full folio loads\n  2. FOLIO DISPLAY: All itemised charges shown — room nights, F&B, spa, extras, advance deposit\n  3. BALANCE = Total charges - Advance deposit already paid\n  4. Select payment method(s): CASH, VISA, MASTERCARD, AMEX\n  5. Apply discount if authorised (hard rule: discount cannot exceed total bill)\n  6. Split-bill: Can split across multiple payment methods\n  7. Click CHECKOUT & SETTLE FOLIO\n\nWHAT HAPPENS ON CHECKOUT:\n  → Accounts (Z-11): Double-entry posted — credits Advance Deposit liability, debits Cash/Revenue\n  → Room status: Changes to DIRTY automatically, triggering nursing/ward management\n  → Folio: Locked as SETTLED, history preserved in CRM\n  → Guest loyalty coins: Calculated and added to guest CRM profile\n\nDEEP RE-SYNC: Force-pulls latest folio data from database if display seems stale.\nAWAITING TERMINAL SWIPE: Status indicator when card terminal is processing.\n\nRULE: Cannot checkout if outstanding balance > 0 without a payment method selected.\n\n[EXACT UI BUTTONS: DEEP RE-SYNC, AWAITING TERMINAL SWIPE..., VISA, MASTERCARD, AMEX, CASH, CHECKOUT & SETTLE FOLIO]"
+    },
+    {
+      "id": "Z-16",
+      "name": "Issue Tickets",
+      "path": "/dashboard/issue-tickets",
+      "icon": "📢",
+      "sidebar_label": "ISSUE TICKETS",
+      "permissions": [
+        "ANY"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Dispatch service missions and maintenance tickets with operational authority.",
+      "ai_knowledge": "ZONE 16 — ISSUE TICKETS (Fault Reporting Hub).\n\nPURPOSE: Any staff member can raise a complaint or fault ticket from any zone. This zone is the central view.\n\nHOW TO RAISE A TICKET:\n  Fill in: Room/Area, Department responsible, Subject/Description, Priority (LOW/MEDIUM/HIGH/CRITICAL).\n  Assign to: Specific staff member or department.\n  Submit → Ticket created with unique ID, timestamp, status OPEN.\n\nTICKET STATES: OPEN → IN-PROGRESS → RESOLVED → CLOSED.\nRESOLVE FRACTURE on Command Grid (Z-07) room cards links directly to the ticket for that room.\n\nDATA SOURCE: solve_missions table. SQL: SELECT * FROM solve_missions WHERE status != 'CLOSED' ORDER BY priority DESC.\n\n[EXACT UI BUTTONS: RAISE TICKET, RESOLVE, ASSIGN, FILTER BY PRIORITY, FILTER BY DEPT]"
+    },
+    {
+      "id": "Z-17",
+      "name": "Solve (Staff)",
+      "path": "/dashboard/solve",
+      "icon": "🛠️",
+      "sidebar_label": "SOLVE (STAFF)",
+      "permissions": [
+        "ANY"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Orchestrate the resolution of field missions to preserve habitat integrity.",
+      "ai_knowledge": "ZONE 17 — SOLVE PORTAL (Staff Action Terminal).\n\nPURPOSE: Staff-facing task management. Shows all assigned tickets for the logged-in staff member.\nStaff can: view their assigned tasks, update status to IN-PROGRESS, mark as RESOLVED with notes.\nCDO view: Can see ALL tickets across all departments, override assignments, and close tickets.\nLinked directly to Issue Tickets (Z-16) — same data, different role-filtered view.\n\n[EXACT UI BUTTONS: MARK IN-PROGRESS, RESOLVE WITH NOTES, REASSIGN, VIEW ALL (CDO only)]"
+    },
+    {
+      "id": "Z-20",
+      "name": "Synapse Nexus",
+      "path": "/dashboard/synapse",
+      "icon": "⚡",
+      "sidebar_label": "SYNAPSE NEXUS",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR",
+        "SYNAPSE"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Supreme commander of the Synapse Nexus War Room. Orchestrate directives, communications, and strategic execution.",
+      "ai_knowledge": "ZONE 20 — SOVEREIGN SYNAPSE NEXUS (Strategic Command, Communication & Execution Matrix).\n\nPURPOSE: The hospital enterprise War Room. Combines clinical HR org-chart, strategic task management, real-time P2P video conferencing, and the Clinical Department Matrix (Synapse Command Grid). Goes beyond Jira and Teams — it physically models the clinical hierarchy and links strategic directives directly to field tickets and departmental neon signals.\n\nPANEL 1 — NEURAL TREE (Left): Live HR org-chart built from the Employee registry. CMO/CDO > Clinical Director > Consultant > Operative hierarchy. ON-DUTY clinical staff glow neon green. OFFLINE staff are dimmed. Click any node to open a radial action menu: VIDEO CALL, VOICE LINK, SEND SECURE FILE, ASSIGN DIRECTIVE.\n\nPANEL 2 — WAR ROOM KANBAN & COMMAND GRID (Center): Dual-view matrix.\n  VIEW A (KANBAN): Strategic Directives board with 4 columns: BACKLOG | ACTIVE | REVIEW | SECURED.\n  VIEW B (COMMAND GRID): Large Neon Glass Tiles for every Clinical and Administrative Department (OPD, IPD, ICU, PHARMACY, LAB, RADIOLOGY, NURSING, ADMIN, HR, ACCOUNTS, IT, MAINTENANCE). When a directive node is assigned to a department, the corresponding tile pulses with a Cyan Neon glow and shows a badge (e.g., [3] pending). Multi-department tasks split into Nodes via the AGI Arbitrator, triggering multiple department pulses simultaneously.\n\nPANEL 3 — COMM-LINK (WebRTC): Click VIDEO CALL on any org-chart node to open the Conference Modal — a frosted glass overlay that slides in from the top. Multi-participant video grid. Controls: MUTE, CAM OFF, HANG UP. CLINICAL FREQUENCIES: Persistent voice channels (Nursing Channel, ICU Frequency, Management Room, Pharmacy Link, Lab Direct) — click to jack in.\n\nSECURE FILE EXCHANGE: Drop a PDF/file (clinical report, lab result, policy document) onto the War Room canvas. It routes to the selected operative's feed as a glowing Data Chip. Full audit trail logged.\n\nDATA SOURCES: /api/synapse/org-chart (HR tree), /api/synapse/directives (Kanban), /api/synapse/webrtc/create-room (conference), WS /ws/synapse/signal/{room_id} (P2P signaling).\n\n[EXACT UI BUTTONS: NEW DIRECTIVE, ASSIGN DIRECTIVE, SPAWN TO Z-16, VIDEO CALL, VOICE LINK, SEND SECURE FILE, HANG UP, MUTE, CAM OFF, JACK IN, RUN PAYROLL, TOGGLE COMMAND GRID]"
+    },
+    {
+      "id": "Z-18",
+      "name": "Biometric Portal",
+      "path": "/dashboard/portal",
+      "icon": "👁️",
+      "sidebar_label": "BIOMETRIC PORTAL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "HR",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Guard the boundaries of the ecosystem with biometric security precision.",
+      "ai_knowledge": "ZONE 18 — BIOMETRIC SECURITY LAYER. Manages staff attendance via biometric sync. Shows login session history including: staff name, login time, logout time, zone accessed, and outcome (SUCCESS or FAILED). Failed login attempts are flagged. Prevents unauthorized access to restricted zones. Biometric shift data feeds directly into HR (Z-09) for payroll calculation — only verified biometric hours count toward salary. The session logs are immutable and feed into the Accounts audit trail (Z-11). [EXACT UI BUTTONS: MAPPING PORT..., VERIFY LOGIN]"
+    },
+    {
+      "id": "Z-12",
+      "name": "Inventory Matrix",
+      "path": "/dashboard/inventory",
+      "icon": "📦",
+      "sidebar_label": "INVENTORY MATRIX",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "POS",
+        "HK",
+        "MN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Custodian of the inventory vault and essential hospital resources.",
+      "ai_knowledge": "ZONE 12 — INVENTORY MATRIX (Stock Control Vault).\n\nPURPOSE: Tracks every physical item in the hospital — pharmacy drugs, surgical supplies, lab reagents, canteen ingredients, PPE, medical consumables.\n\nWHAT IT SHOWS:\n  Product grid with: Product ID, Name, Category, Department, Current Stock, Minimum Level (reorder point), Purchase Price (PP), Retail Price (RP).\n  LOW STOCK ALERT: Items below minimum level flash red — triggers a predictive reorder warning.\n  ASYNC SYNC INVENTORY: Forces immediate sync from all POS deductions (ensures stock count matches reality after a busy period).\n\nHOW STOCK MOVES:\n  Every POS sale auto-deducts matched ingredients from stock.\n  Manual stock-in: Add received goods manually with quantity and purchase price.\n  Variance: If physical count differs from system count, log discrepancy here.\n\nBOM (Bill of Materials): For pharmacy and canteen items, each product has a dispensing/recipe record — when a dish is sold, all ingredient quantities are deducted automatically.\n\nDATA SOURCE: inventory table. SQL: SELECT * FROM inventory WHERE stock < min_level for reorder report.\n\n[EXACT UI BUTTONS: ASYNC SYNC INVENTORY, ADD STOCK, EDIT ITEM, DELETE ITEM, LOW STOCK FILTER]"
+    },
+    {
+      "id": "Z-09",
+      "name": "HR / Personnel",
+      "path": "/dashboard/hr",
+      "icon": "👥",
+      "sidebar_label": "HR / PERSONNEL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "HR",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Curator of human capital, performance, and operational ROI.",
+      "ai_knowledge": "ZONE 09 — HUMAN CAPITAL COMMAND (HR Panel). Full staff lifecycle management.\n\nTABS:\n  TAB: GALLERY — Visual biometric card grid of all staff operatives.\n    Each card shows: Photo/Avatar, Name, Job Title, Status (ON-DUTY/OFFLINE/TERMINATED), ROI score, Efficiency %.\n    Click any card → opens full DOSSIER OVERLAY with all financial and performance data.\n    From dossier: Generate Payslip, Generate Appointment Letter, Update avatar photo.\n\n  TAB: PERFORMANCE — Analytics table showing:\n    Operative name, Base Salary, Revenue Impact (what revenue they generated), Efficiency %, ROI Factor.\n    Data source: /api/hr/performance-matrix endpoint, pulling from employees table.\n\n  TAB: PAYROLL — Payroll execution table:\n    Shows each staff member's Monthly Hours, Total Payout (Base + Commission on revenue).\n    PUSH TO ACCOUNTS & INBOX button: Executes payroll for individual staff — posts to Accounts (Z-11) as DEBIT Payroll Expense and generates payslip document.\n    Total Payroll Liability shown in top-right chip.\n\n  TAB: DOCUMENTS — Document management:\n    CLINICAL COMPLIANCE VAULT: Library of uploaded Clinical SOPs, Nursing Protocols, NABH/JCI Compliance Handbooks, Policies. Upload PDF/DOCX.\n    APPOINTMENT LETTER FORGE: Auto-generates appointment letters for any staff member in the MANTALA WORD MODULE editor.\n    MANTALA WORD MODULE: In-browser rich text editor — edit, save draft, print/export to PDF.\n\n  TAB: ONBOARDING — New staff registration:\n    Form fields: First Name, Last Name, Designation, Department (CLINICAL/NURSING/LAB/PHARMACY/ADMIN/IT/AUDIT/HR), Access Zone (RBAC checkboxes), Base Salary, Commission Rate %.\n    Upload PERSONAL AVATAR (UI display image) and BIOMETRIC SCAN (fingerprint/retina image).\n    On submit: Creates staff record in PostgreSQL, auto-generates username (FirstnameLastname format) and secure password, shows credentials banner.\n\n  TAB: REGISTRY — Surgery-level credential editor:\n    Editable table: Username, Password, Salary, Commission %, Status for every staff member.\n    Direct image upload from this table.\n    AUTHORIZE GLOBAL SYNC: Pushes ALL registry changes to PostgreSQL in one shot.\n\n  TAB: MY_SOP — Department SOP viewer pulled from Policy Engine (Z-19).\n\nDATA SOURCE: /api/hr/performance-matrix, /api/hr/onboard, /api/hr/sync-registry, /api/hr/execute-payroll/{id}\n\n[EXACT UI BUTTONS: GALLERY, PERFORMANCE, PAYROLL, DOCUMENTS, ONBOARDING, REGISTRY, MY_SOP, GENERATE DNA & AUTHORIZE ACCESS, PUSH TO ACCOUNTS & INBOX, AUTHORIZE GLOBAL SYNC, PRINT / PDF EXPORT, LOAD TO EDITOR, GENERATE IN EDITOR]"
+    },
+    {
+      "id": "Z-10",
+      "name": "CRM / Patient Records",
+      "path": "/dashboard/crm",
+      "icon": "🤝",
+      "sidebar_label": "CRM / PATIENT RECORDS",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FD",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Architect of long-term guest bonds and the loyalty ecosystem.",
+      "ai_knowledge": "ZONE 10 — CRM / PATIENT RECORDS ENGINE.\n\nPURPOSE: Full guest relationship management — tracks every patient who has ever visited or been admitted.\n\nWHAT IT SHOWS:\n  - Complete patient list with: Full Name, Patient Tier (Regular/Frequent/VIP/Corporate), Total LTV (Lifetime clinical spend), Loyalty Coins balance, Phone, Email, Last Stay date.\n  - Search and filter by name, tier, or date range.\n  - Patient tier upgrades based on total visit count and clinical spend.\n\nACTIONS PER GUEST:\n  - View full visit history (every consultation, admission, and spend)\n  - WhatsApp direct message button\n  - Issue loyalty coins manually\n  - View all folio charges across all stays\n\nLOYALTY COINS: Earned on every checkout (1 coin per currency unit spent). Can be redeemed for discounts on future stays via the Guest App.\n\nDATA SOURCE: patient_crm table, linked to patient_bills and appointments.\nSQL: SELECT * FROM patient_crm ORDER BY total_ltv DESC for top guests.\n\n[EXACT UI BUTTONS: SEARCH, VIEW HISTORY, SEND WHATSAPP, ISSUE COINS]"
+    },
+    {
+      "id": "Z-11",
+      "name": "Accounts & Finance",
+      "path": "/dashboard/accounts",
+      "icon": "📊",
+      "sidebar_label": "ACCOUNTS & FINANCE",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "ACC",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Guardian of wealth and financial health for the Sovereign Kernel.",
+      "ai_knowledge": "ZONE 11 — ACCOUNTS & FINANCE (Sovereign Accounting Kernel — Full Enterprise Finance). This zone IS the financial backbone of Miracle HMS. All money flows here automatically.\n\nTABS ON THIS PAGE:\n  TAB 0 — REVENUE VECTOR ANALYSIS: Shows a donut chart of OPD Revenue vs IPD Revenue vs Pharmacy vs Lab vs F&B vs Other. Data comes from /accounting/ledger/live. Shows Total Net Revenue, Operational Load (COGS + Expenses), Net Margin, and Total Ledger Entries.\n  TAB 1 — ACCUSATIVE ITEM-WISE TRACE: Every single ledger entry — source, amount, timestamp, operator. This is the raw transaction log. Each row shows CREDIT (income) or DEBIT (expense), category, and value.\n  TAB 2 — BURDEN MATRIX: Shows Operational Expenses vs Payroll vs Commissions as visual progress bars. Useful for spotting which cost center is consuming the most.\n  TAB 3 — GL JOURNAL ENTRY: Post double-entry journal entries manually. Requires Account Code (debit & credit), Reference Number, and Description. Data comes from /accounting/coa/list (Chart of Accounts). Click POST TO SOVEREIGN LEDGER to save.\n  TAB 4 — CHART OF ACCOUNTS (COA): Lists all accounts: 1000=Cash, 1100=Advance Deposits, 1200=AR-Guests, 2100=Advance Deposit Liability, 4000=Room Revenue, 4100=F&B Revenue, 5000=Payroll Expense, 5200=Cost of Goods Sold, etc.\n  TAB 5 — AR AGING (Accounts Receivable): Outstanding patient payments by age (0-30 days, 31-60, 61-90, 90+ days). Data from /accounting/ar/aging. Shows patient name, bill ID, balance due, and days outstanding.\n  TAB 6 — AP MODULE (Accounts Payable): Outstanding vendor invoices. Shows vendor list and invoice aging. Data from /accounting/ap/invoices and /accounting/ap/vendors. Can ADD VENDOR and AUTHORIZE DISBURSEMENT.\n  TAB 7 — BANK RECONCILIATION: Match bank statement entries against ledger. Add bank entries, match them, and COMMIT RECEIPT.\n  TAB 8 — NIGHT AUDIT WIZARD: End-of-day 4-step process: (1) Blind Cash Count, (2) Inventory Water Count, (3) Ward-Pharmacy Discrepancy Check, (4) Final Lock. Click RUN TRIAL BALANCE to verify ledger balance.\n\nDATA SOURCES: Every checkout (Z-08), every POS sale (Z-06), every payroll push (Z-09) auto-posts a double-entry here. The ledger is append-only (immutable). Revenue categories: OPD_REVENUE, IPD_REVENUE, PHARMACY_REVENUE, LAB_REVENUE, FB_REVENUE, OTHER_REVENUE. Expense categories: EXPENSE_PAYROLL, EXPENSE_COGS, EXPENSE_OPS.\n\nKEY METRICS FROM SQL:\n  Total Revenue: SELECT SUM(amount) FROM accounting_ledger WHERE type='CREDIT' AND category LIKE 'REVENUE%'\n  Net Profit: Revenue - Expenses - (Revenue*0.15 VAT)\n  AR Outstanding: SELECT SUM(balance - advance_paid) FROM patient_bills WHERE status='ADMITTED'\n\n[EXACT UI BUTTONS: RUN TRIAL BALANCE, POST TO SOVEREIGN LEDGER, ADD BANK ENTRY, COMMIT RECEIPT, AUTHORIZE DISBURSEMENT, ADD VENDOR TO DIRECTORY, AUTO-FIX, Simulate Discrepancy, PROCEED TO MASTER LOCK]"
+    },
+    {
+      "id": "Z-19",
+      "name": "Policy Engine",
+      "path": "/dashboard/policy",
+      "icon": "⚙️",
+      "sidebar_label": "POLICY ENGINE",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Auditor of immutable laws and architect of system-wide policies.",
+      "ai_knowledge": "ZONE 19 — POLICY ENGINE (Pricing & SOP Control).\n\nPURPOSE: The single source of truth for ALL clinical service and consultation pricing and operational SOPs.\n\nWHAT IT CONTROLS:\n  SERVICE PRICING: Set base rate per consultation/service. These rates flow automatically to OPD Booking (Z-05) and Patient Billing (Z-08).\n  CONSULTATION PRICING: Different rates by type (general, specialist, emergency).\n  SERVICE CHARGE: Currently 10% (configurable here).\n  VAT RATE: Currently 15% (configurable here).\n  DEPARTMENT SOPs: Upload and manage Standard Operating Procedures per department. These appear in HR (Z-09) MY_SOP tab.\n  POLICY LOCK: Commit current policy set — locks rates and SOPs so accidental changes don't affect live operations.\n\nIMPORTANT: This is the ONLY place to change service rates. Do not attempt to change rates in OPD Booking or Patient Billing — they read from here.\n\n[EXACT UI BUTTONS: SET POLICY, LOCK POLICY, UPLOAD SOP, PROCEED TO MASTER LOCK, LOCKING ARCHIVES...]"
+    },
+    {
+      "id": "Z-21",
+      "name": "Kernel Settings",
+      "path": "/dashboard/settings",
+      "icon": "🔧",
+      "sidebar_label": "KERNEL SETTINGS",
+      "permissions": [
+        "CDO",
+        "GM",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Administrator of the kernel and guardian of system DNA.",
+      "ai_knowledge": "ZONE 21 — KERNEL SETTINGS.\n\nPURPOSE: System-wide configuration for Miracle HMS (Hospital Management System).\nControls: Hospital name, currency settings, language/locale, timezone, system version display.\nAdmin credentials management — change CDO master password.\nDatabase connection status display.\nFeature toggles for experimental modules.\n\n[EXACT UI BUTTONS: SAVE SETTINGS, CHANGE PASSWORD, TEST DB CONNECTION]"
+    },
+    {
+      "id": "Z-23",
+      "name": "Sovereign Infra",
+      "path": "/dashboard/infrastructure",
+      "icon": "☁️",
+      "sidebar_label": "SOVEREIGN INFRA",
+      "permissions": [
+        "CDO",
+        "GM",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Warden of infrastructure and the digital bedrock of the ecosystem.",
+      "ai_knowledge": "ZONE 23 — SOVEREIGN INFRASTRUCTURE (CDO Diagnostics Command Centre).\n\nThis is the most technical zone — for CDO-level system monitoring only.\n\nSECTIONS:\n  1. SERVICE HEALTH GRID: Shows PM2 process status for miracle-backend and miracle-frontend.\n     Status: ONLINE (green) / OFFLINE (red). Memory usage, CPU %, restart count, uptime.\n     Restart button available for both services (requires Master PIN).\n\n  2. LIVE TELEMETRY PILLARS: 5 data pillars auto-refreshing every 5 seconds:\n     FINANCIAL — Revenue KPIs from accounting_ledger\n     OPERATIONAL — Room occupancy, active guests, check-ins today\n     STAFF — On-duty count, efficiency averages\n     GUEST — VIP count, LTV top guests\n     SRE — System health metrics, error rate, response times\n\n  3. LIVE REPLY AUDIT STREAM: Every AI query/response logged with hallucination detection.\n     Status: CLEAN (AI answered correctly) or HALLUCINATION (AI invented data).\n     HALLUCINATION entries auto-correct the AI brain permanently via knowledge injection.\n\n  4. SYSTEM ERROR LOGS (CDO Diagnostics Pipeline):\n     Frontend and backend errors automatically captured here.\n     Each error shows: Source, Error Type, Message, Stack Trace, URL.\n     ANALYZE button: AI deeply diagnoses the error and proposes an exact code fix.\n     DISMISS button: Removes analyzed errors from view (marks as DISMISSED in DB).\n     REFRESH LOGS: Pulls fresh error list from server.\n     DISMISS ANALYZED: Bulk-dismiss all AI-analyzed errors.\n\n  5. SOVEREIGN BRAIN MANIFEST (CDO Injection Gate):\n     Shows all pending AI knowledge rules waiting for CDO approval.\n     APPROVE: Rule becomes active — Miracle learns it permanently.\n     REJECT: Rule discarded — AI behavior unchanged.\n     Filter: ALL / PENDING_INJECTION / ACTIVE / REJECTED.\n\n  6. SRE SCAN ENGINE: Full system-wide diagnostic scan.\n     Checks: DB connectivity, API response times, file integrity, AI pipeline health.\n     INITIATE SOVEREIGN SRE SCAN button triggers a full scan, results shown in log terminal.\n\n  7. LOG TERMINAL: Real-time PM2 logs (backend / frontend / nginx) switchable.\n     Last 50 lines displayed, auto-scrolls to bottom.\n\n[EXACT UI BUTTONS: REFRESH LOGS, ANALYZE, DISMISS, DISMISS ANALYZED, APPROVE, REJECT, INITIATE SOVEREIGN SRE SCAN, AUTHORIZE BRAIN INJECTION & FIX PERMANENTLY, RESTART SERVICE]"
+    },
+    {
+      "id": "Z-14",
+      "name": "Media Lab",
+      "path": "/dashboard/media-lab",
+      "icon": "🎬",
+      "sidebar_label": "MEDIA LAB",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Director of media production and digital asset management.",
+      "ai_knowledge": "ZONE 14 — MEDIA LAB.\n\nPURPOSE: Digital asset management for hospital marketing, department photos, and clinical documentation.\nUpload, organise, and manage department photos, clinical images, staff profiles, and promotional health content.\nAssets stored here are referenced by the Patient Portal and hospital website.\n\n[EXACT UI BUTTONS: UPLOAD ASSET, DELETE, PREVIEW, ASSIGN TO ZONE]"
+    },
+    {
+      "id": "Z-GUEST",
+      "name": "Patient Portal",
+      "path": "/dashboard/patient",
+      "icon": "🏥",
+      "sidebar_label": "PATIENT PORTAL",
+      "permissions": [
+        "PATIENT"
+      ],
+      "ai_persona": "Patient Care Navigator",
+      "ai_greeting_context": "You are Miracle — the Patient Care Navigator of Miracle HMS. Guide patients through appointments, bills, meal orders, and ward concierge services with clinical precision.",
+      "ai_knowledge": "ZONE GUEST — PATIENT PORTAL (Patient-facing HMS interface).\n\nThis is what patients see when they log into the Miracle HMS Patient App or web portal.\n\nAVAILABLE TABS FOR PATIENTS:\n  /patient/hub — Main dashboard: Welcome message, today's appointments, ward status\n  /patient/appointments — View upcoming OPD consultations and booking history\n  /patient/book — Book a new OPD appointment by department and doctor\n  /patient/bill — View itemised hospital bill: All charges, insurance status, outstanding balance\n  /patient/meals — Order hospital-approved meals to ward bed\n  /patient/concierge — Message nursing staff, request ward assistance\n  /patient/records — View discharge summaries, prescriptions, lab results (when released by doctor)\n\nPatient requests flow to Ward Admin (Z-07) and Solve Portal (Z-17) for clinical staff action.\nIMPORTANT: Patients are NOT guests. Beds are NOT rooms. Doctors have clinical duty rosters.\n\n[EXACT UI BUTTONS: BOOK APPOINTMENT, VIEW MY BILL, ORDER MEAL, REQUEST WARD SERVICE, MY RECORDS]"
+    },
+    {
+      "id": "Z-LOGIN",
+      "name": "HMS Login Portal",
+      "path": "/",
+      "icon": "🚪",
+      "sidebar_label": "LOGIN / SALES PORTAL",
+      "permissions": [
+        "PUBLIC"
+      ],
+      "ai_persona": "HMS Clinical Sales Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Enterprise sales visionary and clinical ROI consultant for healthcare institutions.",
+      "ai_knowledge": "THE HMS SALES PORTAL — The public-facing gateway to Miracle HMS. AI Persona: Clinical Sales Navigator. Lead capture fields: Contact Name, Hospital/Clinic Name, Bed Capacity, Contact Number. Demo credentials: Login ID = Visitor, Password = Miracle4U. Value pitch: One sovereign platform unifies OPD management, bed occupancy, lab & pharmacy workflows, patient billing, HR, accounts, and AGI-powered clinical analytics. Implementation: 10–25 working days. NEVER mention hotel, resort, or PMS hospitality features — this is 100% hospital software."
+    },
+    {
+      "id": "DEFAULT",
+      "name": "Miracle HMS Dashboard",
+      "path": null,
+      "icon": "🌟",
+      "sidebar_label": "SYSTEM",
+      "permissions": [
+        "INTERNAL_AI_ONLY"
+      ],
+      "ai_persona": "British Executive CDO — Clinical Intelligence",
+      "ai_greeting_context": "You are the Lead CDO Engineer and Clinical Sales Visionary of Miracle HMS. Confident, CEO-level professional, British Executive persona. You architect sovereign Hospital Management Systems — not hotels.",
+      "ai_knowledge": "COMPLETE MIRACLE OS ZONE DIRECTORY (30 ZONES): Z-07=Command Grid (God view, bed grid, real-time ward status, critical alerts) | Z-05=OPD Reservations (appointment tape chart, OPD booking, walk-in, patient CRM vault) | Z-06=POS/Pharmacy Retail (point of sale, patient charge, canteen, pharmacy OTC, stock auto-deduction) | Z-25=Patient Marketing (APK distribution, WhatsApp health campaigns, patient loyalty) | Z-08=Patient Billing (patient invoice settlement, split bill, advance deposit, insurance claims) | Z-16=Issue Tickets (raise maintenance/HK/IT tickets, CRITICAL triggers grid alert) | Z-17=Solve Portal (field mission board, photo proof, CDO override) | Z-18=Biometric Portal (staff attendance, access logs, shift verification) | Z-12=Inventory Matrix (stock vault, PAR levels, Receiving Bay, BOM recipes) | Z-09=HR/Personnel (staff registry, payroll, efficiency ratings, AUTHORIZE SYNC) | Z-10=CRM/Patient Records (patient profiles, visit history, care continuity, loyalty programme) | Z-11=Accounts & Finance (P&L, Chart of Accounts, AP/AR, double-entry ledger, payroll disbursements, night audit) | Z-19=Policy Engine (SERVICE & CONSULTATION PRICES HERE — Units tab, Base Rate column; also: Global Laws, Yield Rules, Seasonal Calendar, SOP Matrix, Maintenance Lock, Bulk Seed) | Z-21=Kernel Settings (user accounts, roles, permissions, auth config) | Z-23=Sovereign Infra (VPS monitoring, PM2, DNS, deployment) | Z-14=Media Lab (digital asset management) | Z-20=Synapse Nexus (War Room Kanban, Neural Tree org-chart, AI Directive Decompiler, Video Conf) | Z-26=Wellness & Spa (treatments, therapists, appointments, spa revenue) | Z-27=Boutiques & Retail (product catalog, pricing, image gallery, sales analytics) | Z-28=Fleet & Transport (vehicles, drivers, airport transfers, commission engine) | Z-29=F&B (menu management, dining reservations, kitchen signals, COGS) | Z-30=PMS V2.0 (Sovereign Asset Portfolio Engine: FULL_OWNER/MORTGAGE_BUYER/RENTAL_OWNER/RENTED/AFFILIATED ownership classes, UDI rental pool math, mortgage amortization engine, AI fair rotation dispatcher, 6-axis compliance scan, data integrity scoring, AGI bot /agi commands, Synapse HK automation on checkout, 10 tabs: Portfolio/Gallery/BOM/CardVault/Ledger/OwnerPayouts/MortgageEngine/RentalPools/AICompliance/AIDispatch) | Z-GUEST=Patient Portal (appointment booking, patient bill, meal orders, ward concierge). KEY RULES: Service & consultation prices are set ONLY in Z-19 Policy Engine > Units tab > Base Rate column. Staff logins are created in Z-21. Payroll is in Z-09. Revenue reports are in Z-11. Inventory stock levels are in Z-12. Service Empire (Z-26 to Z-29) revenue all auto-posts to Z-11. PMS mortgage/pool yields auto-post to Z-11 on checkout."
+    },
+    {
+      "id": "Z-26",
+      "name": "Wellness & Spa",
+      "path": "/dashboard/wellness",
+      "icon": "🌿",
+      "sidebar_label": "WELLNESS & SPA",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "SPA",
+        "WELLNESS",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — Sovereign Clinical Navigator of Miracle HMS. Manage the wellness and spa empire with precision.",
+      "ai_knowledge": "ZONE 26 — WELLNESS & SPA. Full spa management: treatments, therapists, appointment booking, revenue per therapist, commission tracking. Every treatment charge auto-posts to Z-11 Accounts under Spa Revenue. BOM links spa SKUs to inventory ingredients. [EXACT UI BUTTONS: BOOK TREATMENT, ADD THERAPIST, VIEW SCHEDULE, EXPORT REVENUE]"
+    },
+    {
+      "id": "Z-27",
+      "name": "Boutiques & Retail",
+      "path": "/dashboard/boutiques",
+      "icon": "🛍️",
+      "sidebar_label": "BOUTIQUES & RETAIL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "POS",
+        "BOUTIQUE",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — Sovereign Navigator. Manage the boutique retail empire.",
+      "ai_knowledge": "ZONE 27 — BOUTIQUES & RETAIL. Product catalog management, pricing, image gallery, sales analytics per outlet. All retail sales post to Z-11 Boutique Revenue. Stock syncs with Z-12 Inventory. [EXACT UI BUTTONS: ADD PRODUCT, EDIT ITEM, VIEW SALES, SERVICE ARCHITECT]"
+    },
+    {
+      "id": "Z-28",
+      "name": "Fleet & Transport",
+      "path": "/dashboard/fleet",
+      "icon": "🚗",
+      "sidebar_label": "FLEET & TRANSPORT",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FLEET",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — Sovereign Navigator. Orchestrate the fleet and transport operations.",
+      "ai_knowledge": "ZONE 28 — FLEET & TRANSPORT. Vehicle management, airport transfers, driver scheduling, commission engine, trip logging. Driver commissions auto-sync to Z-09 HR payroll. Revenue net of commission posts to Z-11 Accounts. [EXACT UI BUTTONS: NEW TRIP, ASSIGN DRIVER, MARK COMPLETE, VIEW FLEET]"
+    },
+    {
+      "id": "Z-29",
+      "name": "F & B",
+      "path": "/dashboard/z29-gastronomy",
+      "icon": "🍽️",
+      "sidebar_label": "F & B",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FB",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — Sovereign Navigator. Command the Food & Beverage empire.",
+      "ai_knowledge": "ZONE 29 — F&B (Food & Beverage Intelligence). Menu management, dining reservations, table management, kitchen signal routing, revenue per outlet, COGS via BOM. Every F&B sale auto-decrements Z-12 Inventory and posts revenue to Z-11. [EXACT UI BUTTONS: MENU ENGINEER, BOOK TABLE, KITCHEN SIGNAL, VIEW REVENUE]"
+    },
+    {
+      "id": "Z-30",
+      "name": "Asset & Property Management",
+      "path": "/dashboard/pms",
+      "icon": "🏢",
+      "sidebar_label": "ASSET MGMT",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "PMS",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Clinical Navigator of Miracle HMS. Guardian of hospital infrastructure, biomedical equipment, and property portfolio.",
+      "ai_knowledge": "ZONE 30 — PROPERTY & ASSET MANAGEMENT (Hospital Infrastructure Portfolio).\n\nPURPOSE: Sovereign asset portfolio engine for hospital-owned properties, medical equipment, and physical infrastructure.\n\nOWNERSHIP CLASSES:\n  HOSPITAL_OWNED — Freehold clinical building. Depreciation tracked annually.\n  LEASED — Leased clinical or admin space. Monthly rent tracked vs. budget.\n  EQUIPMENT — Biomedical and diagnostic equipment (MRI, CT, X-Ray, Ventilators).\n\nMODULES:\n  - Property register: Hospital buildings, clinics, admin offices\n  - Biomedical equipment register: Make, model, serial, last service date, next AMC\n  - Depreciation schedules (straight-line and reducing balance)\n  - Lease management: Rent payments, escalation clauses, renewal alerts\n  - Asset disposal workflow with approvals\n\nThis is an ASSET MANAGEMENT module for a hospital — NOT a hotel PMS. It tracks clinical infrastructure, not hotel rooms or guest bookings.\n\n[EXACT UI BUTTONS: ADD PROPERTY, ADD EQUIPMENT, LOG SERVICE, GENERATE DEPRECIATION REPORT]"
+    },
+    {
+      "id": "Z-31",
+      "name": "Owner Bridge",
+      "path": "/dashboard/pms?tab=requests",
+      "icon": "📬",
+      "sidebar_label": "OWNER BRIDGE (Z-31)",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "ACC",
+        "STAFF",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign AGI Property Intake Coordinator. You manage the Property Owner Bridge Z-31.",
+      "ai_knowledge": "ZONE 31 - PROPERTY OWNER BRIDGE (B2B Property Intake Portal). Connects international property owners to the Miracle HMS ecosystem. Handles lead intake, dynamic calculations, regional policies control, and approval routing.\n\nREGIONAL POLICIES:\n  - Configured via 'sgpe_region_policies' database table for regions: BD, UAE, US, UK, SG, MV, SA, and fallback '_'.\n  - Parameters include: Cap Rate, Lease Yield, Signing Bonus, Management Fee %, Land Location Discount, Road Access Premium, and VAT Tax %.\n  - Post-Tax Yield: All calculations automatically deduct the regional VAT Tax % (e.g. 15% for BD, 5% for UAE) from JV annual yields, fixed leases, and rental pool yields.\n\nAGI AI VALUATION APPRAISAL:\n  - Invokes Gemini underwriter (via POST /api/properties/request/{id}/ai-analyze) to generate detailed location risk, structural, and market valuation reports.\n  - Analysis is formatted in markdown and cached directly in the database to prevent redundant LLM calls.\n\nDEBT RESCUE SIMULATOR:\n  - Simulates using fractional sales sweeps to accelerate mortgage loan paydown.\n  - Sweeps target percentage (e.g. 80%) of share sales directly to principal loan reduction.\n  - Projects years saved, total interest saved, and year-by-year balance schedules in dual currencies (USD and regional native currency like BDT).\n\nUI WORKFLOW & ACTIONS:\n  - Toggle sub-tabs: 'Pipeline Requests' (review submissions) and '⚙️ Dynamic Policies Control Panel' (edit policy parameters).\n  - Admin Details Panel: Offers proposals overview, Override Valuation & Clarification Notes (NID/deed documents list), Simulate Contact (Email/Call/WhatsApp), AGI Appraisal, and Debt Payoff Simulator.\n  - Finalize & Approve Deal: Creates portfolio asset, owner profile, double-entry GL journal, and initiates first payout.\n  - Cancel/Reject: Rejects lead. Reopen: Restores to Pending.\n[EXACT UI BUTTONS: PIPELINE REQUESTS, DYNAMIC POLICIES CONTROL PANEL, RUN APPRAISAL, RUN RESCUE SIMULATION, SAVE OFFER DETAILS, FINALIZE & APPROVE DEAL, CANCEL / REJECT REQUEST, REOPEN REQUEST, SAVE ALL POLICIES]"
+    },
+    {
+      "id": "Z-DOCTOR",
+      "name": "Physician Command Portal",
+      "path": "/dashboard/doctor",
+      "icon": "🩺",
+      "sidebar_label": "PHYSICIAN PORTAL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "DOCTOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle.",
+      "ai_knowledge": "Doctors Portal"
+    }
+  ],
+  "features": {
+    "voice_enabled": true,
+    "matchstick_trigger": true,
+    "biometric_sync": false
+  },
+  "system_architecture": {
+    "role_permissions": {
+      "CDO": "God Mode. Can access all 30 zones. Only role that can override missions, access Z-21 Kernel Settings, and Z-23 Infra. Full P&L, audit, HR, inventory, and accounts access.",
+      "GM": "General Manager. Can access all 30 operational zones including Z-11 Accounts, Z-05 Reservations, Z-26 Wellness, Z-27 Boutiques, Z-28 Fleet, Z-29 F&B, Z-30 PMS. Cannot access Z-23 Infra config or Z-21 Master Passwords.",
+      "ADMIN": "System Admin. Can manage HR, inventory, accounts, and all 30 zones. Can view all logs and audit records.",
+      "FD": "Front Desk. Access limited to Z-05 Reservations, Z-07 Command Grid, Z-08 Checkout, Z-10 CRM.",
+      "POS": "Point of Sale / Retail. Access limited to Z-06 POS, Z-12 Inventory (view), Z-27 Boutiques.",
+      "HR": "Human Resources. Access limited to Z-09 HR Engine, Z-18 Biometric Portal.",
+      "ACC": "Accounts. Access limited to Z-11 Accounts & Finance, Z-08 Checkout.",
+      "SPA": "Spa & Wellness Operative. Access to Z-06 POS, Z-26 Wellness & Spa.",
+      "WELLNESS": "Wellness Staff. Access to Z-26 Wellness & Spa booking and scheduling.",
+      "BOUTIQUE": "Boutique Staff. Access to Z-27 Boutiques & Retail product management and sales.",
+      "FLEET": "Fleet & Transport Staff. Access to Z-28 Fleet & Transport trip management and driver scheduling.",
+      "FB": "F&B Staff. Access to Z-29 Food & Beverage menu, orders, and kitchen signals.",
+      "PMS": "Property Management Staff. Access to Z-30 PMS portfolio management.",
+      "SYNAPSE": "Synapse Operative. Access to Z-20 Synapse Nexus for directives and team communications.",
+      "HK/MN/IT": "Field Operatives. Access limited to Z-17 Solve Portal, Z-16 Issue Tickets, Z-12 Inventory."
+    },
+    "database_schema": {
+      "miracle_sessions": [
+        "id",
+        "session_id",
+        "user_id",
+        "zone",
+        "role",
+        "content",
+        "created_at"
+      ],
+      "feature_requests": [
+        "id",
+        "reference",
+        "user_id",
+        "zone",
+        "request_text",
+        "status",
+        "created_at",
+        "resolved_at"
+      ],
+      "sales_leads": [
+        "id",
+        "lead_name",
+        "enterprise_name",
+        "enterprise_size",
+        "contact_details",
+        "status",
+        "created_at"
+      ],
+      "login_session_log": [
+        "id",
+        "operative",
+        "role",
+        "outcome",
+        "ip_address",
+        "user_agent",
+        "session_token",
+        "login_at",
+        "logout_at",
+        "duration_min"
+      ],
+      "access_credentials": [
+        "id",
+        "label",
+        "username",
+        "password",
+        "role",
+        "description",
+        "updated_at"
+      ],
+      "miracle_knowledge": [
+        "id",
+        "source_role",
+        "category",
+        "insight",
+        "business_context",
+        "importance_score",
+        "created_at"
+      ],
+      "system_settings": [
+        "id",
+        "auth_expiry_minutes",
+        "ip_whitelist",
+        "sync_pulse_interval",
+        "biometric_threshold",
+        "stripe_live_mode",
+        "system_log_level",
+        "auto_backup",
+        "master_pin_hash",
+        "financial_laws"
+      ],
+      "users": [
+        "id",
+        "username",
+        "hashed_password",
+        "role",
+        "is_active",
+        "created_at"
+      ],
+      "employees": [
+        "id",
+        "user_id",
+        "full_name",
+        "last_name",
+        "position",
+        "dept",
+        "status",
+        "joined_date",
+        "avatar_url",
+        "base_salary",
+        "commission_rate",
+        "revenue_impact",
+        "monthly_hours",
+        "missions_secured",
+        "efficiency_rating"
+      ],
+      "reservations": [
+        "id",
+        "room_id",
+        "guest_crm_id",
+        "guest_name",
+        "start_date",
+        "nights",
+        "status",
+        "nightly_rate",
+        "total_yield",
+        "vault_token",
+        "created_at"
+      ],
+      "guest_dna": [
+        "id",
+        "full_name",
+        "passport_nid",
+        "preferences",
+        "last_stay"
+      ],
+      "guest_crm": [
+        "id",
+        "full_name",
+        "phone",
+        "email",
+        "passport_nid",
+        "social_id",
+        "social_provider",
+        "total_ltv",
+        "total_stays",
+        "vip_tier",
+        "preferences",
+        "coins"
+      ],
+      "guest_offers": [
+        "id",
+        "category",
+        "title",
+        "description",
+        "image_url",
+        "price_tag",
+        "is_active",
+        "is_featured",
+        "created_at"
+      ],
+      "active_occupancy": [
+        "room_number",
+        "guest_crm_id",
+        "folio_id",
+        "check_in_timestamp"
+      ],
+      "guest_folios": [
+        "id",
+        "room_number",
+        "guest_crm_id",
+        "guest_name",
+        "status",
+        "balance",
+        "rate",
+        "advance_paid",
+        "ref_staff",
+        "check_in_date",
+        "last_updated",
+        "payment_network",
+        "gateway_txn_id",
+        "last_4_digits"
+      ],
+      "folio_charges": [
+        "id",
+        "folio_id",
+        "item_name",
+        "category",
+        "amount",
+        "qty",
+        "timestamp",
+        "transaction_id"
+      ],
+      "inventory": [
+        "product_id",
+        "name",
+        "type",
+        "dept",
+        "cat",
+        "margin",
+        "min_level",
+        "s_unit",
+        "p_unit",
+        "factor",
+        "desc",
+        "img",
+        "barcode",
+        "pp",
+        "rp",
+        "stock",
+        "bom",
+        "created_at"
+      ],
+      "pos_transactions": [
+        "id",
+        "terminal_id",
+        "cashier_pin",
+        "guest_type",
+        "guest_ref",
+        "payment_method",
+        "subtotal",
+        "total_cogs",
+        "discount",
+        "vat",
+        "sc",
+        "grand_total",
+        "true_profit",
+        "timestamp"
+      ],
+      "pos_order_items": [
+        "id",
+        "transaction_id",
+        "product_id",
+        "name",
+        "type",
+        "qty",
+        "rp",
+        "cogs",
+        "is_foc"
+      ],
+      "solve_missions": [
+        "id",
+        "room_no",
+        "dept",
+        "subject",
+        "priority",
+        "status",
+        "sop_steps",
+        "assigned_to",
+        "operator_id",
+        "raised_at",
+        "picked_up_at",
+        "secured_at",
+        "proof_image_url"
+      ],
+      "accounts": [
+        "id",
+        "code",
+        "name",
+        "type"
+      ],
+      "journal_entries": [
+        "id",
+        "timestamp",
+        "reference_type",
+        "description",
+        "verification_status"
+      ],
+      "ledger_lines": [
+        "id",
+        "journal_id",
+        "account_id",
+        "debit",
+        "credit"
+      ],
+      "accounting_ledger": [
+        "id",
+        "transaction_ref",
+        "type",
+        "category",
+        "amount",
+        "balance_after",
+        "description",
+        "operator_id",
+        "timestamp",
+        "payment_network",
+        "gateway_txn_id",
+        "last_4_digits"
+      ],
+      "asset_grid": [
+        "room_id",
+        "category",
+        "base_rate",
+        "floor",
+        "is_active",
+        "current_status",
+        "current_guest"
+      ],
+      "policy_sop": [
+        "id",
+        "dept",
+        "task_list",
+        "last_updated"
+      ],
+      "audit_logs": [
+        "id",
+        "action",
+        "operator",
+        "target",
+        "timestamp"
+      ],
+      "vendors": [
+        "id",
+        "name",
+        "contact",
+        "tax_id",
+        "payment_terms_days",
+        "created_at"
+      ],
+      "ap_invoices": [
+        "id",
+        "vendor_id",
+        "invoice_ref",
+        "description",
+        "amount",
+        "due_date",
+        "status",
+        "journal_id",
+        "created_at"
+      ],
+      "ar_receivables": [
+        "id",
+        "client_name",
+        "ota_type",
+        "folio_id",
+        "reservation_id",
+        "amount",
+        "due_date",
+        "status",
+        "journal_id",
+        "created_at"
+      ]
+    },
+    "api_endpoints": [
+      "POST /api/policy/lock",
+      "POST /api/auth/token",
+      "POST /api/billing/checkout/{guest_ref}",
+      "POST /api/accounting/journal/manual",
+      "POST /api/frontdesk_engine/commit",
+      "POST /api/reservation_engine/ota-ingest",
+      "GET /api/frontdesk_engine/reservations",
+      "GET /api/accounting_engine/status",
+      "GET /api/settings/live",
+      "GET /api/bot/sales-leads",
+      "GET /api/guest_api/folio/{room}",
+      "POST /api/frontdesk_engine/sync-offline-queue",
+      "GET /api/billing/status",
+      "POST /api/infra/backup",
+      "GET /api/accounting_engine/ar/aging",
+      "GET /api/bot/alerts",
+      "GET /api/accounting_engine/balance-sheet",
+      "POST /api/accounting/init-balances",
+      "GET /api/accounting_engine/trial-balance",
+      "POST /api/accounting_engine/ap/vendors",
+      "GET /api/guest_api/catalog",
+      "GET /api/accounting_engine/pnl",
+      "POST /api/solve/force-resolve/{mission_id}",
+      "POST /api/frontdesk_engine/quick-walk-in",
+      "GET /api/guest_api/offers",
+      "POST /api/accounting/ar/reconcile/{id}",
+      "POST /api/frontdesk_engine/sync-walkins",
+      "POST /api/accounting/ap/pay/{id}",
+      "POST /api/guest_api/login",
+      "POST /api/accounting_engine/voucher/dispatch",
+      "POST /api/hr/sync-registry",
+      "GET /api/guest_api/profile/{crm_id}",
+      "POST /api/accounting_engine/ar/reconcile/{receivable_id}",
+      "GET /api/infra/services",
+      "POST /api/frontdesk_engine/force-available/{room_id}",
+      "GET /api/accounting/ap/invoices",
+      "GET /api/pos/status",
+      "POST /api/accounting/voucher/dispatch",
+      "GET /api/hr/biometric/{filename}",
+      "GET /api/infra/logs/{service_name}",
+      "POST /api/settings/sync",
+      "GET /api/frontdesk_engine/live-grid",
+      "POST /api/guest_api/crm-assign",
+      "GET /api/settings/diagnostics",
+      "POST /api/inventory_engine/bulk-register",
+      "POST /api/hr/onboard",
+      "GET /api/accounting/ar/aging",
+      "POST /api/bot/feature-request",
+      "GET /api/bot/feature-requests",
+      "POST /api/settings/credentials/update",
+      "DELETE /api/policy/offers/{offer_id}",
+      "GET /api/auth/session-history",
+      "POST /api/guest_api/reserve",
+      "POST /api/frontdesk_engine/force-sync",
+      "POST /api/billing/folio/{guest_ref}/add-charge",
+      "GET /api/guest_api/stats",
+      "GET /api/policy/current-lock",
+      "POST /api/policy/yield-rules",
+      "GET /api/accounting/ap/vendors",
+      "POST /api/guest_api/ecommerce/cashout",
+      "GET /api/solve/status",
+      "GET /api/solve/active",
+      "POST /api/pos/checkout",
+      "GET /api/frontdesk_engine/folios",
+      "GET /api/accounting_engine/ledger/live",
+      "POST /api/frontdesk_engine/checkout/{room_id}",
+      "GET /api/hr/performance-matrix",
+      "POST /api/guest_api/ecommerce/order",
+      "GET /api/solve/pulse",
+      "GET /api/solve/operative-stats/{username}",
+      "GET /api/accounting/ledger/live",
+      "POST /api/accounting/ap/vendors",
+      "GET /api/inventory_engine/live",
+      "POST /api/guest_api/concierge/ticket",
+      "GET /api/solve/operative-load/{dept}",
+      "GET /api/accounting_engine/ap/invoices",
+      "POST /api/policy/offers",
+      "GET /api/frontdesk_engine/crm-profiles",
+      "GET /api/guest_api/app-version",
+      "POST /api/policy/gm-bulk-seed",
+      "POST /api/frontdesk_engine/checkin/{res_id}",
+      "POST /api/bot/query",
+      "POST /api/accounting_engine/ap/pay/{invoice_id}",
+      "POST /api/solve/register",
+      "GET /api/guest_api/crm-profiles",
+      "GET /api/settings/kernel",
+      "POST /api/policy/spawn-ticket",
+      "POST /api/solve/secure/{mission_id}",
+      "POST /api/accounting_engine/journal/manual",
+      "GET /api/frontdesk_engine/active-in-house",
+      "POST /api/policy/maintenance-lock",
+      "GET /api/policy/yield-rules",
+      "GET /api/policy/offers",
+      "POST /api/guest_api/social-login",
+      "GET /api/accounting/trial-balance",
+      "POST /api/frontdesk_engine/extend/{res_id}",
+      "POST /api/guest_api/register-device",
+      "GET /api/accounting_engine/ap/vendors",
+      "GET /api/bot/status",
+      "POST /api/infra/action",
+      "POST /api/guest_api/push-notification",
+      "POST /api/hr/execute-payroll/{staff_id}",
+      "GET /api/settings/credentials",
+      "GET /api/billing/folio/{guest_ref}/invoice",
+      "GET /api/accounting_engine/coa/list",
+      "GET /api/infra/telemetry",
+      "POST /api/infra/browser-error",
+      "GET /api/guest_api/my-tickets",
+      "GET /api/accounting/status",
+      "GET /api/accounting/coa/list"
+    ]
+  }
+}

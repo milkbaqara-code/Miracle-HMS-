@@ -1,0 +1,18 @@
+{
+  "name": "miracle-brain-sync",
+  "script": "python",
+  "args": "train_miracle_ai.py --watch",
+  "cwd": "d:/Vigilant IT Solutions/Miracle_HMS",
+  "interpreter": "none",
+  "watch": false,
+  "autorestart": true,
+  "restart_delay": 5000,
+  "max_restarts": 10,
+  "env": {
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "log_file": "logs/brain-sync.log",
+  "error_file": "logs/brain-sync-error.log",
+  "time": true
+}

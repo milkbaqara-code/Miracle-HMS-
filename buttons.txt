@@ -1,0 +1,84 @@
+
+--- page.tsx ---
+VERIFYING KEY...
+
+--- components\CurrencyLangContext.tsx ---
+#D4AF37, #00F2FF
+
+--- components\MiracleBot.tsx ---
+SEND TO MIRACLE DEV TEAM, 🎙️, rgba(255,49,49,0.1), );                 }               }}               style={{ width: 48, height: 48, borderRadius: , none, 10px 16px
+
+--- dashboard\layout.tsx ---
+All Zones, SIGN OFF DUTY, 12px, none, 🔒 DISCONNECT SESSION
+
+--- dashboard\page.tsx ---
+checkout, #FF3131, fetchLiveGrid()} style={syncBtn}>             📡 PULSE SYNC DATA, reservations, issue-tickets, router.push('/dashboard/accounts')}>📊 ZONE 11: ACCOUNTS, setActiveFilter(f as any)}                    style={filterPill(activeFilter === f)}                 >                   {f} {count > 0 ? `[${count}]` : ''}, pos, solve
+
+--- dashboard\accounts\page.tsx ---
+setGenesisPhase(1)}>🡄 BACK, neon-btn, setInvResolution(res)}>                            {res}, #FF313122, loading, setStepsCleared([true, true, true, false])}>PROCEED TO MASTER LOCK, AUTO-FIX, POST TO SOVEREIGN LEDGER, 🛡️ RUN TRIAL BALANCE, 🔄 LOCKING ARCHIVES..., ,debit:, #00FF8822, setFoHkDiscrepancy(true)}>Simulate Discrepancy, #00F2FF22, setGenesisPhase(2)} disabled={!(parseFloat(obCash)>0)}>PROCEED TO LIABILITIES ➔, + Add Bank Entry, COMMIT RECEIPT, setStepsCleared([true, true, false, false])}>                        ASYNC SYNC INVENTORY, active, 45200, ADD VENDOR TO DIRECTORY, setCurrentPg(p => Math.max(1, p - 1))} className="modern-btn">⬅️ PREV, modern-btn, AUDITING..., POST AS SHORT PAYMENT, setCurrentPg(p => Math.min(13, p + 1))} className="modern-btn">NEXT ➡️, AUTHORIZE DISBURSEMENT
+
+--- dashboard\admin\page.tsx ---
+DISABLE ALL ALARMS, 💾 COMMIT TO POSTGRES, ⚡ BROADCAST UI SIGNAL, 👑 FORCE ROOM TO AVAILABLE
+
+--- dashboard\audit-ledger\page.tsx ---
+SYNCING VAULT..., 📥 EXPORT CSV
+
+--- dashboard\checkout\page.tsx ---
+VISA, no-print, 🔄 DEEP RE-SYNC, 📡 AWAITING TERMINAL SWIPE..., setPaymentMethod(gw)} style={paymentMethod === gw ? gatewayBtnActive : gatewayBtnInactive}>                     {gw}
+
+--- dashboard\crm\page.tsx ---
+SYNCING...
+
+--- dashboard\guest-marketing\page.tsx ---
+EXECUTE PUSH, ANALYTICS, #333, + CONSTRUCT NEW OFFER BROADCAST, #00FF88, DISTRIBUTION, https://miracle.vigilantitsolution.com/downloads/MiracleOS-GuestApp.apk, CRM, rgba(255,255,255,0.05), PROMOS
+
+--- dashboard\hr\page.tsx ---
+#D4AF37, WRITING TO DATABASE..., SYNCING..., handleGeneratePayslip(selectedStaff.id)}>📄 AUTO-GENERATE OFFICIAL PAYSLIP, REGISTRY, 20px, 🖨️ PRINT / PDF EXPORT, setSelectedStaff(null)} style={closeBtn}>×, KERNEL SYNC: Draft Saved., handleViewDoc(doc)} style={ghostBtn}>LOAD TO EDITOR, VIEW INCIDENT LOGS
+
+--- dashboard\infrastructure\page.tsx ---
+📥 SECURE BACKUP, executeRestart(svc.name)}                     >                       ⟲ REBOOT, setActiveLog(target)}                >                  {target.toUpperCase()} LOGS
+
+--- dashboard\inventory\page.tsx ---
+setRegType(t as any)} style={typeToggle(regType === t)}>{t}, #111, SYNCING..., 🔐 AUTHORIZE DETAILED ASSET & SYNC, _, 📡 SYNCING..., setCurrentPage(p => p - 1)} style={pageBtn(currentPage !== 1)}>◀ PREVIOUS, transparent, setCurrentPage(p => p + 1)} style={pageBtn(currentPage !== totalPages)}>NEXT ▶, ⬇️ DOWNLOAD .CSV TEMPLATE
+
+--- dashboard\issue-tickets\page.tsx ---
+⏳ TRANSMITTING...
+
+--- dashboard\media-lab\page.tsx ---
+SYNCING MATRIX..., ENCRYPTING PAYLOAD...
+
+--- dashboard\policy\page.tsx ---
+BUFFET, rgba(0,242,255,0.1), transparent, New Task, NEW, , end: , FORGING ASSETS...,  , 📡 SYNCING..., NEW_DEPT, LOCKING..., UPDATE CONTENT, rateCalendar
+
+--- dashboard\portal\page.tsx ---
+MAPPING PORT...
+
+--- dashboard\pos\page.tsx ---
+#D4AF37, ); setCurrentPage(1); }}                    className={`ecommerce-tab ${isActive ? , PUSHING..., PROCESSING..., #00F2FF, updateQty(item.id, 1)}>+, setCurrentPage(p => Math.min(totalPages, p + 1))}                  className="ecommerce-page-btn"               >                 NEXT, updateQty(item.id, -1)}>-, SYNCING DATA..., setCurrentPage(p => Math.max(1, p - 1))}                  className="ecommerce-page-btn"               >                                  PREV, VOID CART
+
+--- dashboard\pos-admin\page.tsx ---
+removeBOMItem(b.rawId)} style={removeBtnStyle}>✕, INJECTING TO VAULT..., LOCK & COMPRESS TO WEBP, ADD
+
+--- dashboard\reservations\page.tsx ---
+⏳ SYNCING..., #39FF14, setSelectedGateway(gw)} style={selectedGateway === gw ? gatewayBtnActive : gatewayBtnInactive}>{gw}, setActiveView('RESERVATIONS')}>LIVE RESERVATIONS, #00F2FF, #FF3131, Select a Payment Gateway first., setActiveView('VIP_CRM')}>VIP CRM VAULT, ).replace(/[^0-9]/g, , CASH, https://miracle.vigilantitsolution.com/downloads/MiracleOS-GuestApp.apk, Unlock 7-Star service! Download the Miracle Super App: https://miracle.vigilantitsolution.com/downloads/MiracleOS-GuestApp.apk, _blank, AUTHORIZE & LOCK GRID (RESERVATION), Enter nights to extend:
+
+--- dashboard\settings\page.tsx ---
+saveCredential(cred)}                            style={saveBtn}                         >                           UPDATE VAULT, DECRYPT SETTINGS, RE-CALIBRATE, stripe_live_mode, SCANNING..., DECRYPTING..., LOADING..., EXECUTE
+
+--- dashboard\solve\page.tsx ---
+🔄 FORCE CLOUD RE-SYNC, _, finalizeMission(m.id)}                   style={finalizeBtn((completedChecks[m.id] || []).length === m.checks.length && !!proofUploads[m.id])}                 >                   🏁 SECURE MISSION & SYNC PROOF TO Z-07, pickupMission(m.id)} style={pickupBtn}>+ PICKUP MISSION, 📡 SYNC VAULT TO CLOUD
+
+--- guest\layout.tsx ---
+18px, EXIT CONCIERGE
+
+--- guest\hub\page.tsx ---
+/guest/folio, _blank
+
+--- guest\order\page.tsx ---
+PROCESSING..., rgba(255,255,255,0.06), 14, rgba(255,255,255,0.05), price-tag
+
+--- guest\profile\page.tsx ---
+router.push('/guest/hub')}>←, linear-gradient(135deg, #D4AF37, #AA7C11), PROCESSING..., absolute
+
+--- guest\reserve\page.tsx ---
+router.push('/guest/hub')}>Back to Home

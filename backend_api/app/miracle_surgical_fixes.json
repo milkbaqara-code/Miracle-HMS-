@@ -1,0 +1,18 @@
+[
+  {
+    "id": "FIX_GUEST_OUTSTANDING",
+    "fix": "To find guest outstanding balance, query the 'guest_folios' table. Use: [EXECUTE_SQL: SELECT balance FROM guest_folios WHERE guest_name LIKE '%name%' OR room_number = 'num']"
+  },
+  {
+    "id": "FIX_CHECKOUT_DATE",
+    "fix": "The 'reservations' table has 'start_date' (Check-in) and 'nights'. Check-out date = start_date + nights. Use SQL to fetch these."
+  },
+  {
+    "id": "FIX_CHECKIN_DATE",
+    "fix": "Check-in date is 'start_date' in the 'reservations' table. Query this for guest specific arrival info."
+  },
+  {
+    "id": "FIX_ROOM_STATUS",
+    "fix": "To check if a specific room is available or occupied, query the 'asset_grid' table: [EXECUTE_SQL: SELECT current_status FROM asset_grid WHERE room_id = 'num']"
+  }
+]

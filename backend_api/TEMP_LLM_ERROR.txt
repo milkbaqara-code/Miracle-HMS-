@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "D:\Vigilant IT Solutions\Miracle_Os_Master\backend_api\app\routers\bot_router_v2.py", line 579, in execute_executive_synthesis
+    reply = await call_llm(messages, temperature=0.7)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Vigilant IT Solutions\Miracle_Os_Master\backend_api\app\routers\DEPRECATED_bot_router.py", line 719, in call_llm
+    raise HTTPException(status_code=503, detail="Miracle AI is momentarily unavailable. Re-syncing kernel...")
+fastapi.exceptions.HTTPException: 503: Miracle AI is momentarily unavailable. Re-syncing kernel...

@@ -1,0 +1,3489 @@
+<html><head><style>body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2cm; } table { border-collapse: collapse; width: 100%; margin-bottom: 1rem; } th, td { border: 1px solid #ddd; padding: 8px; text-align: left; } th { background-color: #f2f2f2; } pre { background-color: #f4f4f4; padding: 10px; overflow-x: auto; }</style></head><body><h1>MIRACLE OS — THE SOVEREIGN BIBLE</h1>
+<h3>Complete Architectural Blueprint, Feature Reference &amp; Enterprise Deployment Guide</h3>
+<h3>Edition V66.0 — SOVEREIGN KERNEL</h3>
+<hr />
+<p><strong>DEVELOPED BY:</strong> Vigilant IT Solutions<br />
+<strong>FOUNDING YEAR:</strong> 2003<br />
+<strong>YEARS OF ENTERPRISE EXPERIENCE:</strong> 21+<br />
+<strong>PLATFORM VERSION:</strong> V66.0-SOVEREIGN-SRE<br />
+<strong>AI ENGINE:</strong> Miracle Navigator V4.0 (Gemini 1.5 Flash + Groq Llama 3.3 70B)<br />
+<strong>LIVE DEPLOYMENT:</strong> https://miracle.vigilantitsolution.com<br />
+<strong>DOCUMENT CLASSIFICATION:</strong> ENTERPRISE DISTRIBUTION — CONFIDENTIAL<br />
+<strong>DOCUMENT VERSION:</strong> BIBLE-V1.0 / 2026  </p>
+<hr />
+<blockquote>
+<p><em>"For over two decades, Vigilant IT Solutions has engineered enterprise command systems that outlast trends and outperform expectations. Miracle OS is not software. It is a sovereign operating philosophy — a living, AI-driven nucleus that governs every atom of your enterprise in real time."</em><br />
+— Vigilant IT Solutions, Founding Directive</p>
+</blockquote>
+<hr />
+<h2>TABLE OF CONTENTS</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Chapter</th>
+<th style="text-align: left;">Section</th>
+<th style="text-align: left;">Page Ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Executive Summary</td>
+<td style="text-align: left;">§1</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The Vigilant Legacy — 21 Years of Enterprise DNA</td>
+<td style="text-align: left;">§2</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">System Architecture Blueprint</td>
+<td style="text-align: left;">§3</td>
+</tr>
+<tr>
+<td style="text-align: left;">3.1</td>
+<td style="text-align: left;">Frontend Architecture — Next.js Sovereign UI</td>
+<td style="text-align: left;">§3.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">3.2</td>
+<td style="text-align: left;">Backend Architecture — FastAPI Kernel Engine</td>
+<td style="text-align: left;">§3.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">3.3</td>
+<td style="text-align: left;">Database Architecture — Dual-Mode Vault</td>
+<td style="text-align: left;">§3.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">3.4</td>
+<td style="text-align: left;">Deployment &amp; Infrastructure Architecture</td>
+<td style="text-align: left;">§3.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">3.5</td>
+<td style="text-align: left;">WebSocket Real-Time Sync Architecture</td>
+<td style="text-align: left;">§3.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">3.6</td>
+<td style="text-align: left;">Full System Data Flow Diagram</td>
+<td style="text-align: left;">§3.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">AI / AGI Brain Architecture — The Miracle Navigator</td>
+<td style="text-align: left;">§4</td>
+</tr>
+<tr>
+<td style="text-align: left;">4.1</td>
+<td style="text-align: left;">The 4-Layer Intelligence Engine</td>
+<td style="text-align: left;">§4.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">4.2</td>
+<td style="text-align: left;">The 5 Sovereign Sensor Pillars</td>
+<td style="text-align: left;">§4.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">4.3</td>
+<td style="text-align: left;">Navigator Tags &amp; UI Control Protocol</td>
+<td style="text-align: left;">§4.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">4.4</td>
+<td style="text-align: left;">The Wisp Visual Guidance System</td>
+<td style="text-align: left;">§4.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">4.5</td>
+<td style="text-align: left;">Multi-Key API Vault &amp; Quota Protection</td>
+<td style="text-align: left;">§4.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">AGI-Driven Triple Layer Security Management</td>
+<td style="text-align: left;">§5</td>
+</tr>
+<tr>
+<td style="text-align: left;">5.1</td>
+<td style="text-align: left;">Layer 1 — Perimeter Intelligence</td>
+<td style="text-align: left;">§5.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">5.2</td>
+<td style="text-align: left;">Layer 2 — Behavioral Intelligence</td>
+<td style="text-align: left;">§5.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">5.3</td>
+<td style="text-align: left;">Layer 3 — Vault Intelligence</td>
+<td style="text-align: left;">§5.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">5.4</td>
+<td style="text-align: left;">Security Architecture Diagram</td>
+<td style="text-align: left;">§5.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">The 27 Sovereign Zones — Panel Bible</td>
+<td style="text-align: left;">§6</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.1</td>
+<td style="text-align: left;">Z-LOGIN — Sales &amp; Lead Capture Portal</td>
+<td style="text-align: left;">§6.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.2</td>
+<td style="text-align: left;">Z-07 — Master Command Grid</td>
+<td style="text-align: left;">§6.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.3</td>
+<td style="text-align: left;">Z-05 — Global Reservations Engine</td>
+<td style="text-align: left;">§6.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.4</td>
+<td style="text-align: left;">Z-06 — POS / Retail Matrix</td>
+<td style="text-align: left;">§6.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.5</td>
+<td style="text-align: left;">Z-08 — Checkout &amp; Financial Settlement</td>
+<td style="text-align: left;">§6.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.6</td>
+<td style="text-align: left;">Z-09 — Human Capital Command (HR)</td>
+<td style="text-align: left;">§6.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.7</td>
+<td style="text-align: left;">Z-10 — CRM &amp; Guest Loyalty Engine</td>
+<td style="text-align: left;">§6.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.8</td>
+<td style="text-align: left;">Z-11 — Accounts &amp; Finance Sovereign Kernel</td>
+<td style="text-align: left;">§6.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.9</td>
+<td style="text-align: left;">Z-12 — Inventory Matrix &amp; Stock Vault</td>
+<td style="text-align: left;">§6.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.10</td>
+<td style="text-align: left;">Z-14 — Media Lab</td>
+<td style="text-align: left;">§6.10</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.11</td>
+<td style="text-align: left;">Z-16 — Issue Tickets &amp; Fault Reporting</td>
+<td style="text-align: left;">§6.11</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.12</td>
+<td style="text-align: left;">Z-17 — Solve Portal (Field Operations)</td>
+<td style="text-align: left;">§6.12</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.13</td>
+<td style="text-align: left;">Z-18 — Biometric Security Portal</td>
+<td style="text-align: left;">§6.13</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.14</td>
+<td style="text-align: left;">Z-19 — Policy Engine</td>
+<td style="text-align: left;">§6.14</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.15</td>
+<td style="text-align: left;">Z-20 — Synapse Nexus (Enterprise War Room)</td>
+<td style="text-align: left;">§6.15</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.16</td>
+<td style="text-align: left;">Z-21 — Kernel Settings</td>
+<td style="text-align: left;">§6.16</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.17</td>
+<td style="text-align: left;">Z-23 — Sovereign Infrastructure (SRE Command)</td>
+<td style="text-align: left;">§6.17</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.18</td>
+<td style="text-align: left;">Z-25 — Guest Marketing Engine</td>
+<td style="text-align: left;">§6.18</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.19</td>
+<td style="text-align: left;">Z-26 — Fleet &amp; Aviation Command</td>
+<td style="text-align: left;">§6.19</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.20</td>
+<td style="text-align: left;">Z-27 — Med-Spa &amp; Wellness</td>
+<td style="text-align: left;">§6.20</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.21</td>
+<td style="text-align: left;">Z-28 — Luxury Boutiques</td>
+<td style="text-align: left;">§6.21</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.22</td>
+<td style="text-align: left;">Z-29 — Gastronomy &amp; F&amp;B Engine</td>
+<td style="text-align: left;">§6.22</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.23</td>
+<td style="text-align: left;">Z-GUEST — Guest Concierge App</td>
+<td style="text-align: left;">§6.23</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.24</td>
+<td style="text-align: left;">Z-AUDIT — Audit Ledger</td>
+<td style="text-align: left;">§6.24</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.25</td>
+<td style="text-align: left;">Z-KDS — Kitchen Display System</td>
+<td style="text-align: left;">§6.25</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.26</td>
+<td style="text-align: left;">Z-MENU — Guest QR Table Menu</td>
+<td style="text-align: left;">§6.26</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.27</td>
+<td style="text-align: left;">Z-DELIVERY — Rider Delivery Portal</td>
+<td style="text-align: left;">§6.27</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Database Architecture &amp; Full Schema Reference</td>
+<td style="text-align: left;">§7</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">API Endpoint Directory</td>
+<td style="text-align: left;">§8</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">Role-Based Access Control (RBAC) Matrix</td>
+<td style="text-align: left;">§9</td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">Multi-Enterprise Single Kernel Architecture</td>
+<td style="text-align: left;">§10</td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">Enterprise Industry Deployment Blueprints</td>
+<td style="text-align: left;">§11</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.1</td>
+<td style="text-align: left;">Hospitality — Hotels, Resorts &amp; Eco-Resorts</td>
+<td style="text-align: left;">§11.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.2</td>
+<td style="text-align: left;">Food &amp; Beverage (F&amp;B) Management</td>
+<td style="text-align: left;">§11.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.3</td>
+<td style="text-align: left;">Human Resources &amp; Payroll Automation</td>
+<td style="text-align: left;">§11.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.4</td>
+<td style="text-align: left;">Supply &amp; Distribution Management</td>
+<td style="text-align: left;">§11.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.5</td>
+<td style="text-align: left;">AI Automated Accounting &amp; Finance</td>
+<td style="text-align: left;">§11.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.6</td>
+<td style="text-align: left;">Real Estate Management</td>
+<td style="text-align: left;">§11.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.7</td>
+<td style="text-align: left;">Facility Management</td>
+<td style="text-align: left;">§11.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.8</td>
+<td style="text-align: left;">Staff Efficiency &amp; Productivity Intelligence</td>
+<td style="text-align: left;">§11.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.9</td>
+<td style="text-align: left;">ROI Monitoring &amp; Business Intelligence</td>
+<td style="text-align: left;">§11.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.10</td>
+<td style="text-align: left;">Data Security Management</td>
+<td style="text-align: left;">§11.10</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.11</td>
+<td style="text-align: left;">Hospital &amp; Healthcare Management</td>
+<td style="text-align: left;">§11.11</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.12</td>
+<td style="text-align: left;">Production + Supply + Distribution + After-Sales</td>
+<td style="text-align: left;">§11.12</td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">Small Enterprise Deployment Guide</td>
+<td style="text-align: left;">§12</td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">Expansion Roadmap &amp; Future Vision</td>
+<td style="text-align: left;">§13</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>§1. EXECUTIVE SUMMARY</h2>
+<p>Miracle OS is a <strong>Sovereign Enterprise Operating System</strong> — a single, unified command platform that replaces the fragmented ecosystem of disconnected enterprise tools with one living, AI-governed nucleus. Built over 21 years of enterprise solution experience by Vigilant IT Solutions, Miracle OS operates on a principle that every major enterprise operation — rooms management, point of sale, human resources, accounting, inventory, guest loyalty, fleet, wellness, security, and artificial intelligence governance — must flow through one sovereign kernel.</p>
+<h3>What Problem Does Miracle OS Solve?</h3>
+<p>In the modern enterprise, fragmentation is the silent enemy. A typical medium-to-large enterprise deploys between 8 and 24 separate software platforms: a Property Management System (PMS), a Point of Sale (POS), an HR platform, a separate payroll system, an accounting package (QuickBooks, SAP, or Sage), an inventory tool, a CRM, a communication platform, and a security system. Each of these systems creates a <strong>data silo</strong>, which means:</p>
+<ul>
+<li>Decision-makers receive reports that are hours or days old</li>
+<li>Data manually re-entered between systems introduces critical human error</li>
+<li>Staff operate different interfaces requiring separate training</li>
+<li>Integration breaks cause revenue leakage and compliance failures</li>
+<li>Security gaps exist at every seam between disconnected systems</li>
+</ul>
+<p><strong>Miracle OS eliminates all of this</strong> with a single kernel, a single login, a single AI brain, a single database, and a single real-time view of your entire enterprise.</p>
+<h3>The Miracle Proposition</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Traditional Enterprise Stack</th>
+<th style="text-align: left;">Miracle OS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">8–24 separate platforms</td>
+<td style="text-align: left;">1 sovereign kernel</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hours-old reports</td>
+<td style="text-align: left;">Real-time WebSocket sync (60FPS)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Manual data re-entry</td>
+<td style="text-align: left;">Automatic double-entry across all zones</td>
+</tr>
+<tr>
+<td style="text-align: left;">Separate logins and training</td>
+<td style="text-align: left;">Single RBAC login, role-filtered dashboard</td>
+</tr>
+<tr>
+<td style="text-align: left;">No AI intelligence</td>
+<td style="text-align: left;">AGI-driven 5-pillar sensor engine</td>
+</tr>
+<tr>
+<td style="text-align: left;">Zero security coherence</td>
+<td style="text-align: left;">AGI Triple Layer Security (3 shields)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weeks to months for reports</td>
+<td style="text-align: left;">Instant AI synthesis, British Executive narration</td>
+</tr>
+<tr>
+<td style="text-align: left;">Enterprise cost: $500K–$2M/year</td>
+<td style="text-align: left;">One sovereign deployment</td>
+</tr>
+</tbody>
+</table>
+<h3>Core Capabilities at a Glance</h3>
+<ul>
+<li><strong>24 Operational Zones</strong> covering every department of any enterprise</li>
+<li><strong>AI Navigator "Miracle"</strong> — British Executive AGI that understands your business, narrates reports, navigates the UI, and executes SQL in real time</li>
+<li><strong>AGI Triple Layer Security</strong> — Perimeter, Behavioral, and Vault intelligence working simultaneously</li>
+<li><strong>Real-time WebSocket Grid Sync</strong> — All dashboards update simultaneously across all logged-in operators</li>
+<li><strong>Full GAAP-Compliant Double-Entry Accounting</strong> — Every transaction auto-posts to the ledger</li>
+<li><strong>Mobile Android APK</strong> — Thin-client guest app, always reflects live VPS data with no APK rebuild required</li>
+<li><strong>Multi-Enterprise Kernel</strong> — Deploy one OS across multiple properties, branches, or enterprises under a unified CDO command</li>
+<li><strong>Dark Sovereign UI</strong> — Glassmorphism design with 9 theme modes including cyberpunk city backgrounds (Dubai, London, New York, Saudi Arabia, Qatar, Singapore)</li>
+</ul>
+<hr />
+<h2>§2. THE VIGILANT LEGACY — 21 YEARS OF ENTERPRISE DNA</h2>
+<p>Vigilant IT Solutions was founded in 2003 with a singular mission: to engineer enterprise solutions that outlast trends, survive scale, and serve organizations that cannot afford failure. Over 21 years, Vigilant has delivered enterprise systems across hospitality, manufacturing, healthcare, real estate, and public sector organizations.</p>
+<p>Miracle OS is the culmination of that 21-year experience — not a fresh startup experiment, but a <strong>battle-tested, production-hardened, AI-accelerated platform</strong> built from real operational pain that real enterprises have faced.</p>
+<h3>The Vigilant Engineering Philosophy</h3>
+<ol>
+<li><strong>The Sovereign Standard:</strong> No feature ships unless it can survive 24/7 uptime, 365 days a year, across multiple time zones simultaneously.</li>
+<li><strong>Zero Data Silo:</strong> Every byte of data generated by any department must flow to every authorized stakeholder in real time.</li>
+<li><strong>AI-First, Human-Confirmed:</strong> The AI runs autonomously, but critical financial and security decisions always require a human CDO to approve.</li>
+<li><strong>The Iron Law System:</strong> Miracle OS operates on 51 documented Iron Laws — non-negotiable engineering rules that prevent regression, enforce data integrity, and protect the sovereign kernel.</li>
+</ol>
+<hr />
+<h2>§3. SYSTEM ARCHITECTURE BLUEPRINT</h2>
+<p>Miracle OS is built on a modern, production-grade three-tier architecture with AI integration at every layer.</p>
+<p>```mermaid
+graph TB
+    subgraph CLIENT["CLIENT TIER"]
+        BROWSER["Next.js Browser App\n(React + TypeScript)"]
+        APK["Android APK\n(Capacitor Thin Client)"]
+        GUEST_BROWSER["Guest Web Browser\n(/guest/* routes)"]
+    end</p>
+<pre><code>subgraph VPS["VPS TIER — Hetzner 23.88.50.87"]
+    NGINX["Nginx Reverse Proxy\n(SSL Termination + Routing)"]
+    NEXTJS["Next.js Frontend\nPM2: miracle-frontend\nPort 3000"]
+    FASTAPI["FastAPI Backend\nPM2: miracle-backend\nPort 8090"]
+    WS["WebSocket Server\n/ws/grid-sync\n/ws/synapse/chat"]
+    SENTINEL["Ops Sentinel\nPM2: ops-sentinel\n(SRE Monitor)"]
+end
+
+subgraph DB["DATABASE TIER"]
+    MYSQL["MySQL Production DB\nmiracle_os schema\n30+ tables"]
+    SQLITE["SQLite Local Dev\n(miracle_os_master.db)"]
+end
+
+subgraph AI["AI INTELLIGENCE TIER"]
+    GEMINI["Google Gemini 1.5 Flash\nPrimary LLM\n4-Key Vault Rotation"]
+    GROQ["Groq Llama 3.3 70B\nFallback Engine\nZero-Latency"]
+end
+
+APK --&gt;|HTTPS| NGINX
+BROWSER --&gt;|HTTPS| NGINX
+GUEST_BROWSER --&gt;|HTTPS| NGINX
+NGINX --&gt;|Proxy /api| FASTAPI
+NGINX --&gt;|Proxy /ws| WS
+NGINX --&gt;|Static Pages| NEXTJS
+NEXTJS --&gt;|Internal| FASTAPI
+FASTAPI --&gt;|SQLAlchemy ORM| MYSQL
+FASTAPI --&gt;|Fallback| SQLITE
+FASTAPI --&gt;|API Calls| GEMINI
+FASTAPI --&gt;|Fallback Calls| GROQ
+WS --&gt;|Real-time Events| FASTAPI
+SENTINEL --&gt;|Log Monitor| FASTAPI
+
+style CLIENT fill:#1a1a2e,color:#00F2FF,stroke:#00F2FF
+style VPS fill:#0d0d1a,color:#D4AF37,stroke:#D4AF37
+style DB fill:#0a0a0a,color:#00FF88,stroke:#00FF88
+style AI fill:#0d0d1a,color:#9D00FF,stroke:#9D00FF
+</code></pre>
+<p>```</p>
+<h3>§3.1 Frontend Architecture — Next.js Sovereign UI</h3>
+<p>The Miracle OS frontend is built on <strong>Next.js 16.1.6</strong> with <strong>Turbopack</strong>, the fastest JavaScript bundler available. The UI implements a <strong>Glassmorphism Design System</strong> — frosted glass panels, neon glow borders, cyberpunk color palettes, and smooth micro-animations that create an interface that feels simultaneously premium and militarily precise.</p>
+<p><strong>Technology Stack:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Framework</td>
+<td style="text-align: left;">Next.js 16 (App Router)</td>
+<td style="text-align: left;">Routing, SSR, Static Generation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Language</td>
+<td style="text-align: left;">TypeScript</td>
+<td style="text-align: left;">Type safety across 50,000+ lines</td>
+</tr>
+<tr>
+<td style="text-align: left;">Styling</td>
+<td style="text-align: left;">Vanilla CSS + CSS Custom Properties</td>
+<td style="text-align: left;">Fluid scaling, glassmorphism</td>
+</tr>
+<tr>
+<td style="text-align: left;">State</td>
+<td style="text-align: left;">React Context API</td>
+<td style="text-align: left;">Theme, Currency, GlobalSync, Radio</td>
+</tr>
+<tr>
+<td style="text-align: left;">Real-time</td>
+<td style="text-align: left;">Native WebSocket (browser API)</td>
+<td style="text-align: left;">60FPS grid synchronization</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fonts</td>
+<td style="text-align: left;">Google Fonts: Cinzel, Inter</td>
+<td style="text-align: left;">Sovereign typographic identity</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mobile</td>
+<td style="text-align: left;">Capacitor.js</td>
+<td style="text-align: left;">Android APK thin-client wrapper</td>
+</tr>
+<tr>
+<td style="text-align: left;">Build</td>
+<td style="text-align: left;">Turbopack (Next.js 16)</td>
+<td style="text-align: left;">88-second production build</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Frontend Components:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SovereignThemeEngine</td>
+<td style="text-align: left;">components/SovereignThemeEngine.tsx</td>
+<td style="text-align: left;">Background animations (Matrix Rain, Circuit Board, Neon Dots, 6 City Themes)</td>
+</tr>
+<tr>
+<td style="text-align: left;">ThemeControlPanel</td>
+<td style="text-align: left;">components/ThemeControlPanel.tsx</td>
+<td style="text-align: left;">Admin theme customization UI</td>
+</tr>
+<tr>
+<td style="text-align: left;">MiracleBot</td>
+<td style="text-align: left;">components/MiracleBot.tsx</td>
+<td style="text-align: left;">AGI Navigator chat interface + Wisp</td>
+</tr>
+<tr>
+<td style="text-align: left;">MiracleBotGuestGuard</td>
+<td style="text-align: left;">components/MiracleBotGuestGuard.tsx</td>
+<td style="text-align: left;">Prevents AI from loading in Guest WebView</td>
+</tr>
+<tr>
+<td style="text-align: left;">GlobalSyncContext</td>
+<td style="text-align: left;">context/GlobalSyncContext.tsx</td>
+<td style="text-align: left;">WebSocket state bridge for real-time updates</td>
+</tr>
+<tr>
+<td style="text-align: left;">ThemeContext</td>
+<td style="text-align: left;">context/ThemeContext.tsx</td>
+<td style="text-align: left;">Theme state management</td>
+</tr>
+<tr>
+<td style="text-align: left;">CurrencyLangContext</td>
+<td style="text-align: left;">context/CurrencyLangContext.tsx</td>
+<td style="text-align: left;">Multi-currency / multi-language engine</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dashboard Layout</td>
+<td style="text-align: left;">dashboard/layout.tsx</td>
+<td style="text-align: left;">Sidebar navigation, role-based zone rendering</td>
+</tr>
+<tr>
+<td style="text-align: left;">ViewModeBanner</td>
+<td style="text-align: left;">components/ViewModeBanner.tsx</td>
+<td style="text-align: left;">VISITOR-mode overlay</td>
+</tr>
+<tr>
+<td style="text-align: left;">WeatherCorner</td>
+<td style="text-align: left;">components/WeatherCorner.tsx</td>
+<td style="text-align: left;">Live weather display</td>
+</tr>
+<tr>
+<td style="text-align: left;">SovereignToast</td>
+<td style="text-align: left;">components/SovereignToast.tsx</td>
+<td style="text-align: left;">System-wide notification toasts</td>
+</tr>
+</tbody>
+</table>
+<p><strong>UI Architecture Laws (Iron Laws 1–10):</strong></p>
+<p>The frontend operates under 10 non-negotiable CSS and layout laws:
+1. <strong>No Global Zoom Hacks</strong> — Never alter <code>html, body</code> font-size
+2. <strong>No Hardcoded Grids</strong> — Always use fractional units (<code>fr</code>) for major columns
+3. <strong>No Stuck Sidebars</strong> — Sidebar transitions between 80px (collapsed) and 280px (expanded) via <code>isHovered</code> React state
+4. <strong>No Overflow Hidden on Containers</strong> — Users must always scroll to action buttons
+5. <strong>Min-Width Squeeze</strong> — All flex/grid items must have <code>min-width: 0</code> to shrink below content size
+6. <strong>CSS Bloat Ban</strong> — Never append styles to <code>globals.css</code>; always audit and merge
+7. <strong>Safe Build Protocol</strong> — Never delete <code>.next</code> on production before a new build is complete
+8. <strong>Background Never Competes</strong> — Theme animations are opacity 0.03–0.15 max
+9. <strong>Hardware Acceleration Only</strong> — Animations use only <code>transform</code>, <code>opacity</code>, or <code>filter</code>
+10. <strong>Transparent Backgrounds</strong> — Dashboard and guest containers use <code>background: transparent</code> so the Theme Engine layer is visible</p>
+<h3>§3.2 Backend Architecture — FastAPI Kernel Engine</h3>
+<p>The Miracle OS backend is a <strong>Python 3.12 FastAPI</strong> application running under <strong>Uvicorn ASGI</strong> server, managed by <strong>PM2</strong> for production resilience. The backend serves both REST API endpoints and WebSocket connections simultaneously.</p>
+<p><strong>Technology Stack:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Framework</td>
+<td style="text-align: left;">FastAPI (Python 3.12)</td>
+<td style="text-align: left;">REST API + WebSocket server</td>
+</tr>
+<tr>
+<td style="text-align: left;">ORM</td>
+<td style="text-align: left;">SQLAlchemy 2.0</td>
+<td style="text-align: left;">Database models and queries</td>
+</tr>
+<tr>
+<td style="text-align: left;">Auth</td>
+<td style="text-align: left;">JWT (python-jose)</td>
+<td style="text-align: left;">Token-based authentication</td>
+</tr>
+<tr>
+<td style="text-align: left;">Process Manager</td>
+<td style="text-align: left;">PM2</td>
+<td style="text-align: left;">Production uptime management</td>
+</tr>
+<tr>
+<td style="text-align: left;">ASGI Server</td>
+<td style="text-align: left;">Uvicorn</td>
+<td style="text-align: left;">High-performance async server</td>
+</tr>
+<tr>
+<td style="text-align: left;">AI Integration</td>
+<td style="text-align: left;">google-generativeai, groq</td>
+<td style="text-align: left;">LLM API clients</td>
+</tr>
+<tr>
+<td style="text-align: left;">Schema Validation</td>
+<td style="text-align: left;">Pydantic V2</td>
+<td style="text-align: left;">Request/response validation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Password Hashing</td>
+<td style="text-align: left;">bcrypt (passlib)</td>
+<td style="text-align: left;">Secure credential storage</td>
+</tr>
+<tr>
+<td style="text-align: left;">Database Driver</td>
+<td style="text-align: left;">PyMySQL (production) / SQLite3 (dev)</td>
+<td style="text-align: left;">Database connectivity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Backend Router Architecture:</strong></p>
+<p><code>mermaid
+graph LR
+    MAIN["main.py\n(FastAPI App)"] --&gt; AUTH["auth_router.py\nJWT Login/Logout"]
+    MAIN --&gt; FD["frontdesk.py\nLive Grid API"]
+    MAIN --&gt; RES["reservation_engine.py\nBooking Management"]
+    MAIN --&gt; POS["pos_router.py\nPoint of Sale"]
+    MAIN --&gt; BILLING["billing.py\nCheckout/Folio"]
+    MAIN --&gt; HR["hr_router.py\nPersonnel Engine"]
+    MAIN --&gt; INV["inventory_engine.py\nStock Vault"]
+    MAIN --&gt; ACC["accounting_engine.py\nDouble-Entry Ledger"]
+    MAIN --&gt; CRM["crm_router.py\nGuest Loyalty"]
+    MAIN --&gt; BOT["bot_router_v2.py\nAI Navigator Engine"]
+    MAIN --&gt; SYN["synapse_nexus.py\nWar Room + WebRTC"]
+    MAIN --&gt; INFRA["infra.py\nSRE Telemetry"]
+    MAIN --&gt; KM["kernel_manager.py\nZone Intelligence Cache"]
+    MAIN --&gt; POLICY["policy_router.py\nPricing Engine"]
+    MAIN --&gt; GUEST["guest_api.py\nGuest Concierge API"]
+    MAIN --&gt; WS["WebSocket Handler\n/ws/grid-sync"]</code></p>
+<p><strong>The Genesis Sequence (Auto-Healing Startup):</strong></p>
+<p>On every PM2 restart, the backend runs <code>run_genesis_sequence()</code> from <code>genesis.py</code> which:
+1. Verifies database connectivity
+2. Runs schema surgery (<code>perform_database_surgery()</code>) — detects missing columns and runs <code>ALTER TABLE</code> injections automatically
+3. Loads the Zone Intelligence Map from <code>miracle_kernel.json</code> into memory
+4. Warms the AI Knowledge Cache
+5. Opens WebSocket listener channels
+6. Confirms all 30+ API routes are mounted correctly</p>
+<p>This means <strong>zero manual migrations</strong> are ever needed — the system heals itself on every restart.</p>
+<h3>§3.3 Database Architecture — Dual-Mode Vault</h3>
+<p>Miracle OS operates a <strong>dual-mode database architecture</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Environment</th>
+<th style="text-align: left;">Database</th>
+<th style="text-align: left;">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Production (VPS)</td>
+<td style="text-align: left;">MySQL via cPanel</td>
+<td style="text-align: left;"><code>miracle_os</code> database</td>
+</tr>
+<tr>
+<td style="text-align: left;">Local Development</td>
+<td style="text-align: left;">SQLite</td>
+<td style="text-align: left;"><code>miracle_os_master.db</code></td>
+</tr>
+</tbody>
+</table>
+<p>SQLAlchemy ORM handles both engines transparently — the same Python models work for both. The <code>DB_TYPE</code> environment variable switches between engines automatically.</p>
+<p><strong>Database Scale (Production):</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Total Tables</td>
+<td style="text-align: left;">30+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Core Transactional Tables</td>
+<td style="text-align: left;">18</td>
+</tr>
+<tr>
+<td style="text-align: left;">AI/Intelligence Tables</td>
+<td style="text-align: left;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Audit/Security Tables</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Configuration Tables</td>
+<td style="text-align: left;">3</td>
+</tr>
+</tbody>
+</table>
+<h3>§3.4 Deployment &amp; Infrastructure Architecture</h3>
+<p>```mermaid
+graph TB
+    DEV["Developer Machine\n(Windows / Local)"] --&gt;|"npm run build\n+ python deploy"| DEPLOY["sovereign_patient_deploy.py\n(Paramiko SSH Upload)"]
+    DEPLOY --&gt;|"389-406 files via SFTP"| VPS["Hetzner VPS\n23.88.50.87"]</p>
+<pre><code>subgraph VPS_INTERNAL["VPS Internal Architecture"]
+    PM2["PM2 Process Manager"]
+    PM2 --&gt; FE["miracle-frontend\n(Next.js Port 3000)"]
+    PM2 --&gt; BE["miracle-backend\n(FastAPI Port 8090)"]
+    PM2 --&gt; SENT["ops-sentinel\n(SRE Monitor)"]
+    PM2 --&gt; WA["wa-gateway\n(WhatsApp Bridge)"]
+    NGINX_VPS["Nginx\n(Port 80/443)"] --&gt;|"Proxy /api, /ws"| BE
+    NGINX_VPS --&gt;|"Static + SSR"| FE
+    SSL["Let's Encrypt SSL\nmiracle.vigilantitsolution.com"] --&gt; NGINX_VPS
+end
+
+DNS["cPanel DNS\n148.251.78.240"] --&gt;|"A Record → 23.88.50.87"| VPS
+USERS["End Users / Staff"] --&gt;|HTTPS| DNS
+</code></pre>
+<p>```</p>
+<p><strong>Iron Law Deployment Rules:</strong>
+- All deployments use <code>python scripts/sovereign_patient_deploy.py all</code> — never manual SFTP
+- SSH authentication uses Paramiko with password-first, RSA key fallback
+- MTU is set to 1350 on the VPS <code>eth0</code> interface via a systemd startup service to prevent packet fragmentation
+- Before every deploy, <code>rm -rf .next</code> runs on the VPS to prevent Ghost Middleware (cached old pages)
+- The deploy script uploads 389–406 files including all Next.js build artifacts, backend Python files, and city theme images</p>
+<h3>§3.5 WebSocket Real-Time Sync Architecture</h3>
+<p>Every connected staff operator sees the same live state simultaneously, without page refresh. This is achieved via a persistent WebSocket connection to <code>wss://miracle.vigilantitsolution.com/ws/grid-sync</code>.</p>
+<p>```mermaid
+sequenceDiagram
+    participant Staff1 as Staff Operator 1
+    participant Staff2 as Staff Operator 2
+    participant FE as Next.js Frontend
+    participant WS as WebSocket Server
+    participant DB as MySQL Database</p>
+<pre><code>Staff1-&gt;&gt;FE: Checks in Guest to Room 101
+FE-&gt;&gt;WS: POST /api/frontdesk/checkin
+WS-&gt;&gt;DB: UPDATE asset_grid SET status='IN-HOUSE' WHERE room_id='101'
+DB--&gt;&gt;WS: Commit OK
+WS-&gt;&gt;Staff1: Broadcast: {room: '101', status: 'IN-HOUSE', guest: 'ALMAS'}
+WS-&gt;&gt;Staff2: Broadcast: {room: '101', status: 'IN-HOUSE', guest: 'ALMAS'}
+Note over Staff1,Staff2: Both dashboards update in real-time&lt;br/&gt;No refresh needed
+</code></pre>
+<p>```</p>
+<p><strong>GlobalSyncContext</strong> (<code>web/app/context/GlobalSyncContext.tsx</code>) manages the WebSocket connection lifecycle:
+- Connects on mount
+- Reconnects automatically on disconnect
+- Pushes <code>globalGridState</code> updates to all subscribed zone components
+- Guards against firing on <code>/guest/*</code> routes (Iron Law 50)</p>
+<h3>§3.6 Full System Data Flow Diagram</h3>
+<p><code>mermaid
+flowchart TD
+    A["Guest Arrives / Walk-In"] --&gt; B["Z-05: Reservation Engine\n(Tape Chart Booking)"]
+    B --&gt; C["Z-07: Command Grid\nRoom Status → RESERVED"]
+    C --&gt; D["Z-07: CHECK-IN Action"]
+    D --&gt; E["guest_folios table\nadvance_paid posted"]
+    D --&gt; F["active_occupancy table\nroom locked to guest"]
+    F --&gt; G["Z-07: Room → IN-HOUSE\n(WebSocket broadcast to all operators)"]
+    G --&gt; H{Guest Generates Revenue}
+    H --&gt; I["Z-06: POS Sale\n(F&amp;B, Spa, Retail, Minibar)"]
+    H --&gt; J["Z-GUEST: Room Service Order\n(Mobile App)"]
+    I --&gt; K["folio_charges table\n(amount posted)"]
+    J --&gt; K
+    K --&gt; L["accounting_ledger table\nCREDIT: F&amp;B / Spa Revenue\n(auto double-entry)"]
+    K --&gt; M["inventory table\nSTOCK DEDUCTED (BOM recipe)"]
+    L --&gt; N["Z-11: Accounts Dashboard\nReal-time P&amp;L update"]
+    M --&gt; O["Z-12: Inventory Matrix\nLow stock alert if below PAR"]
+    G --&gt; P{Issue Raised}
+    P --&gt; Q["Z-16: Issue Ticket\nRoom 101 - AC Fault - CRITICAL"]
+    Q --&gt; R["Z-07: Room Card\nRed Strobe Alarm"]
+    Q --&gt; S["Z-17: Solve Portal\nHK/Maintenance operative assigned"]
+    S --&gt; T["Mission: RESOLVED + Photo Proof"]
+    T --&gt; U["Z-07: Signal cleared\nRoom returns to normal"]
+    G --&gt; V["Guest Checks Out"]
+    V --&gt; W["Z-08: Checkout/Billing\nFull folio settlement"]
+    W --&gt; X["accounting_ledger\nCREDIT: Advance Deposit cleared\nDEBIT: Cash/Card received"]
+    X --&gt; Y["Z-11: Night Audit Wizard\n4-step close of day"]
+    Y --&gt; Z["Policy Lock: Records Immutable\nAudit trail sealed"]
+    W --&gt; AA["guest_crm table\nLoyalty coins credited\nVIP tier recalculated"]
+    AA --&gt; AB["Z-10: CRM Profile Updated\nLifetime Value increased"]</code></p>
+<hr />
+<h2>§4. AI / AGI BRAIN ARCHITECTURE — THE MIRACLE NAVIGATOR</h2>
+<p>The Miracle AI is not a chatbot. It is a <strong>Sovereign Navigator</strong> — an AGI engine that understands the full operational state of your enterprise in real time, narrates executive reports in a confident British tone, navigates the UI on behalf of staff, and executes live SQL queries to answer questions with factual precision.</p>
+<h3>§4.1 The 4-Layer Intelligence Engine</h3>
+<p>```mermaid
+graph TB
+    INPUT["Staff Query or System Trigger"] --&gt; L0</p>
+<pre><code>subgraph ENGINE["MIRACLE AI ENGINE — 4 LAYER STACK"]
+    L0["Layer 0: Local Pattern Matching\n(Python Regex — 0 Tokens)\nIntent: Revenue? Status? Help?\nCost: FREE"]
+    L1["Layer 1: Zone-Conditional Directive Engine\n(Different system prompt per zone)\nZ-LOGIN: Sales persona\nZ-GUEST: Concierge persona\nOperational: Full navigator + SQL access"]
+    L2["Layer 2: Analysis Engine (ai_analysis.py)\n5 Sovereign Sensor Pillars — Native SQL\nCost: FREE (local Python)"]
+    L3["Layer 3: Emotional Synthesizer\n(Gemini 1.5 Flash or Groq Llama 3.3 70B)\nBritish Executive persona delivery\nCost: ~400 tokens"]
+end
+
+L0 --&gt; L1
+L1 --&gt; L2
+L2 --&gt; L3
+L3 --&gt; RESPONSE["Spoken + Displayed Response\n+ Navigator Tags executed"]
+</code></pre>
+<p>```</p>
+<p><strong>Layer 0 — Local Pattern Matching (0 Cost):</strong>
+The first shield. Pure Python regex detects common queries (revenue, status, help) and responds instantly without any AI API call. This handles approximately 30% of all queries at zero cost.</p>
+<p><strong>Layer 1 — Zone-Conditional Directives:</strong>
+Every zone receives a purpose-built system directive. The Z-LOGIN portal acts as an enterprise sales executive collecting leads. The Z-GUEST portal acts as a concierge. All operational zones receive the full navigator directive with complete SQL access and zone map knowledge. This prevents the Z-LOGIN sales script from leaking into operational zones.</p>
+<p><strong>Layer 2 — Analysis Engine (0 Cost):</strong>
+Native Python pulls live data from MySQL using the 5 Sovereign Sensor Pillars (see §4.2). The result is a structured JSON object containing real business data — no AI hallucination possible at this stage because it is pure SQL execution.</p>
+<p><strong>Layer 3 — Emotional Synthesizer:</strong>
+The structured JSON data from Layer 2 is passed to Gemini 1.5 Flash, which transforms raw SQL results into the British Executive narrative that Miracle delivers to the staff member.</p>
+<h3>§4.2 The 5 Sovereign Sensor Pillars</h3>
+<p>These are the 5 live data feeds that the AI pulls on every operational query:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pillar</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Key Data Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1 — Financial Vault</td>
+<td style="text-align: left;"><code>get_financial_vault()</code></td>
+<td style="text-align: left;">Revenue today / 7d / 30d / MTD, VAT, Service Charge, F&amp;B / Pool / Spa / Retail earnings, COGS, Net Profit, AR/AP outstanding, Folio dues</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 — Operational Grid</td>
+<td style="text-align: left;"><code>get_operational_grid()</code></td>
+<td style="text-align: left;">Room status (IN-HOUSE / AVAILABLE / DIRTY / MAINTENANCE), Occupancy %, Today's Arrivals, Today's Departures, HK queue</td>
+</tr>
+<tr>
+<td style="text-align: left;">3 — Human Capital</td>
+<td style="text-align: left;"><code>get_human_capital_report()</code></td>
+<td style="text-align: left;">Staff headcount, On-duty count, Average efficiency rating %, Open tickets by dept, Critical issues, Dept breakdown</td>
+</tr>
+<tr>
+<td style="text-align: left;">4 — Guest Intelligence</td>
+<td style="text-align: left;"><code>get_guest_intelligence()</code></td>
+<td style="text-align: left;">CRM profiles, VIP counts, Returning guest %, Loyalty coin totals, Top guest LTV, Live promotional offers, Upcoming reservations</td>
+</tr>
+<tr>
+<td style="text-align: left;">5 — SRE Infrastructure</td>
+<td style="text-align: left;"><code>get_system_health()</code></td>
+<td style="text-align: left;">DB query latency (ms), PM2 process states, API port confirmation, Error log count, Telemetry</td>
+</tr>
+</tbody>
+</table>
+<h3>§4.3 Navigator Tags &amp; UI Control Protocol</h3>
+<p>The Miracle AI does not just speak — it <strong>controls the UI</strong>. Through a set of protocol tags embedded in its responses, Miracle can navigate the operator to any zone, highlight specific UI elements, and execute database operations:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tag</th>
+<th style="text-align: left;">Syntax</th>
+<th style="text-align: left;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[NAVIGATE]</code></td>
+<td style="text-align: left;"><code>[NAVIGATE: /dashboard/hr]</code></td>
+<td style="text-align: left;">Routes the browser to the specified zone after 1.5s delay</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[FOCUS]</code></td>
+<td style="text-align: left;"><code>[FOCUS: element-label]</code></td>
+<td style="text-align: left;">Moves the Wisp light to a specific UI element</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[STATUS]</code></td>
+<td style="text-align: left;"><code>[STATUS: Processing payroll...]</code></td>
+<td style="text-align: left;">Shows a processing indicator in the chat panel</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[LOGIN]</code></td>
+<td style="text-align: left;"><code>[LOGIN: pin]</code></td>
+<td style="text-align: left;">Executes the authentication handshake</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>EXECUTE_SQL</code></td>
+<td style="text-align: left;"><code>EXECUTE_SQL: SELECT ...</code></td>
+<td style="text-align: left;">Backend runs the SQL query and re-synthesizes (2-pass loop)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[BTN_WHATSAPP]</code></td>
+<td style="text-align: left;"><code>[BTN_WHATSAPP]</code></td>
+<td style="text-align: left;">Renders a WhatsApp contact button for restricted actions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interceptor Chain (V4.0 — Critical Order):</strong>
+1. Extract ALL tags from raw AI reply
+2. Strip ALL tags from display text
+3. If <code>NAVIGATE</code> found → execute route (1.5s delay), skip FOCUS
+4. If FOCUS-only → move Wisp after 600ms delay
+5. Show/speak clean text
+6. If text empty after stripping → "Taking you there now, Sir."</p>
+<h3>§4.4 The Wisp Visual Guidance System</h3>
+<p>The <strong>Wisp</strong> is a glowing visual dot (<code>miracle-wisp</code> div, <code>position: fixed</code>) that floats across the screen to guide operators to the exact UI element the AI is referring to. It is purely visual — it never blocks interaction, never hides the chat panel, and returns to its home position after 4 seconds.</p>
+<h3>§4.5 Multi-Key API Vault &amp; Quota Protection</h3>
+<p>To prevent API quota exhaustion (each Gemini key allows 1,500 requests/day), Miracle OS employs a <strong>4-Key Sovereign Vault</strong> with round-robin rotation:</p>
+<p><code>python
+GEMINI_API_KEY_1 = "AIzaSyD..."  # Key 1 — Primary
+GEMINI_API_KEY_2 = "AIzaSyD..."  # Key 2 — Secondary
+GEMINI_API_KEY_3 = "AIzaSyB..."  # Key 3 — Tertiary
+GEMINI_API_KEY_4 = "AIzaSyC..."  # Key 4 — Quaternary
+GROQ_API_KEY     = "gsk_..."     # Final failover — Llama 3.3 70B</code></p>
+<p><strong>Model Selection Policy:</strong>
+- <strong>Gemini 1.5 Flash Latest</strong> — Default for all operational queries (1,500/day per key)
+- <strong>Gemini 2.5 Flash</strong> — Strictly forbidden as default (limited to 20/day per key)
+- <strong>Fallback Chain:</strong> Flash-Latest → Flash-2.0 → Flash-1.5 → Flash-8b → GROQ Llama-3.1</p>
+<hr />
+<h2>§5. AGI-DRIVEN TRIPLE LAYER SECURITY MANAGEMENT</h2>
+<p>Miracle OS does not have a security module. It <strong>is</strong> a security system. Every layer of the architecture — from the login screen to the immutable financial ledger — is governed by a three-shield security architecture driven by the AGI engine. These three layers work simultaneously, continuously, and without operator intervention.</p>
+<p>```mermaid
+graph TB
+    subgraph L1["LAYER 1: PERIMETER INTELLIGENCE"]
+        RBAC["RBAC Engine\n8 Roles × N Zones"]
+        JWT["JWT Token Auth\nAuto-Expiry"]
+        BIO["Biometric Portal Z-18\nSession Fingerprinting"]
+        IP["IP Whitelist\nsystem_settings table"]
+        FAIL["Failed Login Detector\nFlagged + Logged"]
+    end</p>
+<pre><code>subgraph L2["LAYER 2: BEHAVIORAL INTELLIGENCE (AGI)"]
+    SENSOR["5 Sovereign Sensor Pillars\nContinuous Monitoring"]
+    AUDIT["AI Audit Stream\nEvery query logged\nHallucination detection"]
+    BROWSER["Browser Console Monitor\nJS errors + suspicious requests"]
+    ANOMALY["Transaction Anomaly Engine\nAfter-hours POS\nUnusual amounts\nFolio drops"]
+    BRAIN["Sovereign Brain Manifest\nCDO must APPROVE\nevery AI knowledge injection"]
+end
+
+subgraph L3["LAYER 3: VAULT INTELLIGENCE"]
+    LEDGER["Immutable Double-Entry Ledger\nAppend-only\nNo DELETE allowed"]
+    NIGHT["Night Audit Wizard\n4-step physical verification\nLocks all financial records"]
+    POLICY["Policy Lock Z-19\nPricing/SOPs frozen\nNo accidental changes"]
+    PAYROLL["Biometric-Verified Payroll\nOnly confirmed hours count"]
+    BRIDGE["Synapse Bridge Protocol\nMathematical communication gate\nUnauthorized cross-tier: BLOCKED"]
+end
+
+USER["Enterprise User / Operator"] --&gt; L1
+L1 --&gt; L2
+L2 --&gt; L3
+L3 --&gt; DATA["Sovereign Data Vault\n(MySQL — Immutable Core)"]
+</code></pre>
+<p>```</p>
+<h3>§5.1 Layer 1 — Perimeter Intelligence (Access Control)</h3>
+<p><strong>Role-Based Access Control (RBAC):</strong>
+Every user is assigned exactly one role at onboarding. Each role has a mathematically defined set of zones they can access. Attempting to access a zone outside your role returns a 403 Forbidden response with no data leakage.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Zones Accessible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chief Digital Officer</td>
+<td style="text-align: left;">CDO</td>
+<td style="text-align: left;">ALL 24 zones — God Mode</td>
+</tr>
+<tr>
+<td style="text-align: left;">General Manager</td>
+<td style="text-align: left;">GM</td>
+<td style="text-align: left;">All operational zones except Z-21 master passwords and Z-23 Infra</td>
+</tr>
+<tr>
+<td style="text-align: left;">System Admin</td>
+<td style="text-align: left;">ADMIN</td>
+<td style="text-align: left;">HR, Inventory, Accounts, all logs</td>
+</tr>
+<tr>
+<td style="text-align: left;">Front Desk</td>
+<td style="text-align: left;">FD</td>
+<td style="text-align: left;">Z-05 Reservations, Z-07 Command Grid, Z-08 Checkout, Z-10 CRM</td>
+</tr>
+<tr>
+<td style="text-align: left;">Point of Sale</td>
+<td style="text-align: left;">POS</td>
+<td style="text-align: left;">Z-06 POS, Z-12 Inventory (view only)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Human Resources</td>
+<td style="text-align: left;">HR</td>
+<td style="text-align: left;">Z-09 HR Engine, Z-18 Biometric Portal</td>
+</tr>
+<tr>
+<td style="text-align: left;">Accounts</td>
+<td style="text-align: left;">ACC</td>
+<td style="text-align: left;">Z-11 Accounts &amp; Finance, Z-08 Checkout</td>
+</tr>
+<tr>
+<td style="text-align: left;">Field Operative</td>
+<td style="text-align: left;">HK/MN/IT</td>
+<td style="text-align: left;">Z-17 Solve Portal, Z-16 Issue Tickets only</td>
+</tr>
+<tr>
+<td style="text-align: left;">Guest</td>
+<td style="text-align: left;">GUEST</td>
+<td style="text-align: left;">/guest/<em> routes only — never /dashboard/</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Visitor/Demo</td>
+<td style="text-align: left;">VISITOR</td>
+<td style="text-align: left;">Full view of all panels — ZERO execution rights</td>
+</tr>
+</tbody>
+</table>
+<p><strong>JWT Token Architecture:</strong>
+- Login issues a JWT with role, user ID, and expiry embedded
+- Every API request validates the token and extracts the role
+- Tokens auto-expire per <code>auth_expiry_minutes</code> in <code>system_settings</code> table
+- Session history logged to <code>login_session_log</code> table (immutable)</p>
+<p><strong>Biometric Session Fingerprinting (Z-18):</strong>
+Every login is logged with: operative name, role, IP address, user agent, login time, logout time, zones accessed, and outcome (SUCCESS / FAILED). Failed login attempts are flagged and visible to CDO.</p>
+<p><strong>IP Whitelisting:</strong>
+The <code>system_settings</code> table contains an <code>ip_whitelist</code> field. When populated, only requests from listed IPs are processed — all others return 403.</p>
+<h3>§5.2 Layer 2 — Behavioral Intelligence (AGI Anomaly Detection)</h3>
+<p>The Miracle AGI continuously monitors all 5 Sensor Pillars and flags behavioral anomalies in real time:</p>
+<p><strong>Transaction Anomaly Detection:</strong>
+- After-hours POS sales (e.g., a POS transaction at 3:00 AM) flagged for CDO review
+- Unusually large single transactions (above configurable threshold) trigger an alert
+- Folio balance drops without a corresponding checkout transaction
+- Inventory deductions without matching POS records</p>
+<p><strong>AI Audit Stream (Z-23):</strong>
+Every single AI query and response is logged with a <strong>hallucination detection score</strong>:
+- <code>CLEAN</code> — AI answered with real SQL data
+- <code>HALLUCINATION</code> — AI invented data not in the database
+- Hallucination entries auto-correct the AI brain via knowledge injection (requires CDO approval via Sovereign Brain Manifest)</p>
+<p><strong>Browser Console Monitor:</strong>
+The <code>MiracleBot.tsx</code> component intercepts:
+- <code>console.error</code> calls (any JavaScript error)
+- <code>window.onerror</code> (uncaught exceptions)
+- <code>window.unhandledrejection</code> (promise failures)
+All are batched and sent to <code>POST /api/infra/browser-error</code> with a 3-second debounce. They appear in Z-23 System Error Logs for CDO analysis.</p>
+<p><strong>Sovereign Brain Manifest (Knowledge Gate):</strong>
+No new knowledge can be injected into the AI's permanent memory without CDO approval. The Brain Manifest in Z-23 shows all pending knowledge rules as PENDING_INJECTION. The CDO must explicitly APPROVE or REJECT each one. This prevents unauthorized behavior modification of the AI.</p>
+<h3>§5.3 Layer 3 — Vault Intelligence (Data Integrity)</h3>
+<p><strong>Immutable Double-Entry Ledger:</strong>
+The <code>accounting_ledger</code> table is <strong>append-only</strong>. Every financial transaction is a CREDIT or DEBIT entry. No entry can be deleted or modified — only new correcting entries can be added. This ensures a complete, tamper-proof audit trail of every cent that has ever entered or left the enterprise.</p>
+<p><strong>The Night Audit Lock (Z-11):</strong>
+Every day must be formally closed via the 4-step Night Audit Wizard:
+1. <strong>Blind Cash Count</strong> — Physical cash counted and entered; system compares with POS records
+2. <strong>Inventory Water Count</strong> — Physical stock count; system compares with recorded deductions
+3. <strong>FO-HK Discrepancy Check</strong> — Front Office and Housekeeping room status reconciled
+4. <strong>Final Lock</strong> — <code>RUN TRIAL BALANCE</code> executed; all records for the day sealed and immutable</p>
+<p><strong>Policy Lock (Z-19):</strong>
+When the CDO commits a policy set (room rates, VAT, service charge, SOPs), the system enters a LOCKED state. No price changes can take effect until the next policy unlock cycle. This prevents unauthorized rate manipulation during live operations.</p>
+<p><strong>Biometric-Verified Payroll:</strong>
+Payroll calculations use only hours that have been confirmed by a biometric login record in Z-18. A staff member who is not biometrically verified for a shift will not receive pay for that shift, regardless of manual timesheet entries. This eliminates ghost employees and time fraud.</p>
+<p><strong>Synapse Bridge Protocol (Mathematical Communication Gate):</strong>
+In Z-20 Synapse Nexus, the corporate hierarchy enforces communication boundaries using a mathematical formula:</p>
+<p><code>python
+delta = initiator.tier_weight - target.tier_weight
+if delta &gt;= 0 OR delta == -1: ALLOW_DIRECT_MESSAGE
+else: REQUIRE_BRIDGE_PROTOCOL  # Block — offer Bridge Request</code></p>
+<p>A field operative (Tier 1) cannot message a Director (Tier 3) directly. The system blocks the message and offers a Bridge Request — a 3-way thread that includes the operative's immediate Manager (Tier 2). This prevents chain-of-command bypasses and ensures every communication flows through the correct authority tier.</p>
+<h3>§5.4 Security Architecture Flow Diagram</h3>
+<p>```mermaid
+sequenceDiagram
+    participant Operative as Field Operative
+    participant L1 as Layer 1: Perimeter
+    participant L2 as Layer 2: Behavioral AGI
+    participant L3 as Layer 3: Vault
+    participant CDO as CDO / System Admin</p>
+<pre><code>Operative-&gt;&gt;L1: Login Request (username + password)
+L1-&gt;&gt;L1: Validate credentials (bcrypt hash)
+L1-&gt;&gt;L1: Issue JWT (role: HK, expiry: 8h)
+L1-&gt;&gt;L1: Log to login_session_log (immutable)
+L1--&gt;&gt;Operative: Access granted to Z-16, Z-17 only
+
+Operative-&gt;&gt;L1: Attempts to access Z-11 Accounts
+L1-&gt;&gt;L1: JWT role = HK — Z-11 not in permissions
+L1--&gt;&gt;Operative: 403 Forbidden (no data returned)
+L1-&gt;&gt;L2: ANOMALY ALERT: Role HK attempted Z-11 access
+
+L2-&gt;&gt;L2: Log anomaly to System Error Logs
+L2-&gt;&gt;CDO: Notification: Unauthorized zone access attempt
+CDO-&gt;&gt;L2: Reviews AI Audit Stream
+
+Operative-&gt;&gt;L1: Raises Issue Ticket (Z-16)
+L1--&gt;&gt;Operative: Ticket created (authorized action)
+L2-&gt;&gt;L2: Transaction logged and analyzed
+L2-&gt;&gt;L3: Ticket linked to solve_missions (immutable record)
+L3-&gt;&gt;CDO: Available in Audit Ledger
+</code></pre>
+<p>```</p>
+<hr />
+<h2>§6. THE 27 SOVEREIGN ZONES — PANEL BIBLE</h2>
+<p>Each Zone in Miracle OS is a fully independent operational module that also communicates with every other zone via the shared database and WebSocket backbone. Below is the comprehensive reference for every zone.</p>
+<hr />
+<h3>§6.1 Z-LOGIN — Sales &amp; Lead Capture Portal</h3>
+<p><strong>Path:</strong> <code>/</code><br />
+<strong>Access:</strong> PUBLIC (any visitor)<br />
+<strong>Role:</strong> Enterprise Sales Executive + Lead Capture Engine</p>
+<p><strong>Purpose:</strong>
+The public-facing gateway to Miracle OS. Every enterprise evaluator arrives here. The AI persona immediately engages as a <strong>High-End Enterprise Sales Executive</strong>, collecting four lead qualification data points before revealing demo credentials:
+1. Visitor/Client Name
+2. Enterprise / Business Name
+3. Employee Count (enterprise size)
+4. Contact Number</p>
+<p><strong>AI Persona at Z-LOGIN:</strong>
+- Collects lead data conversationally
+- Pitches: "One system replaces PMS + POS + Inventory + HR + Accounting + CRM + Guest App"
+- ROI pitch: "Implementation: 10–25 working days"
+- Demo credentials revealed after all 4 lead fields collected: <code>Login ID: Visitor / Password: Miracle4U</code>
+- All leads saved to <code>sales_leads</code> table automatically</p>
+<p><strong>VISITOR Mode:</strong>
+Once logged in as VISITOR, the operator has <strong>full view access</strong> to all 24 zones but <strong>zero execution rights</strong>. Every action attempt is intercepted by the AI, which pivots into a sales pitch and displays a WhatsApp contact button to connect with the Vigilant deployment team.</p>
+<p><strong>Data Flow:</strong>
+<code>Visitor arrives → AI collects 4 fields → sales_leads table → credentials revealed → login → VISITOR JWT issued → all zones unlocked (view only)</code></p>
+<hr />
+<h3>§6.2 Z-07 — Master Command Grid</h3>
+<p><strong>Path:</strong> <code>/dashboard</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, VISITOR<br />
+<strong>Role:</strong> The Sovereign God View — Real-time enterprise asset grid</p>
+<p><strong>Purpose:</strong>
+This is the operational nerve centre and the first screen visible after login. It provides a real-time card grid showing the live status of every room, suite, villa, or asset in the enterprise. No other system in the world provides this level of simultaneous visibility across every operational dimension on a single screen.</p>
+<p><strong>Room Card Data:</strong>
+Each card displays all critical data points for one asset:
+- <strong>Room ID</strong> (e.g., RS-01, V-05, LTR-12) in 32px Cinzel font
+- <strong>Asset Class &amp; Status</strong> (ROYAL SUITE | IN-HOUSE)
+- <strong>Active Ticket Badge</strong> (🚨 LEAKING AC — shows active issue)
+- <strong>Guest Name</strong> (or VACANT)
+- <strong>Nightly Rate</strong> (from Policy Engine Z-19)
+- <strong>Folio Balance</strong> (running total from folio_charges)
+- <strong>Signal Matrix</strong> (3×3 department activity grid): HK | MN | RS / IT | SPA | FLT</p>
+<p><strong>Signal States:</strong>
+| State | Color | Meaning |
+|:---|:---|:---|
+| PULSE | Animated glow (dept color) | Active mission in this department |
+| ON | Static glow | Department activity (e.g., room is dirty → HK on) |
+| OFF | Dimmed | No activity |</p>
+<p><strong>Status Border Colors:</strong>
+| Status | Border | Glow |
+|:---|:---|:---|
+| AVAILABLE | White/dark | None |
+| RESERVED | Pulsing blue | Slow-breath animation |
+| IN-HOUSE | Cyan | Soft cyan glow |
+| DIRTY | Purple | Purple tint |
+| MAINTENANCE | Amber | Amber glow |
+| ALARM/CRITICAL | Red strobe | <code>retina-strobe</code> animation |</p>
+<p><strong>Room Card Actions:</strong>
+| Status | Available Actions |
+|:---|:---|
+| AVAILABLE | CHECK-IN, RESERVE |
+| RESERVED | PUSH CHECK-IN |
+| IN-HOUSE | ADD CHARGE, FOLIO |
+| IN-HOUSE + Ticket | FOLIO + RESOLVE (side-by-side) |
+| DIRTY | ASSIGN HK, INSPECT |
+| MAINTENANCE | WORK ORDER |
+| ALARM | RESOLVE FRACTURE |</p>
+<p><strong>Top HUD Bar:</strong>
+- Live time marquee: Dhaka, Sydney, Mumbai (and additional cities in marquee)
+- Total room count, ALARMS count, DIRTY count, MAINTENANCE count
+- LIVE YIELD display (total revenue from all IN-HOUSE folios)
+- Zone 20 Synapse Nexus quick-link
+- Accounts pulse dot (live indicator)
+- PULSE SYNC DATA button (force-refresh from database)</p>
+<p><strong>Asset Classes (Default Dubai Standard):</strong>
+- Royal Suites (5 units) — Rate: ৳500,000
+- Presidential Suites (5 units) — Rate: ৳200,000
+- Private Villas (10 units) — Rate: ৳150,000
+- Luxury Residences (10 units) — Rate: ৳100,000
+- Overwater Bungalows (5 units) — Rate: ৳250,000</p>
+<p><strong>API Endpoints:</strong>
+- <code>GET /api/frontdesk/live-grid</code> — Full grid state
+- <code>GET /api/frontdesk/folios</code> — Active folio balances
+- <code>GET /api/solve/active</code> — Active missions (tickets)
+- <code>POST /api/frontdesk/force-available/{roomId}</code> — CDO override to reset room</p>
+<p><strong>WebSocket:</strong> <code>wss://miracle.vigilantitsolution.com/ws/grid-sync</code></p>
+<hr />
+<h3>§6.3 Z-05 — Global Reservations Engine</h3>
+<p><strong>Path:</strong> <code>/dashboard/reservations</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, FD, VISITOR</p>
+<p><strong>Purpose:</strong>
+The complete booking engine. Manages the full reservation lifecycle from initial inquiry to physical check-in. Features a 45-day horizontal Gantt-style tape chart — the industry standard "tape chart" view where rooms appear on the Y-axis and dates on the X-axis.</p>
+<p><strong>Tab 1 — Live Reservations (Tape Chart):</strong>
+- 45-day rolling view; each room has its own horizontal row
+- Existing bookings appear as colored blocks on the chart
+- Clicking any empty cell opens the booking form for that room and date
+- <strong>Booking Form Fields:</strong> Guest Name (legal passport name), Phone/WhatsApp, NID/Passport Number, Number of Nights, Room Selection
+- <strong>Payment Options at Booking:</strong>
+  - RESERVE — Locks room for future date, no immediate payment
+  - QUICK WALK-IN CASH — Immediate check-in, cash collected
+  - SWIPE VISA / MASTERCARD / AMEX — Card payment at terminal
+- <strong>Auto-Calculation:</strong> Rate × Nights + 10% Service Charge + 15% VAT = Total Yield
+- Overstay Detection: Red banner appears when checkout date has passed
+- WALK-IN SYNC: Force-backfills any missing in-house guests from the database</p>
+<p><strong>Tab 2 — VIP CRM Vault:</strong>
+- Searchable guest database with all registered profiles
+- Each record: Full Name, VIP Tier, Lifetime Value, Loyalty Coins, Phone, Email
+- WhatsApp push button, Email button
+- Full booking history per guest
+- VIRAL GUEST APP DISTRIBUTION: Send APK download link via WhatsApp</p>
+<p><strong>Data Flow:</strong>
+<code>Booking Form → reservations table → asset_grid status → RESERVED 
+→ Z-07 room card updates via WebSocket → guest_crm created/updated
+→ accounting_ledger: CREDIT advance deposit</code></p>
+<p><strong>API Endpoints:</strong>
+- <code>GET /api/frontdesk_engine/reservations</code> — All reservations
+- <code>POST /api/frontdesk_engine/commit</code> — Commit new reservation
+- <code>POST /api/reservation_engine/ota-ingest</code> — OTA (Online Travel Agent) bookings
+- <code>GET /api/crm/guests</code> — Guest CRM vault</p>
+<hr />
+<h3>§6.4 Z-06 — POS / Retail Matrix</h3>
+<p><strong>Path:</strong> <code>/dashboard/pos</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, POS, SPA, VISITOR</p>
+<p><strong>Purpose:</strong>
+The centralized Point of Sale for the entire enterprise. This is the ONLY authorized POS in Miracle OS — all revenue from F&amp;B, Spa, Retail, Minibar, and any other product category flows through here. Departmental dummy POS systems have been eliminated.</p>
+<p><strong>Transaction Flow:</strong>
+1. Staff selects a <strong>Product</strong> from the product grid (organized by category tabs)
+2. Uses <code>+</code> / <code>-</code> to set quantity → ADD TO CART
+3. Cart calculates: Subtotal + VAT (15%) + Service Charge (10%) = Grand Total
+4. Selects payment method:
+   - <strong>ROOM CHARGE</strong> — Posts directly to the in-house guest's open folio (validates guest is IN-HOUSE first)
+   - <strong>CASH</strong> — Direct cash payment
+   - <strong>CARD</strong> — Card terminal payment</p>
+<p><strong>Auto-Integrations (Every Sale):</strong>
+1. <strong>Inventory Deduction</strong> → Z-12: BOM recipe ingredients deducted from stock in real time
+2. <strong>Accounting Post</strong> → Z-11: <code>accounting_ledger</code> — CREDIT to F&amp;B Revenue / Spa Revenue / Retail Revenue
+3. <strong>Folio Update</strong> → Z-08: If room charge, guest folio balance increases immediately
+4. <strong>COGS Calculation</strong> → Z-11: Cost of goods sold calculated and posted as DEBIT</p>
+<p><strong>Product Categories:</strong> Food &amp; Beverage, Spa Treatments, Shop Items, Minibar, Wellness Services</p>
+<p><strong>POS Admin (Z-POSADMIN):</strong>
+- CDO-only panel
+- Manage product prices, categories, add/remove items
+- Accessible at <code>/dashboard/pos-admin</code></p>
+<p><strong>Database Tables:</strong>
+- <code>pos_transactions</code> — Complete transaction records
+- <code>pos_order_items</code> — Line items per transaction
+- <code>inventory</code> — Stock levels (auto-deducted)
+- <code>accounting_ledger</code> — Financial record</p>
+<hr />
+<h3>§6.5 Z-08 — Checkout &amp; Financial Settlement</h3>
+<p><strong>Path:</strong> <code>/dashboard/checkout</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, FD, POS, SPA, ACC, VISITOR</p>
+<p><strong>Purpose:</strong>
+The guest folio settlement terminal. Every cent spent by a guest during their stay is consolidated here for review, discount application, split-bill processing, and final settlement.</p>
+<p><strong>Checkout Process:</strong>
+1. Search guest by name or room number → Full folio loads
+2. View all itemized charges: Room nights, F&amp;B, Spa, Extras, Advance deposit
+3. Balance = Total charges − Advance deposit already paid
+4. Select payment method(s): CASH, VISA, MASTERCARD, AMEX
+5. Apply authorized discount (cannot exceed total bill)
+6. Split-bill across multiple methods if required
+7. Click CHECKOUT &amp; SETTLE FOLIO</p>
+<p><strong>Auto-Actions on Checkout:</strong>
+- <strong>Accounts (Z-11):</strong> Posts double-entry: CREDIT Advance Deposit liability, DEBIT Cash/Card received
+- <strong>Room Status:</strong> Changes to DIRTY automatically, triggering HK signal on Z-07
+- <strong>Folio:</strong> Locked as SETTLED, full history preserved in CRM
+- <strong>Loyalty Coins:</strong> Calculated (1 coin per currency unit spent) and credited to guest_crm</p>
+<p><strong>Key Rule:</strong> Cannot checkout if outstanding balance &gt; 0 without a payment method selected. This eliminates revenue leakage.</p>
+<hr />
+<h3>§6.6 Z-09 — Human Capital Command (HR)</h3>
+<p><strong>Path:</strong> <code>/dashboard/hr</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, HR, VISITOR</p>
+<p><strong>Purpose:</strong>
+The full staff lifecycle management engine. From hiring to payroll to performance analytics to document generation — Z-09 handles every dimension of human capital management.</p>
+<p><strong>Tabs:</strong></p>
+<p><strong>GALLERY Tab:</strong>
+- Visual biometric card grid of all staff
+- Each card: Photo/Avatar, Name, Job Title, Status (ON-DUTY/OFFLINE/TERMINATED), ROI score, Efficiency %
+- Click card → Full Dossier Overlay (all financial and performance data)
+- From Dossier: Generate Payslip, Generate Appointment Letter, Update avatar photo</p>
+<p><strong>PERFORMANCE Tab:</strong>
+- Analytics table: Operative name, Base Salary, Revenue Impact, Efficiency %, ROI Factor
+- Source: <code>/api/hr/performance-matrix</code>
+- Ranks staff by contribution to enterprise revenue</p>
+<p><strong>PAYROLL Tab:</strong>
+- Shows each staff member's Monthly Hours, Total Payout (Base + Commission)
+- PUSH TO ACCOUNTS &amp; INBOX: Executes payroll → posts DEBIT to Z-11 Payroll Expense account
+- Total Payroll Liability chip in top-right</p>
+<p><strong>DOCUMENTS Tab:</strong>
+- DUBAI 5-STAR VAULT: Library of SOPs, Handbooks, Policies (PDF/DOCX)
+- APPOINTMENT LETTER FORGE: Auto-generates appointment letters
+- MANTALA WORD MODULE: In-browser rich text editor — edit, save draft, print/export PDF</p>
+<p><strong>ONBOARDING Tab:</strong>
+- New staff registration form: First Name, Last Name, Designation, Department, Access Zones (RBAC checkboxes), Base Salary, Commission Rate %
+- Upload Personal Avatar and Biometric Scan
+- On submit: Creates staff record, auto-generates username (FirstnameLastname format) and secure password, displays credentials banner</p>
+<p><strong>REGISTRY Tab:</strong>
+- Surgery-level credential editor: Username, Password, Salary, Commission %, Status for every staff
+- Direct image upload per staff
+- AUTHORIZE GLOBAL SYNC: Pushes ALL changes to MySQL in one shot</p>
+<p><strong>MY_SOP Tab:</strong>
+- Department SOP viewer pulled from Policy Engine (Z-19)</p>
+<hr />
+<h3>§6.7 Z-10 — CRM &amp; Guest Loyalty Engine</h3>
+<p><strong>Path:</strong> <code>/dashboard/crm</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, FD, VISITOR</p>
+<p><strong>Purpose:</strong>
+Complete Guest Relationship Management. Every guest who has ever interacted with the enterprise has a profile here, with full booking history, spending analytics, and loyalty rewards.</p>
+<p><strong>Guest Profile Data:</strong>
+- Full name, VIP Tier, Total LTV (Lifetime Value), Loyalty Coins balance, Phone, Email, Last Stay date</p>
+<p><strong>VIP Tier Progression:</strong>
+| Tier | LTV Threshold | Benefits |
+|:---|:---|:---|
+| Bronze | Base | Standard service |
+| Silver | ৳500,000 LTV | Priority check-in |
+| Gold | ৳2,000,000 LTV | Complimentary upgrade |
+| Platinum | ৳5,000,000 LTV | Dedicated concierge |</p>
+<p><strong>Loyalty Coin Engine:</strong>
+- 1 coin earned per currency unit spent on checkout
+- Coins redeemable for discounts via the Guest App
+- Manual coin issuance available for CDO</p>
+<p><strong>Actions per Guest:</strong>
+- View complete booking history
+- WhatsApp direct message
+- Issue loyalty coins manually
+- View all folio charges across all stays</p>
+<hr />
+<h3>§6.8 Z-11 — Accounts &amp; Finance Sovereign Kernel</h3>
+<p><strong>Path:</strong> <code>/dashboard/accounts</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, ACC, VISITOR</p>
+<p><strong>Purpose:</strong>
+The complete, GAAP-compliant, double-entry accounting engine. Every financial transaction generated by any zone in Miracle OS automatically posts a corresponding ledger entry here. No manual data entry required.</p>
+<p><strong>8 Financial Tabs:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tab</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">REVENUE VECTOR ANALYSIS</td>
+<td style="text-align: left;">Donut chart P&amp;L: Room vs F&amp;B vs Other revenue. Net Revenue, Operational Load, Net Margin</td>
+</tr>
+<tr>
+<td style="text-align: left;">ACCUSATIVE ITEM-WISE TRACE</td>
+<td style="text-align: left;">Raw transaction ledger — every CREDIT and DEBIT with source, amount, operator, timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left;">BURDEN MATRIX</td>
+<td style="text-align: left;">Operational Expenses vs Payroll vs Commissions as visual progress bars</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL JOURNAL ENTRY</td>
+<td style="text-align: left;">Manual double-entry posting with Account Code, Reference Number, Description</td>
+</tr>
+<tr>
+<td style="text-align: left;">CHART OF ACCOUNTS (COA)</td>
+<td style="text-align: left;">Complete account structure: 1000=Cash, 4000=Room Revenue, 5000=Payroll Expense, etc.</td>
+</tr>
+<tr>
+<td style="text-align: left;">AR AGING</td>
+<td style="text-align: left;">Outstanding guest payments by age bracket (0-30d, 31-60d, 61-90d, 90+d)</td>
+</tr>
+<tr>
+<td style="text-align: left;">AP MODULE</td>
+<td style="text-align: left;">Vendor invoice management, aging, AUTHORIZE DISBURSEMENT</td>
+</tr>
+<tr>
+<td style="text-align: left;">BANK RECONCILIATION</td>
+<td style="text-align: left;">Match bank statement entries against ledger, COMMIT RECEIPT</td>
+</tr>
+<tr>
+<td style="text-align: left;">NIGHT AUDIT WIZARD</td>
+<td style="text-align: left;">4-step day-close: Cash Count → Inventory Count → Discrepancy Check → Final Lock</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Auto-Posting Sources:</strong>
+- Every POS sale (Z-06) → CREDIT: Revenue category
+- Every Checkout (Z-08) → CREDIT: Advance Deposit, DEBIT: Cash/Card
+- Every Payroll Push (Z-09) → DEBIT: Payroll Expense
+- Every Inventory Receipt → DEBIT: Inventory Asset, CREDIT: Accounts Payable</p>
+<p><strong>Chart of Accounts (Core):</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Account Name</th>
+<th style="text-align: left;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">Cash</td>
+<td style="text-align: left;">Asset</td>
+</tr>
+<tr>
+<td style="text-align: left;">1100</td>
+<td style="text-align: left;">Advance Deposits Receivable</td>
+<td style="text-align: left;">Asset</td>
+</tr>
+<tr>
+<td style="text-align: left;">1200</td>
+<td style="text-align: left;">Accounts Receivable — Guests</td>
+<td style="text-align: left;">Asset</td>
+</tr>
+<tr>
+<td style="text-align: left;">2100</td>
+<td style="text-align: left;">Advance Deposit Liability</td>
+<td style="text-align: left;">Liability</td>
+</tr>
+<tr>
+<td style="text-align: left;">4000</td>
+<td style="text-align: left;">Room Revenue</td>
+<td style="text-align: left;">Revenue</td>
+</tr>
+<tr>
+<td style="text-align: left;">4100</td>
+<td style="text-align: left;">F&amp;B Revenue</td>
+<td style="text-align: left;">Revenue</td>
+</tr>
+<tr>
+<td style="text-align: left;">4200</td>
+<td style="text-align: left;">Spa Revenue</td>
+<td style="text-align: left;">Revenue</td>
+</tr>
+<tr>
+<td style="text-align: left;">4300</td>
+<td style="text-align: left;">Retail Revenue</td>
+<td style="text-align: left;">Revenue</td>
+</tr>
+<tr>
+<td style="text-align: left;">5000</td>
+<td style="text-align: left;">Payroll Expense</td>
+<td style="text-align: left;">Expense</td>
+</tr>
+<tr>
+<td style="text-align: left;">5200</td>
+<td style="text-align: left;">Cost of Goods Sold</td>
+<td style="text-align: left;">Expense</td>
+</tr>
+<tr>
+<td style="text-align: left;">5300</td>
+<td style="text-align: left;">Operational Expense</td>
+<td style="text-align: left;">Expense</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>§6.9 Z-12 — Inventory Matrix &amp; Stock Vault</h3>
+<p><strong>Path:</strong> <code>/dashboard/inventory</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, POS, HK, MN, VISITOR</p>
+<p><strong>Purpose:</strong>
+Tracks every physical item in the enterprise — F&amp;B ingredients, spa supplies, minibar items, retail products, cleaning supplies, maintenance parts. The single source of truth for stock levels.</p>
+<p><strong>Key Features:</strong>
+- Product grid: Product ID, Name, Category, Dept, Current Stock, Minimum Level (PAR), Purchase Price (PP), Retail Price (RP)
+- LOW STOCK ALERT: Items below minimum level flash red and trigger a predictive reorder warning
+- ASYNC SYNC INVENTORY: Force-syncs stock count from all POS deductions
+- BOM (Bill of Materials): Each F&amp;B menu item has a recipe — selling a dish automatically deducts all ingredient quantities
+- Manual stock-in: Add received goods with quantity and purchase price
+- Variance logging: Physical count vs system count discrepancy recording</p>
+<p><strong>Auto-Deduction Flow:</strong>
+<code>POS Sale (Z-06) → BOM lookup for product sold
+→ inventory table: stock -= required_qty for each ingredient
+→ if stock &lt; min_level: LOW STOCK ALERT
+→ accounting_ledger: DEBIT COGS entry</code></p>
+<hr />
+<h3>§6.10 Z-14 — Media Lab</h3>
+<p><strong>Path:</strong> <code>/dashboard/media-lab</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, VISITOR</p>
+<p><strong>Purpose:</strong>
+Digital Asset Management for the enterprise. All property photography, menu images, staff avatars, promotional banners, and branding assets are managed here. Assets stored in Z-14 are referenced by the Guest App, website, and marketing materials.</p>
+<p><strong>Features:</strong>
+- Upload, organize, and tag assets
+- Preview before publishing
+- Assign assets to zones (e.g., Room photos → Guest App hub, Menu images → POS product grid)
+- Bulk delete and folder organization</p>
+<hr />
+<h3>§6.11 Z-16 — Issue Tickets &amp; Fault Reporting</h3>
+<p><strong>Path:</strong> <code>/dashboard/issue-tickets</code><br />
+<strong>Access:</strong> ANY (all authenticated roles)</p>
+<p><strong>Purpose:</strong>
+The central fault reporting hub. Any staff member, from any zone, can raise a complaint, maintenance request, or operational fault. This zone is the aggregate view of all raised tickets.</p>
+<p><strong>Ticket Form:</strong>
+- Room/Area, Department Responsible, Subject/Description
+- Priority: LOW / MEDIUM / HIGH / CRITICAL
+- Assign to: Specific staff or department</p>
+<p><strong>Ticket States:</strong> OPEN → IN-PROGRESS → RESOLVED → CLOSED</p>
+<p><strong>Critical Ticket Visual Response:</strong>
+- CRITICAL priority tickets immediately trigger the <strong>red strobe animation</strong> on the corresponding room card in Z-07
+- HK tickets → HK signal badge pulses purple on room card
+- MN tickets → MN signal badge pulses orange on room card
+- IT tickets → IT signal badge pulses green on room card</p>
+<p><strong>Data Source:</strong> <code>solve_missions</code> table</p>
+<hr />
+<h3>§6.12 Z-17 — Solve Portal (Field Operations)</h3>
+<p><strong>Path:</strong> <code>/dashboard/solve</code><br />
+<strong>Access:</strong> ANY (all authenticated roles)</p>
+<p><strong>Purpose:</strong>
+The staff-facing mission execution terminal. While Z-16 is for raising tickets, Z-17 is for field operatives to see and act on their assigned missions.</p>
+<p><strong>Staff View:</strong> Only shows tickets assigned to the logged-in operative
+<strong>CDO View:</strong> Shows ALL tickets across all departments, with override and reassignment capability</p>
+<p><strong>Field Actions:</strong>
+- Mark ticket IN-PROGRESS
+- Resolve with written notes
+- Upload photo proof of completion
+- CDO override: reassign, escalate, or force-close</p>
+<p><strong>Integration with Z-07:</strong> When a ticket is RESOLVED in Z-17, the signal badge on the corresponding room card in Z-07 clears automatically via WebSocket broadcast.</p>
+<hr />
+<h3>§6.13 Z-18 — Biometric Security Portal</h3>
+<p><strong>Path:</strong> <code>/dashboard/portal</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, HR, VISITOR</p>
+<p><strong>Purpose:</strong>
+Staff attendance management via biometric verification. The immutable record of who entered the system, when, from where, and what they accessed.</p>
+<p><strong>Session Log Data:</strong>
+- Staff name and role
+- Login timestamp and logout timestamp
+- Zone(s) accessed during session
+- IP address and user agent (device fingerprint)
+- Outcome: SUCCESS or FAILED ATTEMPT
+- Duration in minutes</p>
+<p><strong>Security Integration:</strong>
+- Failed login attempts flagged and visible to CDO in real time
+- Biometric shift data flows to Z-09 (HR Payroll) — only verified biometric hours count
+- Session logs are immutable and feed into Z-11 Audit Trail
+- Prevents unauthorized access and ghost employee payroll fraud</p>
+<hr />
+<h3>§6.14 Z-19 — Policy Engine</h3>
+<p><strong>Path:</strong> <code>/dashboard/policy</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, VISITOR</p>
+<p><strong>Purpose:</strong>
+The single source of truth for ALL pricing and operational policies in the enterprise. Any change to room rates, VAT rates, service charges, or SOPs must be made here — never in Reservations or Checkout.</p>
+<p><strong>Controls:</strong>
+- Room pricing per unit per night (all asset classes)
+- Seasonal pricing calendars (peak / off-peak)
+- Service Charge: 10% (configurable)
+- VAT Rate: 15% (configurable)
+- Department SOPs: Upload and publish per department
+- Policy Lock: Commits and freezes current pricing and SOPs</p>
+<p><strong>Policy Lock Mechanism:</strong>
+Once locked, rates and SOPs are immutable until the next unlock cycle. This prevents accidental or unauthorized price changes during live operations. The lock state is reflected across Z-05 and Z-08 which read rates from this table.</p>
+<hr />
+<h3>§6.15 Z-20 — Synapse Nexus (Enterprise War Room)</h3>
+<p><strong>Path:</strong> <code>/dashboard/synapse</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, SYNAPSE, VISITOR</p>
+<p><strong>Purpose:</strong>
+The most sophisticated panel in Miracle OS — the enterprise <strong>War Room</strong>. Synapse Nexus combines HR organizational visualization, strategic task management (Kanban), real-time P2P video conferencing (WebRTC), corporate hierarchy messaging, and the AGI Strategic Arbitrator. It goes beyond tools like Jira, Teams, or Slack by physically modeling the enterprise hierarchy and enforcing it mathematically.</p>
+<p><strong>Panel 1 — Neural Tree (Org-Chart):</strong>
+- Live HR org-chart built from the Employee Registry
+- Hierarchy: CEO &gt; Director &gt; Manager &gt; Operative
+- ON-DUTY staff glow neon green; OFFLINE staff are dimmed
+- Click any node → Radial action menu: VIDEO CALL, VOICE LINK, SEND SECURE FILE, ASSIGN DIRECTIVE</p>
+<p><strong>Panel 2 — War Room (Kanban + Command Grid):</strong>
+- VIEW A (KANBAN): Strategic Directives board with 4 columns: BACKLOG | ACTIVE | REVIEW | SECURED
+- VIEW B (COMMAND GRID): Large Neon Glass Tiles for every Department (IT, HR, ACCOUNTS) and Area (POOL, SPA, BOARDROOM)
+- When a directive node is assigned to a department, the corresponding tile pulses with Cyan Neon glow + badge ([3] pending)
+- Multi-department tasks split into Nodes via AGI Arbitrator → multiple department tiles pulse simultaneously</p>
+<p><strong>Panel 3 — COMM-LINK (WebRTC Video):</strong>
+- Click VIDEO CALL on any org-chart node → Conference Modal slides in
+- Multi-participant video grid, frosted glass overlay
+- Controls: MUTE, CAM OFF, HANG UP
+- SOVEREIGN FREQUENCIES: Persistent voice channels (HK Frequency 1, Maintenance Channel, Management Room)</p>
+<p><strong>AGI Arbitrator:</strong>
+- ✨ AUTO-DECOMPILE button on any Strategic Directive
+- The Miracle AGI analyzes the directive and splits it into department-specific sub-tasks
+- Each sub-task spawns as a Z-16 Issue Ticket automatically
+- Multiple department tiles in the Command Grid pulse simultaneously to signal the directive has been distributed</p>
+<p><strong>Hierarchical Communication Gate (Synapse Bridge Protocol):</strong>
+| Tier | Role | DM Rights |
+|:---|:---|:---|
+| 4 (C-SUITE) | CDO, Board | Can initiate DM to any tier |
+| 3 (DIRECTOR) | Directors | DM Tier 4, 3, 2 |
+| 2 (MANAGER) | Managers | DM Tier 3, 2, 1 (immediate reports only) |
+| 1 (OPERATIVE) | All staff | DM peers + immediate boss only |</p>
+<p><strong>Secure File Exchange:</strong>
+Drop a PDF/file onto the War Room canvas → routed to the selected operative's feed as a glowing Data Chip with full audit trail.</p>
+<hr />
+<h3>§6.16 Z-21 — Kernel Settings</h3>
+<p><strong>Path:</strong> <code>/dashboard/settings</code><br />
+<strong>Access:</strong> CDO, GM, VISITOR</p>
+<p><strong>Purpose:</strong>
+System-wide configuration hub for the entire Miracle OS kernel.</p>
+<p><strong>Controls:</strong>
+- Enterprise name, currency, language/locale, timezone
+- CDO master password management
+- Database connection status
+- Feature toggles for experimental modules
+- <strong>Sovereign Theme Engine:</strong> 
+  - Backgrounds: Matrix Rain, Circuit Board, Neon Dots, OFF
+  - City Themes: Neon Dubai, Neon London, Neon New York, Neon Saudi, Neon Qatar, Neon Singapore
+  - Intensity Slider (0–100%)
+  - Transparency Slider (0–100%)
+  - Sharpness Slider (0–100% blur control)
+  - Neon Color: 8 presets + custom hex input
+  - Per-page background override system
+- User Management (login credentials)</p>
+<hr />
+<h3>§6.17 Z-23 — Sovereign Infrastructure (SRE Command)</h3>
+<p><strong>Path:</strong> <code>/dashboard/infrastructure</code><br />
+<strong>Access:</strong> CDO, GM, VISITOR</p>
+<p><strong>Purpose:</strong>
+The CDO-level technical command centre for monitoring and controlling the entire Miracle OS infrastructure stack. This is the most powerful zone — a real-time Site Reliability Engineering (SRE) dashboard.</p>
+<p><strong>Sections:</strong></p>
+<ol>
+<li>
+<p><strong>SERVICE HEALTH GRID:</strong> PM2 process status for miracle-backend and miracle-frontend. Status: ONLINE (green) / OFFLINE (red). Memory, CPU %, restart count, uptime. Restart button (requires Master PIN).</p>
+</li>
+<li>
+<p><strong>LIVE TELEMETRY PILLARS:</strong> 5 data pillars refreshing every 5 seconds:</p>
+</li>
+<li>FINANCIAL — Revenue KPIs</li>
+<li>OPERATIONAL — Occupancy, arrivals</li>
+<li>STAFF — On-duty count, efficiency</li>
+<li>GUEST — VIP count, LTV leaders</li>
+<li>
+<p>SRE — System health, error rate, response times</p>
+</li>
+<li>
+<p><strong>LIVE REPLY AUDIT STREAM:</strong> Every AI query/response logged. CLEAN vs HALLUCINATION detection. Auto-correction learning pipeline.</p>
+</li>
+<li>
+<p><strong>SYSTEM ERROR LOGS:</strong> Frontend and backend errors captured automatically. ANALYZE button: AI diagnoses and proposes exact code fix. DISMISS, REFRESH, DISMISS ANALYZED.</p>
+</li>
+<li>
+<p><strong>SOVEREIGN BRAIN MANIFEST:</strong> All pending AI knowledge rules. CDO APPROVES or REJECTS each one. Approved rules become permanent AI behavior.</p>
+</li>
+<li>
+<p><strong>SRE SCAN ENGINE:</strong> Full system-wide diagnostic scan. Checks DB connectivity, API response times, file integrity, AI pipeline health. INITIATE SOVEREIGN SRE SCAN button.</p>
+</li>
+<li>
+<p><strong>LOG TERMINAL:</strong> Real-time PM2 logs (backend / frontend / nginx). Last 50 lines, auto-scrolls. Switchable between processes.</p>
+</li>
+<li>
+<p><strong>3D GLASS BODY:</strong> Visual representation of AI health — each core system (Brain, Heart, Spine) maps to a physical organ visualization.</p>
+</li>
+</ol>
+<hr />
+<h3>§6.18 Z-25 — Guest Marketing Engine</h3>
+<p><strong>Path:</strong> <code>/dashboard/guest-marketing</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, VISITOR</p>
+<p><strong>Purpose:</strong>
+The digital bridge between the enterprise and its guests. Manages the Guest App distribution, promotional campaigns, and engagement analytics.</p>
+<p><strong>Features:</strong>
+- APK Distribution via WhatsApp: Send the Android APK download link to any guest in one tap
+- PROMOTIONAL BROADCASTS: Create and send offers to guest segments (VIP, all guests, specific dates)
+- LOYALTY COIN CAMPAIGNS: Issue bonus coins as promotional incentives
+- ANALYTICS: App downloads, engagement rates, redemption rates
+- MIRACLE CINEMA Admin: Manage the in-room entertainment content library</p>
+<hr />
+<h3>§6.19 Z-26 — Fleet &amp; Aviation Command</h3>
+<p><strong>Path:</strong> <code>/dashboard/fleet</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, VISITOR</p>
+<p><strong>Purpose:</strong>
+Vehicle and aviation fleet management. Covers ground transportation (limousines, SUVs, golf carts) and aviation assets (helicopters, private aircraft). Manages transfer scheduling, maintenance tracking, driver and pilot assignments, and fuel/maintenance cost tracking. Revenue from fleet services posts via Z-06 POS to Z-11 Accounts.</p>
+<hr />
+<h3>§6.20 Z-27 — Med-Spa &amp; Wellness</h3>
+<p><strong>Path:</strong> <code>/dashboard/wellness</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, SPA, VISITOR</p>
+<p><strong>Purpose:</strong>
+Dedicated wellness department engine. Treatment scheduling, therapist assignments, service Bill of Materials (BOM) linked to the Z-12 Inventory Vault. Wastage from treatments logs to Z-11 COGS. Revenue from services flows through Z-06 POS.</p>
+<hr />
+<h3>§6.21 Z-28 — Luxury Boutiques</h3>
+<p><strong>Path:</strong> <code>/dashboard/boutiques</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, POS, VISITOR</p>
+<p><strong>Purpose:</strong>
+Retail department management. Full product catalog, luxury goods inventory, pricing management. All sales flow through the centralized Z-06 POS. Stock managed in Z-12. Revenue in Z-11.</p>
+<hr />
+<h3>§6.22 Z-29 — Gastronomy &amp; F&amp;B Engine</h3>
+<p><strong>Path:</strong> <code>/dashboard/z29-gastronomy</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, FB, VISITOR</p>
+<p><strong>Purpose:</strong>
+Dedicated Food &amp; Beverage department engine. Menu management, recipe BOM construction (linking menu items to Z-12 inventory ingredients), kitchen workflow management, waste tracking. The Architect Engine (ServiceArchitectBOM component) allows F&amp;B department heads to pull raw inventory items and compile services with calculated COGS and profit margins. Wastage logs flow to Z-11 Audit Ledger.</p>
+<hr />
+<h3>§6.23 Z-GUEST — Guest Concierge App</h3>
+<p><strong>Path:</strong> <code>/guest/*</code><br />
+<strong>Access:</strong> GUEST (hotel guests) via mobile app or browser</p>
+<p><strong>Purpose:</strong>
+The guest-facing mobile application and web portal. Delivered as a thin-client Android APK (Capacitor) pointing to the live VPS — no APK rebuild required for any UI change.</p>
+<p><strong>Guest Tabs:</strong>
+| Path | Feature |
+|:---|:---|
+| /guest/hub | Welcome dashboard, current room status, quick actions |
+| /guest/folio | Real-time bill view: all charges, advance paid, current balance |
+| /guest/order | Room service / food ordering from live menu |
+| /guest/reserve | Extend stay, request future booking |
+| /guest/concierge | Message front desk, request services |
+| /guest/ecommerce | Shop resort merchandise |
+| /guest/cinema | In-room entertainment (Netflix-style UI) |
+| /guest/profile | Loyalty coins, VIP tier, past stays |</p>
+<p>All guest requests flow to Z-07 Command Grid and Z-17 Solve Portal for staff action.</p>
+<p><strong>Security Architecture (Guest):</strong>
+- Token stored in localStorage (never cookie — Capacitor doesn't support cookie auth)
+- Bearer token sent in Authorization header for every API call
+- <code>/guest/*</code> routes never intercepted by Nginx proxy (prevents redirect loop on Android)
+- MiracleBotGuestGuard prevents AI engine from loading in guest WebView
+- GlobalSyncContext aborts kernel polling on <code>/guest/*</code> routes</p>
+<hr />
+<h3>§6.24 Z-AUDIT — Audit Ledger</h3>
+<p><strong>Path:</strong> <code>/dashboard/audit-ledger</code><br />
+<strong>Access:</strong> CDO, GM, ACC</p>
+<p><strong>Purpose:</strong>
+The immutable audit trail for the entire enterprise. Every action taken by every operator is logged here with: action type, operator name, target (which record/zone), timestamp, and result. This is the forensic record that cannot be modified, deleted, or altered.</p>
+<hr />
+<h3>§6.25 Z-KDS — Kitchen Display System</h3>
+<p><strong>Path:</strong> <code>/dashboard/orders</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, FB, CHEF, STAFF</p>
+<p><strong>Purpose:</strong>
+Real-time kitchen order management screen. When a guest scans a QR code and places an order on Z-MENU (or staff creates an order in Z-06 POS), it immediately appears on the Kitchen Display System (KDS). Includes auditory alert chimes and bump-to-next-status capability.</p>
+<p><strong>Workflow:</strong>
+Chef bumps order from PENDING → PREPARING → READY. SSE event bus broadcasts status changes in real-time. Automatically integrates with inventory stock deduction.</p>
+<hr />
+<h3>§6.26 Z-MENU — Guest QR Table Menu</h3>
+<p><strong>Path:</strong> <code>/menu?table=Table+X</code><br />
+<strong>Access:</strong> PUBLIC (No login required)</p>
+<p><strong>Purpose:</strong>
+A public web interface for guests to browse the F&B menu and place orders from their table. Operates outside the dashboard auth guard.</p>
+<p><strong>Workflow:</strong>
+User scans QR code containing a table label → adds items to cart → places order → pushes to backend API `/api/fnb/orders` → instantly broadcasts via SSE to Z-KDS.</p>
+<hr />
+<h3>§6.27 Z-DELIVERY — Rider Delivery Portal</h3>
+<p><strong>Path:</strong> <code>/delivery</code><br />
+<strong>Access:</strong> CDO, GM, ADMIN, RIDER, FB, STAFF</p>
+<p><strong>Purpose:</strong>
+Rider dispatch and delivery management portal. Riders log in using a 4-to-6 digit PIN, view dispatched orders, update delivery status, and log GPS coordinates in real-time.</p>
+<p><strong>Workflow:</strong>
+Manager assigns order to a rider → Rider sees active delivery → marks PICKED_UP → marks EN_ROUTE → marks DELIVERED. Virtual COD wallet tracks cash liabilities. Auto-suspension triggers if holding cash exceeds predefined limit.</p>
+<hr />
+<h2>§7. DATABASE ARCHITECTURE &amp; FULL SCHEMA REFERENCE</h2>
+<p>```mermaid
+erDiagram
+    asset_grid {
+        string room_id PK
+        string category
+        float base_rate
+        int floor
+        bool is_active
+        string current_status
+        string current_guest
+    }</p>
+<pre><code>reservations {
+    int id PK
+    string room_id FK
+    int guest_crm_id FK
+    string guest_name
+    date start_date
+    int nights
+    string status
+    float nightly_rate
+    float total_yield
+    string vault_token
+    datetime created_at
+}
+
+guest_folios {
+    int id PK
+    string room_number FK
+    int guest_crm_id FK
+    string guest_name
+    string status
+    float balance
+    float rate
+    float advance_paid
+    string ref_staff
+    date check_in_date
+    datetime last_updated
+    string payment_network
+}
+
+folio_charges {
+    int id PK
+    int folio_id FK
+    string item_name
+    string category
+    float amount
+    int qty
+    datetime timestamp
+    string transaction_id
+}
+
+guest_crm {
+    int id PK
+    string full_name
+    string phone
+    string email
+    string passport_nid
+    float total_ltv
+    int total_stays
+    string vip_tier
+    text preferences
+    int coins
+}
+
+inventory {
+    string product_id PK
+    string name
+    string type
+    string dept
+    string cat
+    float margin
+    float min_level
+    string s_unit
+    float pp
+    float rp
+    float stock
+    json bom
+    datetime created_at
+}
+
+pos_transactions {
+    int id PK
+    string terminal_id
+    string guest_type
+    string payment_method
+    float subtotal
+    float total_cogs
+    float vat
+    float sc
+    float grand_total
+    float true_profit
+    datetime timestamp
+}
+
+accounting_ledger {
+    int id PK
+    string transaction_ref
+    string type
+    string category
+    float amount
+    float balance_after
+    text description
+    string operator_id
+    datetime timestamp
+    string payment_network
+}
+
+employees {
+    int id PK
+    int user_id FK
+    string full_name
+    string position
+    string dept
+    string status
+    float base_salary
+    float commission_rate
+    float revenue_impact
+    float efficiency_rating
+}
+
+solve_missions {
+    int id PK
+    string room_no
+    string dept
+    string subject
+    string priority
+    string status
+    text sop_steps
+    string assigned_to
+    datetime raised_at
+    datetime secured_at
+    string proof_image_url
+}
+
+asset_grid ||--o{ reservations : "room_id"
+asset_grid ||--o{ guest_folios : "room_number"
+guest_crm ||--o{ reservations : "guest_crm_id"
+guest_crm ||--o{ guest_folios : "guest_crm_id"
+guest_folios ||--o{ folio_charges : "folio_id"
+pos_transactions ||--o{ folio_charges : "transaction_id"
+inventory ||--o{ pos_transactions : "BOM deduction"
+accounting_ledger }o--|| pos_transactions : "auto-post"
+accounting_ledger }o--|| guest_folios : "auto-post"
+</code></pre>
+<p>```</p>
+<hr />
+<h2>§8. API ENDPOINT DIRECTORY</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Endpoint</th>
+<th style="text-align: left;">Zone</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/auth/token</td>
+<td style="text-align: left;">Z-LOGIN</td>
+<td style="text-align: left;">Login, get JWT</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/frontdesk/live-grid</td>
+<td style="text-align: left;">Z-07</td>
+<td style="text-align: left;">All room states</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/frontdesk/folios</td>
+<td style="text-align: left;">Z-07</td>
+<td style="text-align: left;">Active folio balances</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/frontdesk/force-available/{id}</td>
+<td style="text-align: left;">Z-07</td>
+<td style="text-align: left;">CDO room reset</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/frontdesk_engine/reservations</td>
+<td style="text-align: left;">Z-05</td>
+<td style="text-align: left;">All reservations</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/frontdesk_engine/commit</td>
+<td style="text-align: left;">Z-05</td>
+<td style="text-align: left;">New reservation</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/reservation_engine/ota-ingest</td>
+<td style="text-align: left;">Z-05</td>
+<td style="text-align: left;">OTA booking import</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/pos/transaction</td>
+<td style="text-align: left;">Z-06</td>
+<td style="text-align: left;">Complete POS sale</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/inventory/live</td>
+<td style="text-align: left;">Z-12</td>
+<td style="text-align: left;">Stock levels</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/inventory/stock-in</td>
+<td style="text-align: left;">Z-12</td>
+<td style="text-align: left;">Receive new stock</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/billing/checkout/{guest_ref}</td>
+<td style="text-align: left;">Z-08</td>
+<td style="text-align: left;">Settle folio</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/hr/performance-matrix</td>
+<td style="text-align: left;">Z-09</td>
+<td style="text-align: left;">Staff analytics</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/hr/onboard</td>
+<td style="text-align: left;">Z-09</td>
+<td style="text-align: left;">New staff registration</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/hr/execute-payroll/{id}</td>
+<td style="text-align: left;">Z-09</td>
+<td style="text-align: left;">Run payroll</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/hr/sync-registry</td>
+<td style="text-align: left;">Z-09</td>
+<td style="text-align: left;">Bulk credential sync</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/accounting/ledger/live</td>
+<td style="text-align: left;">Z-11</td>
+<td style="text-align: left;">Live P&amp;L data</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/accounting/journal/manual</td>
+<td style="text-align: left;">Z-11</td>
+<td style="text-align: left;">Manual journal entry</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/accounting/ar/aging</td>
+<td style="text-align: left;">Z-11</td>
+<td style="text-align: left;">AR aging report</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/accounting/ap/invoices</td>
+<td style="text-align: left;">Z-11</td>
+<td style="text-align: left;">Vendor invoices</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/policy/lock</td>
+<td style="text-align: left;">Z-19</td>
+<td style="text-align: left;">Commit and lock pricing</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/bot/v2/query</td>
+<td style="text-align: left;">Z-ALL</td>
+<td style="text-align: left;">AI Navigator query</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/synapse/org-chart</td>
+<td style="text-align: left;">Z-20</td>
+<td style="text-align: left;">HR org chart data</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/synapse/directives</td>
+<td style="text-align: left;">Z-20</td>
+<td style="text-align: left;">New strategic directive</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/synapse/webrtc/create-room</td>
+<td style="text-align: left;">Z-20</td>
+<td style="text-align: left;">Video conference room</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/infra/telemetry</td>
+<td style="text-align: left;">Z-23</td>
+<td style="text-align: left;">System health metrics</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/infra/logs</td>
+<td style="text-align: left;">Z-23</td>
+<td style="text-align: left;">System error logs</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/infra/pm2/restart</td>
+<td style="text-align: left;">Z-23</td>
+<td style="text-align: left;">Restart PM2 process</td>
+</tr>
+<tr>
+<td style="text-align: left;">POST</td>
+<td style="text-align: left;">/api/infra/browser-error</td>
+<td style="text-align: left;">Z-23</td>
+<td style="text-align: left;">Browser error ingest</td>
+</tr>
+<tr>
+<td style="text-align: left;">GET</td>
+<td style="text-align: left;">/api/settings/kernel</td>
+<td style="text-align: left;">Z-ALL</td>
+<td style="text-align: left;">Zone intelligence map</td>
+</tr>
+<tr>
+<td style="text-align: left;">WS</td>
+<td style="text-align: left;">/ws/grid-sync</td>
+<td style="text-align: left;">Z-07</td>
+<td style="text-align: left;">Real-time grid events</td>
+</tr>
+<tr>
+<td style="text-align: left;">WS</td>
+<td style="text-align: left;">/ws/synapse/chat/{thread_id}</td>
+<td style="text-align: left;">Z-20</td>
+<td style="text-align: left;">Corporate messaging</td>
+</tr>
+<tr>
+<td style="text-align: left;">WS</td>
+<td style="text-align: left;">/ws/synapse/signal/{room_id}</td>
+<td style="text-align: left;">Z-20</td>
+<td style="text-align: left;">WebRTC P2P signaling</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>§9. ROLE-BASED ACCESS CONTROL (RBAC) MATRIX</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Zone</th>
+<th style="text-align: center;">CDO</th>
+<th style="text-align: center;">GM</th>
+<th style="text-align: center;">ADMIN</th>
+<th style="text-align: center;">FD</th>
+<th style="text-align: center;">POS</th>
+<th style="text-align: center;">HR</th>
+<th style="text-align: center;">ACC</th>
+<th style="text-align: center;">HK/MN/IT</th>
+<th style="text-align: center;">GUEST</th>
+<th style="text-align: center;">VISITOR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Z-LOGIN</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-07 Command Grid</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-05 Reservations</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-06 POS</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-08 Checkout</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-09 HR</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-10 CRM</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-11 Accounts</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-12 Inventory</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-14 Media Lab</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-16 Issue Tickets</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-17 Solve Portal</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-18 Biometric</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-19 Policy Engine</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-20 Synapse</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-21 Kernel</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-23 Infra (SRE)</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-25 Guest Mktg</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-26 Fleet</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-27 Wellness</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-28 Boutiques</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-29 Gastronomy</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-GUEST</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>§10. MULTI-ENTERPRISE SINGLE KERNEL ARCHITECTURE</h2>
+<p>The most powerful capability of Miracle OS — the ability to govern multiple enterprises, properties, or business units from a single sovereign kernel deployment.</p>
+<p>```mermaid
+graph TB
+    CDO_SUPREME["Supreme CDO\n(Holding Company / Owner)"]</p>
+<pre><code>subgraph KERNEL["MIRACLE OS SOVEREIGN KERNEL"]
+    Z07_HQ["Z-07: Master Grid\n(All Properties Combined)"]
+    Z11_HQ["Z-11: Consolidated Accounts\n(Group P&amp;L)"]
+    Z09_HQ["Z-09: Group HR\n(All Staff Across Units)"]
+    Z23_HQ["Z-23: Infrastructure\n(All Servers Monitored)"]
+    Z20_HQ["Z-20: Synapse War Room\n(Cross-Property Directives)"]
+end
+
+subgraph PROP1["PROPERTY / BUSINESS UNIT 1"]
+    P1_CDO["Property Manager 1"]
+    P1_STAFF["Staff (FD, POS, HK...)"]
+    P1_GUESTS["Guests / Clients"]
+end
+
+subgraph PROP2["PROPERTY / BUSINESS UNIT 2"]
+    P2_CDO["Property Manager 2"]
+    P2_STAFF["Staff (FD, POS, HK...)"]
+    P2_GUESTS["Guests / Clients"]
+end
+
+subgraph PROP3["BRANCH / FACTORY / FACILITY"]
+    P3_CDO["Branch Manager"]
+    P3_STAFF["Operations Staff"]
+    P3_OPS["Operations Flow"]
+end
+
+CDO_SUPREME --&gt; KERNEL
+KERNEL --&gt; PROP1
+KERNEL --&gt; PROP2
+KERNEL --&gt; PROP3
+P1_CDO --&gt; KERNEL
+P2_CDO --&gt; KERNEL
+P3_CDO --&gt; KERNEL
+</code></pre>
+<p>```</p>
+<p><strong>Multi-Enterprise Kernel Capabilities:</strong>
+- <strong>Consolidated Financial Reporting:</strong> Z-11 aggregates P&amp;L across all properties into a single group financial view
+- <strong>Cross-Property Staff Transfer:</strong> Z-09 manages staff assignments across multiple business units
+- <strong>Unified Inventory Pool:</strong> Z-12 can share inventory across properties or maintain separate vaults
+- <strong>Group-Wide Policy:</strong> Z-19 can broadcast pricing and policy changes to all properties simultaneously
+- <strong>AGI Group Intelligence:</strong> The Miracle AI understands the full group operation and can be asked: "What is the total group revenue across all properties this month?"
+- <strong>Hierarchical Security:</strong> Each property manager sees only their property data; the Supreme CDO sees all</p>
+<hr />
+<h2>§11. ENTERPRISE INDUSTRY DEPLOYMENT BLUEPRINTS</h2>
+<h3>§11.1 Hospitality — Hotels, Resorts &amp; Eco-Resorts</h3>
+<p><strong>Industries:</strong> Luxury Hotels, Budget Hotels, Eco-Resorts, Boutique Properties, Safari Lodges, Island Resorts, Cruise Ships</p>
+<p><strong>Primary Zones:</strong> Z-07, Z-05, Z-06, Z-08, Z-09, Z-10, Z-11, Z-12, Z-19, Z-27, Z-28, Z-29, Z-GUEST</p>
+<p><strong>How Miracle OS Serves Hospitality:</strong></p>
+<p>The hospitality industry is Miracle OS's origin application. Every zone was engineered to solve a real operational problem in a luxury hotel or resort environment.</p>
+<p><strong>Operational Flow:</strong>
+<code>Guest Inquiry → Z-LOGIN (AI Lead Capture) 
+→ Z-05 (Reservation Booked on Tape Chart)
+→ Z-07 (Room Status: RESERVED, pulsing amber)
+→ Guest Arrives → Z-05 (PUSH CHECK-IN)
+→ Z-07 (Room: IN-HOUSE, cyan glow)
+→ Guest orders room service → Z-GUEST App / Z-06 POS
+→ folio charges accumulate
+→ Guest requests spa treatment → Z-27 Wellness
+→ Z-06 POS charges posted to folio
+→ Guest shops boutique → Z-28 Boutiques → Z-06 POS
+→ Issue raised (AC fault) → Z-16 → Z-07 red strobe
+→ Z-17 Maintenance dispatched → RESOLVED
+→ Guest checks out → Z-08 Settlement
+→ Z-11 Night Audit → Records sealed
+→ Z-10 CRM → Loyalty coins credited, VIP tier upgraded</code></p>
+<p><strong>Key ROI for Hospitality:</strong>
+| Metric | Without Miracle OS | With Miracle OS |
+|:---|:---|:---|
+| Revenue leakage (no room charge auth) | 3–8% | 0% (room charge validates IN-HOUSE) |
+| Time to checkout (manual folio) | 8–15 minutes | Under 2 minutes |
+| Night audit time | 2–4 hours | 25 minutes (automated) |
+| Inventory shrinkage | 5–12% | Under 1% (BOM auto-deduction) |
+| Staff efficiency visibility | None | Real-time ROI per operative |
+| Guest retention (no loyalty program) | 25–35% return rate | 55–70% (loyalty coins + VIP tiers) |</p>
+<hr />
+<h3>§11.2 Food &amp; Beverage (F&amp;B) Management</h3>
+<p><strong>Industries:</strong> Restaurant Chains, Cloud Kitchens, Catering Companies, Food Courts, Hotel F&amp;B Departments, Bakeries, Coffee Shop Chains</p>
+<p><strong>Primary Zones:</strong> Z-06 (POS), Z-12 (Inventory), Z-29 (Gastronomy), Z-11 (Accounts), Z-09 (HR)</p>
+<p><strong>How Miracle OS Serves F&amp;B:</strong></p>
+<p>For a standalone restaurant or F&amp;B operation, Miracle OS deploys as a complete F&amp;B management kernel:</p>
+<p><strong>Recipe Management (BOM Engine):</strong>
+- Every menu item has a Bill of Materials (recipe) defined in Z-12
+- Selling one "Signature Wagyu Burger" automatically deducts: 200g Wagyu beef, 1 brioche bun, 20g truffle sauce, and 5g microgreens from the inventory vault
+- COGS is calculated instantly per sale
+- Gross Profit Margin per dish visible in real time</p>
+<p><strong>Waste Tracking:</strong>
+- The Wastage Audit Log in Z-29 tracks every discarded ingredient
+- Wastage posts to Z-11 as DEBIT: Cost of Goods Sold (Wastage)
+- AI can query: "What was our food waste COGS this week?" and get an instant SQL-sourced answer</p>
+<p><strong>Staff Efficiency in F&amp;B:</strong>
+- Each server/cashier's POS sales tracked in Z-09
+- Revenue Impact per staff member visible: Who is your most productive server?
+- Commission rates configurable per staff for upsell incentives</p>
+<p><strong>Multi-Outlet F&amp;B:</strong>
+- Deploy Z-29 (Gastronomy) as a separate zone per outlet: Restaurant, Pool Bar, Room Service, Banquet
+- Each outlet's revenue streams into separate revenue categories in Z-11
+- Consolidated F&amp;B P&amp;L visible on the REVENUE VECTOR ANALYSIS tab</p>
+<hr />
+<h3>§11.3 Human Resources &amp; Payroll Automation</h3>
+<p><strong>Industries:</strong> Corporate HR Departments, Staffing Agencies, Manufacturing Plants, Hospitals, Government Organizations, Any employer with 10+ staff</p>
+<p><strong>Primary Zones:</strong> Z-09 (HR), Z-18 (Biometric), Z-11 (Accounts), Z-20 (Synapse Nexus)</p>
+<p><strong>How Miracle OS Serves HR:</strong></p>
+<p>Miracle OS replaces standalone HR software (e.g., BambooHR, Workday, ADP) with a deeply integrated HR engine that connects staff performance directly to financial outcomes.</p>
+<p><strong>Complete Staff Lifecycle:</strong>
+| Phase | Miracle OS Function |
+|:---|:---|
+| Recruitment | Onboarding Tab: Register candidate, assign RBAC zones, generate credentials |
+| Onboarding | Document Vault: SOPs, handbooks, appointment letters via Mantala Word Module |
+| Attendance | Z-18 Biometric Portal: Every shift biometrically verified |
+| Performance | Z-09 Performance Tab: Revenue Impact %, Efficiency Rating, ROI Factor |
+| Payroll | Z-09 Payroll Tab: Monthly hours × base salary + commission → PUSH TO ACCOUNTS |
+| Appraisal | Z-20 Synapse: Directive assigned, tracked through Kanban to SECURED |
+| Offboarding | Z-09 Registry: Status changed to TERMINATED, access revoked |</p>
+<p><strong>AI-Driven HR Intelligence:</strong>
+- Ask Miracle: "Who is my highest ROI staff member in the spa department?"
+- AI queries <code>employees</code> table, cross-references <code>pos_transactions</code> and <code>revenue_impact</code>, and delivers a British Executive summary with the exact operative's name and numbers</p>
+<p><strong>The Synapse Corporate Hierarchy:</strong>
+- Z-20 enforces the org-chart with mathematical certainty
+- No operative can bypass their manager to reach C-Suite
+- Every directive assignment, task completion, and communication is logged</p>
+<hr />
+<h3>§11.4 Supply &amp; Distribution Management</h3>
+<p><strong>Industries:</strong> Wholesale Distributors, FMCG Companies, Pharmaceutical Distributors, Auto Parts Distribution, Food &amp; Beverage Distributors, E-commerce Fulfillment Centers</p>
+<p><strong>Primary Zones:</strong> Z-12 (Inventory), Z-11 (Accounts / AP), Z-06 (POS / Order Processing), Z-26 (Fleet), Z-16 (Issue Tickets), Z-19 (Policy Engine)</p>
+<p><strong>How Miracle OS Serves Supply &amp; Distribution:</strong></p>
+<p>In a distribution context, Miracle OS rearchitects its zones for the supply chain:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Miracle OS Zone</th>
+<th style="text-align: left;">Distribution Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Z-12 Inventory Matrix</td>
+<td style="text-align: left;">Warehouse stock management — receiving bay, PAR levels, reorder alerts</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-11 Accounts (AP)</td>
+<td style="text-align: left;">Vendor invoice management, payment terms tracking, AUTHORIZE DISBURSEMENT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-11 Accounts (AR)</td>
+<td style="text-align: left;">Customer invoice aging (0–30d, 31–60d, 61–90d, 90+d)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-06 POS</td>
+<td style="text-align: left;">Order processing terminal — sales order entry, dispatch</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-26 Fleet</td>
+<td style="text-align: left;">Delivery fleet management — route assignment, driver tracking, vehicle maintenance</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-16 Issue Tickets</td>
+<td style="text-align: left;">Delivery exception reporting — damaged goods, late delivery, wrong shipment</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-19 Policy Engine</td>
+<td style="text-align: left;">Pricing tiers, discount policies, customer-specific rate cards</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-07 Command Grid</td>
+<td style="text-align: left;">Warehouse bay / zone status grid — which bays are occupied, which orders are pending dispatch</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Distribution Data Flow:</strong>
+<code>Purchase Order received → Z-12 (Receiving Bay stock-in)
+→ accounting_ledger: DEBIT Inventory, CREDIT Accounts Payable (vendor)
+→ Sales Order placed → Z-06 (Order processing)
+→ Z-12: Stock allocated to order (reserved quantity)
+→ Z-26: Delivery vehicle assigned, driver scheduled
+→ Z-16: Delivery exception raised if issue occurs
+→ Delivery confirmed → Z-11: AR invoice created
+→ Payment received → Z-11: Bank Reconciliation, COMMIT RECEIPT
+→ AR closed, cash position updated</code></p>
+<p><strong>AGI Supply Intelligence:</strong>
+- "What is our current stock coverage for SKU-4521 at current sales velocity?" → AI executes SQL: <code>SELECT stock / (sales_last_30_days / 30) AS days_coverage FROM inventory WHERE product_id = 'SKU-4521'</code>
+- "Which vendor has the highest outstanding AP balance?" → Real-time answer from <code>ap_invoices</code> and <code>vendors</code> tables</p>
+<hr />
+<h3>§11.5 AI Automated Accounting &amp; Finance</h3>
+<p><strong>Industries:</strong> Any enterprise with financial operations — the AI Finance capability is horizontal across ALL industries</p>
+<p><strong>Primary Zones:</strong> Z-11 (Accounts &amp; Finance), Z-06 (POS), Z-08 (Billing), Z-09 (Payroll), Z-12 (COGS)</p>
+<p><strong>How Miracle OS Serves Accounting &amp; Finance:</strong></p>
+<p>Miracle OS eliminates the need for standalone accounting software (QuickBooks, Xero, SAP) by embedding a full GAAP-compliant accounting engine at the core of the operational system.</p>
+<p><strong>What Makes It AI-Automated:</strong></p>
+<ol>
+<li>
+<p><strong>Zero Manual Entry:</strong> Every transaction posts to the ledger automatically. A POS sale → CREDIT F&amp;B Revenue. A payroll push → DEBIT Payroll Expense. A stock receipt → DEBIT Inventory Asset. No accountant needs to re-enter these.</p>
+</li>
+<li>
+<p><strong>AI Financial Intelligence:</strong> The Miracle Navigator can synthesize a full executive financial briefing on demand:</p>
+</li>
+<li>Revenue breakdown by category</li>
+<li>Expense analysis vs budget</li>
+<li>Cash position</li>
+<li>Outstanding AR aging</li>
+<li>Net profit calculation</li>
+<li>
+<p>Trend analysis (7-day, 30-day, MTD)</p>
+</li>
+<li>
+<p><strong>GAAP Double-Entry:</strong> Every financial event generates exactly two ledger entries (one DEBIT, one CREDIT) maintaining the accounting equation: <code>Assets = Liabilities + Equity</code> at all times.</p>
+</li>
+<li>
+<p><strong>Night Audit Automation:</strong> The 4-step Night Audit Wizard guides the team through end-of-day close in 25 minutes (vs. 2–4 hours manually).</p>
+</li>
+<li>
+<p><strong>Immutable Audit Trail:</strong> The ledger is append-only. No deletion possible. Every correcting entry creates a new record. This satisfies external audit requirements.</p>
+</li>
+</ol>
+<p><strong>Chart of Accounts (GAAP-Compliant):</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Code Range</th>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1000–1999</td>
+<td style="text-align: left;">Assets</td>
+<td style="text-align: left;">Cash, AR, Inventory, Prepaid</td>
+</tr>
+<tr>
+<td style="text-align: left;">2000–2999</td>
+<td style="text-align: left;">Liabilities</td>
+<td style="text-align: left;">AP, Advance Deposits, VAT payable</td>
+</tr>
+<tr>
+<td style="text-align: left;">3000–3999</td>
+<td style="text-align: left;">Equity</td>
+<td style="text-align: left;">Owner's Capital, Retained Earnings</td>
+</tr>
+<tr>
+<td style="text-align: left;">4000–4999</td>
+<td style="text-align: left;">Revenue</td>
+<td style="text-align: left;">Room Revenue, F&amp;B, Spa, Retail</td>
+</tr>
+<tr>
+<td style="text-align: left;">5000–5999</td>
+<td style="text-align: left;">Expenses</td>
+<td style="text-align: left;">Payroll, COGS, Operational Expenses</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>§11.6 Real Estate Management</h3>
+<p><strong>Industries:</strong> Property Management Companies, Real Estate Investment Firms, Mixed-Use Developments, Commercial Property Managers, Serviced Apartments, Co-living Operators</p>
+<p><strong>Primary Zones:</strong> Z-07 (Property Grid), Z-05 (Lease Management), Z-11 (Accounts/AR), Z-09 (Maintenance Staff), Z-12 (Asset Inventory), Z-16 (Issue Tickets), Z-19 (Policy Engine)</p>
+<p><strong>How Miracle OS Serves Real Estate:</strong></p>
+<p>Miracle OS rearchitects for real estate with these zone mappings:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Miracle OS Zone</th>
+<th style="text-align: left;">Real Estate Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Z-07 Command Grid</td>
+<td style="text-align: left;">Property/Unit Status Grid — Occupied, Vacant, Under Maintenance, Listed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-05 Reservations</td>
+<td style="text-align: left;">Lease Management — tenant move-in, lease duration, renewal dates</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-08 Checkout</td>
+<td style="text-align: left;">Lease Settlement — final account reconciliation on move-out</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-11 Accounts (AR)</td>
+<td style="text-align: left;">Rental income tracking, payment aging, late fee calculation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-11 Accounts (AP)</td>
+<td style="text-align: left;">Vendor management (contractors, utilities, maintenance)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-09 HR</td>
+<td style="text-align: left;">Property management staff, maintenance team, security</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-12 Inventory</td>
+<td style="text-align: left;">Asset register — fixtures, appliances, common area assets</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-16 Issue Tickets</td>
+<td style="text-align: left;">Tenant maintenance requests — plumbing, electrical, HVAC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-17 Solve Portal</td>
+<td style="text-align: left;">Contractor dispatch and work order management</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-19 Policy Engine</td>
+<td style="text-align: left;">Rent rate cards, escalation policies, service charge schedules</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-10 CRM</td>
+<td style="text-align: left;">Tenant database, renewal history, communication records</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real Estate Data Flow:</strong>
+<code>Prospective Tenant → Z-LOGIN (AI lead capture and qualification)
+→ Z-05 (Lease Agreement — unit, start date, duration, monthly rent)
+→ Z-07 (Unit Status: RESERVED → IN-HOUSE / OCCUPIED)
+→ Monthly: Z-11 AR → Rent invoice generated
+→ Payment received → Z-11 Bank Reconciliation
+→ Maintenance Request → Z-16 Ticket → Z-17 Contractor Dispatch
+→ Lease End → Z-08 Final Settlement → Deposit reconciliation
+→ Z-07 Unit: DIRTY (inspection) → AVAILABLE (re-listed)
+→ Z-10 CRM: Tenant record archived, renewal probability scored</code></p>
+<p><strong>AGI Real Estate Intelligence:</strong>
+- "What is our portfolio occupancy rate this quarter?" → AI queries all unit statuses
+- "Which units have outstanding maintenance tickets older than 48 hours?" → Instant SQL result from <code>solve_missions</code>
+- "What is our total rental income vs property expense for the last 6 months?" → Full P&amp;L synthesis from <code>accounting_ledger</code></p>
+<hr />
+<h3>§11.7 Facility Management</h3>
+<p><strong>Industries:</strong> Shopping Malls, Airport Facilities, Corporate Campuses, Industrial Complexes, Hospital Campuses, Government Buildings, Sports Stadiums</p>
+<p><strong>Primary Zones:</strong> Z-16 (Issue Tickets), Z-17 (Solve Portal), Z-09 (FM Staff), Z-12 (Asset Inventory), Z-07 (Facility Grid), Z-20 (Synapse), Z-18 (Biometric)</p>
+<p><strong>How Miracle OS Serves Facility Management:</strong></p>
+<p>Facility Management is fundamentally about tracking assets, managing maintenance, and deploying staff efficiently. Miracle OS provides exactly this infrastructure.</p>
+<p><strong>Zone Remapping for FM:</strong>
+| Miracle OS Zone | FM Function |
+|:---|:---|
+| Z-07 Command Grid | Facility Zone Grid — each card = a zone/area of the building (Lobby, Parking, HVAC Room, Level 3, etc.) |
+| Z-16 Issue Tickets | Work Order Management — any staff can raise a fault for any zone |
+| Z-17 Solve Portal | FM Field Team — plumbers, electricians, cleaners see and action their work orders |
+| Z-12 Inventory | Maintenance parts inventory, cleaning supplies, spare parts tracking |
+| Z-09 HR | FM staff rosters, performance, payroll |
+| Z-18 Biometric | Contractor and staff access logs — who entered which zone, when |
+| Z-20 Synapse | Preventive maintenance scheduling, PPM program management |
+| Z-11 Accounts | FM budget tracking, contractor payments, utility costs |</p>
+<p><strong>Preventive Maintenance via Synapse:</strong>
+- CDO creates a Strategic Directive: "Monthly HVAC inspection — all 24 units"
+- AGI Arbitrator decomposes into 24 sub-tasks → spawns 24 Issue Tickets in Z-16
+- Each ticket assigned to the responsible technician
+- Progress tracked in Z-20 Kanban: BACKLOG → ACTIVE → REVIEW → SECURED
+- Completion percentage visible in real time on Z-07 Facility Grid</p>
+<hr />
+<h3>§11.8 Staff Efficiency &amp; Productivity Intelligence</h3>
+<p><strong>Industries:</strong> Any enterprise with measurable staff output — Hospitality, Manufacturing, Healthcare, Retail, Call Centers, Logistics</p>
+<p><strong>Primary Zones:</strong> Z-09 (HR Performance), Z-16 (Issue Tickets), Z-17 (Solve Portal), Z-20 (Synapse), Z-11 (Payroll ROI)</p>
+<p><strong>How Miracle OS Quantifies Staff Efficiency:</strong></p>
+<p>Every action a staff member takes in Miracle OS generates a performance data point. Over time, the system builds a <strong>360-degree staff efficiency profile</strong> without any manual reporting.</p>
+<p><strong>The Efficiency Rating Formula:</strong>
+<code>Efficiency % = (Missions Secured / Missions Assigned) × (1 / Avg Resolution Time) × 100</code></p>
+<p><strong>Revenue Impact Score:</strong>
+<code>Revenue Impact = Total POS Sales by Staff + Total Room Revenue on Shifts Worked</code></p>
+<p><strong>ROI Factor:</strong>
+<code>ROI = Revenue Impact / (Base Salary + Commission Paid)</code></p>
+<p><strong>Staff Performance Dashboard (Z-09 Performance Tab):</strong>
+| Column | Data Source |
+|:---|:---|
+| Operative Name | employees.full_name |
+| Base Salary | employees.base_salary |
+| Revenue Impact | employees.revenue_impact (auto-calculated from pos_transactions) |
+| Efficiency % | employees.efficiency_rating |
+| ROI Factor | revenue_impact / total_payout |
+| Missions Secured | employees.missions_secured (from solve_missions) |</p>
+<p><strong>AGI Staff Intelligence:</strong>
+- "Who is my least efficient staff member this month?"
+- "What department has the highest average ROI?"
+- "How many missions did maintenance team secure vs raise?"</p>
+<p>These questions are answered in real time by the Miracle AI executing SQL against live production data.</p>
+<hr />
+<h3>§11.9 ROI Monitoring &amp; Business Intelligence</h3>
+<p><strong>Industries:</strong> Any business needing real-time financial intelligence — Hotels, Restaurants, Retailers, Manufacturers, Healthcare, Real Estate</p>
+<p><strong>Primary Zones:</strong> Z-11 (Accounts), Z-07 (Revenue Grid), Z-23 (Infrastructure BI), Z-09 (HR ROI)</p>
+<p><strong>The Miracle BI Architecture:</strong></p>
+<p>Miracle OS does not require a separate Business Intelligence tool (Tableau, Power BI, Looker). The AGI Navigator IS the BI engine — it synthesizes data from all 5 Sensor Pillars on demand and delivers executive-grade intelligence in plain English.</p>
+<p><strong>Real-Time KPIs Always Available:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">KPI</th>
+<th style="text-align: left;">SQL Source</th>
+<th style="text-align: left;">Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Total Revenue Today</td>
+<td style="text-align: left;">accounting_ledger WHERE type='CREDIT' AND DATE(timestamp)=today</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+<tr>
+<td style="text-align: left;">Room RevPAR (Revenue per Available Room)</td>
+<td style="text-align: left;">total_room_revenue / total_available_rooms</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+<tr>
+<td style="text-align: left;">Occupancy Rate %</td>
+<td style="text-align: left;">IN-HOUSE count / total_assets × 100</td>
+<td style="text-align: left;">Instant (WebSocket)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Average Daily Rate (ADR)</td>
+<td style="text-align: left;">total_room_revenue / occupied_rooms</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+<tr>
+<td style="text-align: left;">F&amp;B Revenue vs Room Revenue</td>
+<td style="text-align: left;">SUM by category from accounting_ledger</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+<tr>
+<td style="text-align: left;">COGS %</td>
+<td style="text-align: left;">total_cogs / total_revenue × 100</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gross Profit Margin</td>
+<td style="text-align: left;">(revenue - cogs) / revenue × 100</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+<tr>
+<td style="text-align: left;">Staff ROI</td>
+<td style="text-align: left;">revenue_impact / payroll_cost</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+<tr>
+<td style="text-align: left;">Net Revenue (after VAT)</td>
+<td style="text-align: left;">revenue - (revenue × vat_rate)</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+<tr>
+<td style="text-align: left;">AR Outstanding</td>
+<td style="text-align: left;">SUM balance FROM guest_folios WHERE status='IN_HOUSE'</td>
+<td style="text-align: left;">Instant</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The AI Financial Briefing:</strong>
+CDO says: "Miracle, give me this week's executive financial brief."</p>
+<p>Miracle responds:</p>
+<blockquote>
+<p>"This week, Sovereign Yield stands at ৳4.2M — up 18% from last week driven by a 3-night surge in Royal Suite occupancy. F&amp;B contributed ৳620K, with the Gastronomy outlet leading at ৳380K. Spa services added ৳180K. Payroll ran at 28% of revenue — within policy. Two outstanding AR folios totaling ৳340K from corporate accounts remain open. Recommend triggering AR chase via Z-11 this afternoon."</p>
+</blockquote>
+<p>This is not a report — it is an intelligent briefing from an AGI that understands your business.</p>
+<hr />
+<h3>§11.10 Data Security Management</h3>
+<p><strong>Industries:</strong> All regulated industries — Healthcare (HIPAA), Finance (PCI-DSS), Government (ISO 27001), Hospitality (PCI)</p>
+<p>Miracle OS's security architecture (detailed in §5) provides defense-in-depth across all data categories:</p>
+<p><strong>Data Classification in Miracle OS:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Data Category</th>
+<th style="text-align: left;">Classification</th>
+<th style="text-align: left;">Protection Layer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Login credentials</td>
+<td style="text-align: left;">CRITICAL</td>
+<td style="text-align: left;">bcrypt hashing + JWT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Financial ledger entries</td>
+<td style="text-align: left;">IMMUTABLE</td>
+<td style="text-align: left;">Append-only, no DELETE</td>
+</tr>
+<tr>
+<td style="text-align: left;">Guest personal data (passport, NID)</td>
+<td style="text-align: left;">CONFIDENTIAL</td>
+<td style="text-align: left;">RBAC — FD/CDO only</td>
+</tr>
+<tr>
+<td style="text-align: left;">Staff biometric records</td>
+<td style="text-align: left;">RESTRICTED</td>
+<td style="text-align: left;">HR/CDO only</td>
+</tr>
+<tr>
+<td style="text-align: left;">AI query/response logs</td>
+<td style="text-align: left;">AUDIT</td>
+<td style="text-align: left;">Immutable + CDO review</td>
+</tr>
+<tr>
+<td style="text-align: left;">System error logs</td>
+<td style="text-align: left;">OPERATIONAL</td>
+<td style="text-align: left;">CDO/GM only (Z-23)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Policy and pricing data</td>
+<td style="text-align: left;">LOCKED</td>
+<td style="text-align: left;">Policy Lock mechanism</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Security Compliance Capabilities:</strong>
+- <strong>PCI-DSS:</strong> Card payment data (last 4 digits only stored — no full card numbers), payment network recorded, transaction audit trail
+- <strong>GDPR-equivalent:</strong> Guest data access controlled by RBAC; data deletion capability for right-to-be-forgotten requests
+- <strong>SOX-equivalent:</strong> Immutable financial ledger, night audit lock, dual-control for large disbursements
+- <strong>ISO 27001:</strong> Access logging, failed attempt detection, session timeout, IP whitelisting</p>
+<hr />
+<h3>§11.11 Hospital &amp; Healthcare Management</h3>
+<p><strong>Industries:</strong> Private Hospitals, Clinics, Diagnostic Centers, Rehabilitation Centers, Dental Chains, Nursing Homes</p>
+<p><strong>Primary Zones:</strong> Z-07 (Ward/Room Grid), Z-05 (Patient Admission), Z-09 (Medical Staff), Z-11 (Billing/Accounts), Z-12 (Medical Inventory), Z-16 (Issue Tickets), Z-19 (Policy Engine)</p>
+<p><strong>Zone Remapping for Healthcare:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Miracle OS Zone</th>
+<th style="text-align: left;">Healthcare Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Z-07 Command Grid</td>
+<td style="text-align: left;">Ward Management Grid — each card = a patient bed/room (ICU-01, Ward-A-12, etc.)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-05 Reservations</td>
+<td style="text-align: left;">Patient Admission Management — bed assignment, admission date, expected discharge</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-08 Checkout</td>
+<td style="text-align: left;">Patient Discharge Billing — all charges settled, insurance applied, discharge clearance</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-06 POS</td>
+<td style="text-align: left;">Pharmacy/Canteen/Auxiliary services billing</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-09 HR</td>
+<td style="text-align: left;">Medical staff rosters, doctor/nurse performance, payroll, credentialing documents</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-10 CRM</td>
+<td style="text-align: left;">Patient records, medical history, returning patient profiles, insurance details</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-11 Accounts</td>
+<td style="text-align: left;">Hospital billing, insurance claims aging, medical supply AP, payroll</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-12 Inventory</td>
+<td style="text-align: left;">Medical supplies, pharmaceuticals, surgical consumables (with FIFO tracking)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-16 Issue Tickets</td>
+<td style="text-align: left;">Clinical incident reporting, equipment faults, infection control alerts</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-17 Solve Portal</td>
+<td style="text-align: left;">Clinical staff task management — nurse assignments, equipment maintenance</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-18 Biometric</td>
+<td style="text-align: left;">Staff access control to restricted areas (ICU, Pharmacy, Surgery)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-19 Policy Engine</td>
+<td style="text-align: left;">Medical tariff schedules, insurance pricing, procedure rates</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-20 Synapse</td>
+<td style="text-align: left;">Clinical team communications, ward round coordination, department directives</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Patient Journey in Miracle OS:</strong>
+<code>Patient arrives → Z-LOGIN (AI collects: Name, ID, Insurance, Emergency contact)
+→ Z-05 (Bed/Room Assignment — admission date, department, attending physician)
+→ Z-07 (Ward Grid: Bed-ICU-01 → IN-HOUSE, cyan glow, patient name displayed)
+→ Treatment: Pharmacy dispenses medication → Z-06 POS → folio_charges
+→ Laboratory tests → Z-06 POS → folio_charges
+→ Surgical procedure → Z-06 POS → folio_charges (procedure code)
+→ Clinical incident → Z-16 Ticket (CRITICAL) → Z-17 nurse dispatch
+→ Discharge: Z-08 Settlement (Insurance applied, patient pays balance)
+→ Z-11: Insurance claim posted to AR, hospital revenue credited
+→ Z-10 CRM: Patient record updated, follow-up scheduled</code></p>
+<p><strong>Medical Inventory Control:</strong>
+- Controlled substances tracked with zero-tolerance variance
+- FIFO (First In, First Out) expiry tracking for pharmaceuticals
+- Low stock alerts for critical medications
+- BOM for surgical kits and procedure consumables</p>
+<hr />
+<h3>§11.12 Production + Supply + Distribution + After-Sales in One Kernel</h3>
+<p><strong>Industries:</strong> Manufacturing Companies, Consumer Goods, Industrial Equipment, Food Production, Textile Manufacturing, Pharmaceutical Production</p>
+<p><strong>This is the most powerful single-kernel deployment:</strong> Running the entire product lifecycle from raw material procurement through production, finished goods warehousing, distribution logistics, sales, and post-sale customer service — all in one Miracle OS kernel.</p>
+<p>```mermaid
+flowchart LR
+    subgraph PROCUREMENT["PROCUREMENT"]
+        A["Z-11 AP: Purchase Order\n→ Vendor Invoice"]
+        B["Z-12: Raw Material Receipt\n→ Stock In (Receiving Bay)"]
+    end</p>
+<pre><code>subgraph PRODUCTION["PRODUCTION"]
+    C["Z-29 (Gastronomy/Production)\nBOM: Raw → Finished Goods\nCOGS Calculated"]
+    D["Z-16: Production Issue Tickets\nEquipment fault\nQuality defects"]
+end
+
+subgraph WAREHOUSE["FINISHED GOODS WAREHOUSE"]
+    E["Z-12: Finished Goods Inventory\nSKU Management\nPAR Level Alerts"]
+end
+
+subgraph DISTRIBUTION["DISTRIBUTION"]
+    F["Z-06: Sales Order Processing"]
+    G["Z-26: Fleet — Delivery Assignment\nDriver + Vehicle + Route"]
+    H["Z-11 AR: Customer Invoice\nPayment Terms Tracking"]
+end
+
+subgraph AFTERSALES["AFTER-SALES"]
+    I["Z-10 CRM: Customer Profiles\nOrder History\nWarranty Records"]
+    J["Z-16: Customer Complaint Tickets\nReturn Merchandise Authorization"]
+    K["Z-17: Field Service Engineer\nDispatch + Resolution"]
+    L["Z-20 Synapse: Account Management\nCross-department coordination"]
+end
+
+subgraph INTELLIGENCE["AGI INTELLIGENCE LAYER"]
+    AI["Miracle Navigator\nProduction Yield Analytics\nDistribution Efficiency\nAfter-Sales NPS\nCustomer LTV\nFull P&amp;L"]
+end
+
+A --&gt; B --&gt; C --&gt; D
+C --&gt; E --&gt; F --&gt; G --&gt; H
+H --&gt; I --&gt; J --&gt; K --&gt; L
+AI --&gt; PROCUREMENT &amp; PRODUCTION &amp; DISTRIBUTION &amp; AFTERSALES
+
+style PROCUREMENT fill:#0d1a0d,color:#00FF88,stroke:#00FF88
+style PRODUCTION fill:#1a0d0d,color:#FF3131,stroke:#FF3131
+style WAREHOUSE fill:#0d0d1a,color:#00F2FF,stroke:#00F2FF
+style DISTRIBUTION fill:#1a1a0d,color:#D4AF37,stroke:#D4AF37
+style AFTERSALES fill:#0d1a1a,color:#9D00FF,stroke:#9D00FF
+style INTELLIGENCE fill:#0a0a0a,color:#FFF,stroke:#FFF
+</code></pre>
+<p>```</p>
+<p><strong>Zone-by-Zone Mapping:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Lifecycle Phase</th>
+<th style="text-align: left;">Miracle OS Zone</th>
+<th style="text-align: left;">Specific Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Raw Material Procurement</td>
+<td style="text-align: left;">Z-11 AP + Z-12</td>
+<td style="text-align: left;">Vendor management, PO tracking, goods receipt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Production Planning</td>
+<td style="text-align: left;">Z-20 Synapse</td>
+<td style="text-align: left;">Strategic directives, department task allocation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Production Execution</td>
+<td style="text-align: left;">Z-29 / Z-28</td>
+<td style="text-align: left;">BOM-based production, COGS calculation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Quality Control</td>
+<td style="text-align: left;">Z-16 + Z-17</td>
+<td style="text-align: left;">Defect reporting, QC team dispatch, resolution logging</td>
+</tr>
+<tr>
+<td style="text-align: left;">Finished Goods Storage</td>
+<td style="text-align: left;">Z-12</td>
+<td style="text-align: left;">Warehouse management, SKU tracking, PAR levels</td>
+</tr>
+<tr>
+<td style="text-align: left;">Order Processing</td>
+<td style="text-align: left;">Z-06 (POS)</td>
+<td style="text-align: left;">Sales order entry, pricing per Z-19 policy</td>
+</tr>
+<tr>
+<td style="text-align: left;">Delivery Logistics</td>
+<td style="text-align: left;">Z-26 Fleet</td>
+<td style="text-align: left;">Vehicle assignment, route management, proof of delivery</td>
+</tr>
+<tr>
+<td style="text-align: left;">Customer Invoicing</td>
+<td style="text-align: left;">Z-11 AR</td>
+<td style="text-align: left;">Invoice generation, payment terms, aging</td>
+</tr>
+<tr>
+<td style="text-align: left;">Customer Relations</td>
+<td style="text-align: left;">Z-10 CRM</td>
+<td style="text-align: left;">Customer database, order history, loyalty</td>
+</tr>
+<tr>
+<td style="text-align: left;">Customer Complaints</td>
+<td style="text-align: left;">Z-16 + Z-17</td>
+<td style="text-align: left;">Complaint ticket, RMA, field service dispatch</td>
+</tr>
+<tr>
+<td style="text-align: left;">Financial Reporting</td>
+<td style="text-align: left;">Z-11 Full</td>
+<td style="text-align: left;">Production P&amp;L, COGS %, margin analysis</td>
+</tr>
+<tr>
+<td style="text-align: left;">Staff Management</td>
+<td style="text-align: left;">Z-09 + Z-18</td>
+<td style="text-align: left;">Factory floor staff, shift management, payroll</td>
+</tr>
+<tr>
+<td style="text-align: left;">AGI Intelligence</td>
+<td style="text-align: left;">AI Navigator</td>
+<td style="text-align: left;">Full enterprise synthesis on demand</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The Power of One Kernel:</strong>
+Before Miracle OS, a manufacturing company would need: an ERP (SAP/Oracle) for procurement and production, a separate WMS (Warehouse Management System), a TMS (Transport Management System) for distribution, a CRM (Salesforce) for after-sales, and a standalone accounting system. Each costs $50,000–$500,000 per year in licensing, with 6–18 months of implementation time.</p>
+<p>Miracle OS delivers all of this in one sovereign deployment, in 10–25 working days.</p>
+<hr />
+<h2>§12. SMALL ENTERPRISE DEPLOYMENT GUIDE</h2>
+<p>Miracle OS is not exclusively for large enterprises. A small enterprise can deploy a curated subset of zones relevant to their specific operation.</p>
+<p><strong>Small Restaurant (5–20 staff):</strong>
+- Z-06 (POS), Z-12 (Inventory), Z-29 (F&amp;B), Z-09 (HR/Payroll), Z-11 (Accounting)
+- Full operational coverage for under 25% of a standard ERP cost</p>
+<p><strong>Small Hotel (10–30 rooms):</strong>
+- Z-07, Z-05, Z-06, Z-08, Z-09, Z-10, Z-11, Z-12, Z-19
+- Full PMS + POS + Accounting + CRM in one system</p>
+<p><strong>Small Clinic (1–5 doctors):</strong>
+- Z-05 (Patient Scheduling), Z-09 (Staff), Z-06 (Billing), Z-11 (Accounts), Z-10 (Patient CRM)
+- Replace standalone appointment + billing software</p>
+<p><strong>Retail Shop Chain:</strong>
+- Z-06 (POS), Z-12 (Inventory), Z-11 (Accounts), Z-09 (Staff)
+- Complete retail management with real-time financial reporting</p>
+<p>The Miracle OS AI Navigator adapts its intelligence to the deployed zone set — it knows which zones are active and only references them in its responses.</p>
+<hr />
+<h2>§13. EXPANSION ROADMAP &amp; FUTURE VISION</h2>
+<p>Miracle OS V66.0 is the current production standard. The following capabilities are on the sovereign roadmap:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Predictive Revenue Engine</td>
+<td style="text-align: left;">AI predicts next 30-day revenue based on reservation pipeline and historical patterns</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">OTA Channel Manager</td>
+<td style="text-align: left;">Direct integration with Booking.com, Expedia, Airbnb for automatic reservation ingest</td>
+<td style="text-align: left;">Architecture Complete</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multi-Currency Ledger</td>
+<td style="text-align: left;">True multi-currency accounting with live exchange rate conversion</td>
+<td style="text-align: left;">Partial (Currency display complete)</td>
+</tr>
+<tr>
+<td style="text-align: left;">IoT Sensor Integration</td>
+<td style="text-align: left;">Room sensor data (temperature, motion, water) → Z-07 signal matrix</td>
+<td style="text-align: left;">Research Phase</td>
+</tr>
+<tr>
+<td style="text-align: left;">Voice-First Interface</td>
+<td style="text-align: left;">Full voice control of all 24 zones via Miracle AI (no touchscreen required)</td>
+<td style="text-align: left;">TTS/STT Complete</td>
+</tr>
+<tr>
+<td style="text-align: left;">AGI Predictive Maintenance</td>
+<td style="text-align: left;">AI analyzes ticket patterns and predicts equipment failures before they occur</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Blockchain Audit Trail</td>
+<td style="text-align: left;">Ledger entries hashed to a public blockchain for irrefutable financial proof</td>
+<td style="text-align: left;">Research Phase</td>
+</tr>
+<tr>
+<td style="text-align: left;">WhatsApp Business Integration</td>
+<td style="text-align: left;">Full WhatsApp bot for guest ordering, front desk requests, and marketing</td>
+<td style="text-align: left;">WA Gateway Operational</td>
+</tr>
+<tr>
+<td style="text-align: left;">Advanced Analytics Dashboard</td>
+<td style="text-align: left;">Dedicated BI zone with charts, heat maps, trend analysis</td>
+<td style="text-align: left;">Planned</td>
+</tr>
+<tr>
+<td style="text-align: left;">Group Consolidation Engine</td>
+<td style="text-align: left;">Full multi-property consolidated P&amp;L with elimination entries</td>
+<td style="text-align: left;">Architecture Planned</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>APPENDIX A: IRON LAWS SUMMARY</h2>
+<p>Miracle OS operates under 51 documented Iron Laws. Below are the most critical:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Iron Law</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Iron Law 1</td>
+<td style="text-align: left;">AI maintains Sovereign Navigator persona at all times</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 2</td>
+<td style="text-align: left;">VISITOR can view everything but execute nothing</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 10</td>
+<td style="text-align: left;">AI Brevity: 4–5 lines standard, 10 lines maximum</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 26</td>
+<td style="text-align: left;">Pure SQL Delegation — AI never invents business data</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 31</td>
+<td style="text-align: left;">MiracleBot is a singleton — one instance across all routes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 32</td>
+<td style="text-align: left;">Frontend never calls api.vigilantitsolution.com directly</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 33</td>
+<td style="text-align: left;">Database schema changes require ALTER TABLE via genesis.py</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 37</td>
+<td style="text-align: left;">VPS MTU set to 1350 to prevent SSH packet fragmentation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 38</td>
+<td style="text-align: left;">All deploy scripts use paramiko, not subprocess SSH</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 46</td>
+<td style="text-align: left;">PM2 restart before diagnosing any zone blindness symptom</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 47</td>
+<td style="text-align: left;">miracle_kernel.json is a flat array — never a dictionary</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 50</td>
+<td style="text-align: left;">MiracleBot is NEVER loaded in /guest/* WebView</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iron Law 51</td>
+<td style="text-align: left;">Capacitor APK uses localStorage auth — never cookies</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>APPENDIX B: TECHNOLOGY STACK COMPLETE REFERENCE</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Frontend Framework</td>
+<td style="text-align: left;">Next.js</td>
+<td style="text-align: left;">16.1.6</td>
+<td style="text-align: left;">App Router, SSR, Static Gen</td>
+</tr>
+<tr>
+<td style="text-align: left;">UI Language</td>
+<td style="text-align: left;">TypeScript</td>
+<td style="text-align: left;">5.x</td>
+<td style="text-align: left;">Type safety</td>
+</tr>
+<tr>
+<td style="text-align: left;">Build Tool</td>
+<td style="text-align: left;">Turbopack</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">88-second builds</td>
+</tr>
+<tr>
+<td style="text-align: left;">CSS</td>
+<td style="text-align: left;">Vanilla CSS + Custom Properties</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Glassmorphism design system</td>
+</tr>
+<tr>
+<td style="text-align: left;">Backend Framework</td>
+<td style="text-align: left;">FastAPI</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">REST + WebSocket</td>
+</tr>
+<tr>
+<td style="text-align: left;">Backend Language</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: left;">3.12</td>
+<td style="text-align: left;">All server logic</td>
+</tr>
+<tr>
+<td style="text-align: left;">ORM</td>
+<td style="text-align: left;">SQLAlchemy</td>
+<td style="text-align: left;">2.0</td>
+<td style="text-align: left;">Database abstraction</td>
+</tr>
+<tr>
+<td style="text-align: left;">Auth</td>
+<td style="text-align: left;">python-jose (JWT)</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">Token authentication</td>
+</tr>
+<tr>
+<td style="text-align: left;">Password Hashing</td>
+<td style="text-align: left;">passlib (bcrypt)</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">Credential security</td>
+</tr>
+<tr>
+<td style="text-align: left;">Process Manager</td>
+<td style="text-align: left;">PM2</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">Production uptime</td>
+</tr>
+<tr>
+<td style="text-align: left;">Web Server</td>
+<td style="text-align: left;">Nginx</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">SSL + Reverse Proxy</td>
+</tr>
+<tr>
+<td style="text-align: left;">ASGI Server</td>
+<td style="text-align: left;">Uvicorn</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">Async Python server</td>
+</tr>
+<tr>
+<td style="text-align: left;">Primary Database</td>
+<td style="text-align: left;">MySQL</td>
+<td style="text-align: left;">8.x</td>
+<td style="text-align: left;">Production data store</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dev Database</td>
+<td style="text-align: left;">SQLite</td>
+<td style="text-align: left;">3.x</td>
+<td style="text-align: left;">Local development</td>
+</tr>
+<tr>
+<td style="text-align: left;">AI: Primary</td>
+<td style="text-align: left;">Google Gemini 1.5 Flash</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">Language synthesis</td>
+</tr>
+<tr>
+<td style="text-align: left;">AI: Fallback</td>
+<td style="text-align: left;">Groq Llama 3.3 70B</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">Zero-latency fallback</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mobile</td>
+<td style="text-align: left;">Capacitor.js</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">Android APK wrapper</td>
+</tr>
+<tr>
+<td style="text-align: left;">Real-time</td>
+<td style="text-align: left;">Native WebSocket</td>
+<td style="text-align: left;">Browser API</td>
+<td style="text-align: left;">Grid sync</td>
+</tr>
+<tr>
+<td style="text-align: left;">Video Conf</td>
+<td style="text-align: left;">WebRTC</td>
+<td style="text-align: left;">Browser API</td>
+<td style="text-align: left;">P2P video (Z-20)</td>
+</tr>
+<tr>
+<td style="text-align: left;">SSH Deploy</td>
+<td style="text-align: left;">Paramiko</td>
+<td style="text-align: left;">Latest</td>
+<td style="text-align: left;">Windows-to-VPS deploy</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fonts</td>
+<td style="text-align: left;">Google Fonts</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Cinzel, Inter</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hosting</td>
+<td style="text-align: left;">Hetzner VPS</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">23.88.50.87</td>
+</tr>
+<tr>
+<td style="text-align: left;">CDN/DNS</td>
+<td style="text-align: left;">cPanel</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">148.251.78.240</td>
+</tr>
+<tr>
+<td style="text-align: left;">SSL</td>
+<td style="text-align: left;">Let's Encrypt</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">HTTPS + WSS</td>
+</tr>
+<tr>
+<td style="text-align: left;">Source Control</td>
+<td style="text-align: left;">Git / GitHub</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">milkbaqara-code/miracle-os-master</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>This document is the intellectual property of Vigilant IT Solutions. All architectural details, zone designs, AI models, and system structures described herein are proprietary to Vigilant IT Solutions. Unauthorized reproduction or distribution is prohibited.</em></p>
+<p><strong>MIRACLE OS SOVEREIGN BIBLE — V1.0</strong><br />
+<strong>Vigilant IT Solutions — 2026</strong><br />
+<strong>"Engineering Success. Engineering the Future."</strong></p></body></html>

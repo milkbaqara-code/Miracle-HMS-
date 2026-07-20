@@ -1,0 +1,61 @@
+
+> web@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.production
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.9s
+  Running TypeScript ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/34) ...
+  Generating static pages using 1 worker (8/34) 
+  Generating static pages using 1 worker (16/34) 
+  Generating static pages using 1 worker (25/34) 
+✓ Generating static pages using 1 worker (34/34) in 478.0ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /dashboard
+├ ○ /dashboard/accounts
+├ ○ /dashboard/admin
+├ ○ /dashboard/audit-ledger
+├ ○ /dashboard/checkout
+├ ○ /dashboard/crm
+├ ○ /dashboard/guest
+├ ○ /dashboard/guest-marketing
+├ ○ /dashboard/hr
+├ ○ /dashboard/infrastructure
+├ ○ /dashboard/inventory
+├ ○ /dashboard/issue-tickets
+├ ○ /dashboard/media-lab
+├ ○ /dashboard/policy
+├ ○ /dashboard/portal
+├ ○ /dashboard/pos
+├ ○ /dashboard/pos-admin
+├ ○ /dashboard/reservations
+├ ○ /dashboard/settings
+├ ○ /dashboard/solve
+├ ○ /guest
+├ ○ /guest/cinema
+├ ○ /guest/concierge
+├ ○ /guest/ecommerce
+├ ○ /guest/folio
+├ ○ /guest/hub
+├ ○ /guest/order
+├ ○ /guest/profile
+├ ○ /guest/reserve
+└ ○ /privacy
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)  prerendered as static content
+
+
+
+--- STDERR ---
+

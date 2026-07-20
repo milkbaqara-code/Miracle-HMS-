@@ -1,0 +1,45 @@
+{
+  "apps": [
+    {
+      "name": "miracle-backend",
+      "script": "python",
+      "args": "-m uvicorn backend_api.app.main:app --host 0.0.0.0 --port 8000",
+      "cwd": "d:/Vigilant IT Solutions/Miracle_HMS",
+      "autorestart": true,
+      "watch": false,
+      "env": { "PYTHONIOENCODING": "utf-8" },
+      "log_file": "logs/backend.log",
+      "error_file": "logs/backend-error.log",
+      "time": true
+    },
+    {
+      "name": "miracle-brain-sync",
+      "script": "python",
+      "args": "train_miracle_ai.py --watch",
+      "cwd": "d:/Vigilant IT Solutions/Miracle_HMS",
+      "interpreter": "none",
+      "autorestart": true,
+      "restart_delay": 5000,
+      "max_restarts": 10,
+      "env": { "PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1" },
+      "log_file": "logs/brain-sync.log",
+      "error_file": "logs/brain-sync-error.log",
+      "time": true
+    },
+    {
+      "name": "miracle-sentinel",
+      "script": "python",
+      "args": "backend_api/app/core/ops_sentinel.py",
+      "cwd": "d:/Vigilant IT Solutions/Miracle_HMS",
+      "interpreter": "none",
+      "autorestart": true,
+      "restart_delay": 10000,
+      "max_restarts": 20,
+      "env": { "PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1" },
+      "log_file": "logs/sentinel.log",
+      "error_file": "logs/sentinel-error.log",
+      "time": true,
+      "description": "Self-questioning AI brain. Scans audit logs, asks self-questions, validates DB consistency. Never sleeps. 0 LLM tokens."
+    }
+  ]
+}

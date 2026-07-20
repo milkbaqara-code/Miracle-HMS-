@@ -1,0 +1,178 @@
+
+> web@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.production
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.1s
+  Running TypeScript ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/34) ...
+  Generating static pages using 1 worker (8/34) 
+  Generating static pages using 1 worker (16/34) 
+  Generating static pages using 1 worker (25/34) 
+✓ Generating static pages using 1 worker (34/34) in 504.6ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /dashboard
+├ ○ /dashboard/accounts
+├ ○ /dashboard/admin
+├ ○ /dashboard/audit-ledger
+├ ○ /dashboard/checkout
+├ ○ /dashboard/crm
+├ ○ /dashboard/guest
+├ ○ /dashboard/guest-marketing
+├ ○ /dashboard/hr
+├ ○ /dashboard/infrastructure
+├ ○ /dashboard/inventory
+├ ○ /dashboard/issue-tickets
+├ ○ /dashboard/media-lab
+├ ○ /dashboard/policy
+├ ○ /dashboard/portal
+├ ○ /dashboard/pos
+├ ○ /dashboard/pos-admin
+├ ○ /dashboard/reservations
+├ ○ /dashboard/settings
+├ ○ /dashboard/solve
+├ ○ /guest
+├ ○ /guest/cinema
+├ ○ /guest/concierge
+├ ○ /guest/ecommerce
+├ ○ /guest/folio
+├ ○ /guest/hub
+├ ○ /guest/order
+├ ○ /guest/profile
+├ ○ /guest/reserve
+└ ○ /privacy
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)  prerendered as static content
+
+
+
+Use --update-env to update environment variables
+[PM2] Applying action restartProcessId on app [miracle-frontend](ids: [ 10 ])
+[PM2] [miracle-frontend](10) ✓
+┌────┬─────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name                │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼─────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 6  │ miracle-backend     │ default     │ N/A     │ fork    │ 539403   │ 2h     │ 27   │ online    │ 0%       │ 110.8mb  │ root     │ disabled │
+│ 10 │ miracle-frontend    │ default     │ N/A     │ fork    │ 564924   │ 0s     │ 35   │ online    │ 0%       │ 18.5mb   │ root     │ disabled │
+│ 2  │ wa-gateway          │ default     │ 1.0.0   │ fork    │ 564887   │ 0      │ 352… │ waiting … │ 0%       │ 0b       │ root     │ disabled │
+└────┴─────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+
+[TAILING] Tailing last 50 lines for [miracle-frontend] process (change the value with --lines option)
+/root/.pm2/logs/miracle-frontend-error.log last 50 lines:
+10|miracle | }
+10|miracle | Error: ENOENT: no such file or directory, open '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle |     at ignore-listed frames {
+10|miracle |   errno: -2,
+10|miracle |   code: 'ENOENT',
+10|miracle |   syscall: 'open',
+10|miracle |   path: '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle | }
+10|miracle | Error: ENOENT: no such file or directory, open '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle |     at ignore-listed frames {
+10|miracle |   errno: -2,
+10|miracle |   code: 'ENOENT',
+10|miracle |   syscall: 'open',
+10|miracle |   path: '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle | }
+10|miracle | Error: ENOENT: no such file or directory, open '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle |     at ignore-listed frames {
+10|miracle |   errno: -2,
+10|miracle |   code: 'ENOENT',
+10|miracle |   syscall: 'open',
+10|miracle |   path: '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle | }
+10|miracle | Error: ENOENT: no such file or directory, open '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle |     at ignore-listed frames {
+10|miracle |   errno: -2,
+10|miracle |   code: 'ENOENT',
+10|miracle |   syscall: 'open',
+10|miracle |   path: '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle | }
+10|miracle | Error: ENOENT: no such file or directory, open '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle |     at ignore-listed frames {
+10|miracle |   errno: -2,
+10|miracle |   code: 'ENOENT',
+10|miracle |   syscall: 'open',
+10|miracle |   path: '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle | }
+10|miracle | Error: ENOENT: no such file or directory, open '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle |     at ignore-listed frames {
+10|miracle |   errno: -2,
+10|miracle |   code: 'ENOENT',
+10|miracle |   syscall: 'open',
+10|miracle |   path: '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle | }
+10|miracle | Error: ENOENT: no such file or directory, open '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle |     at ignore-listed frames {
+10|miracle |   errno: -2,
+10|miracle |   code: 'ENOENT',
+10|miracle |   syscall: 'open',
+10|miracle |   path: '/home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com/.next/prerender-manifest.json'
+10|miracle | }
+
+/root/.pm2/logs/miracle-frontend-out.log last 50 lines:
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | ✓ Ready in 422ms
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | ✓ Ready in 488ms
+
+
+

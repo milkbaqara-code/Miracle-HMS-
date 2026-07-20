@@ -1,0 +1,905 @@
+{
+  "version": "V66.0-SOVEREIGN-SRE",
+  "system_name": "Miracle OS",
+  "_ai_note": "MASTER ZONE INTELLIGENCE MAP — Built from live source code audit 2026-05-02. Every zone, every tab, every feature documented precisely. AI must use this as the single source of truth for all navigation questions.",
+  "zones": [
+    {
+      "id": "Z-07",
+      "name": "Command Grid",
+      "path": "/dashboard",
+      "icon": "🖥️",
+      "sidebar_label": "COMMAND GRID",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Provide a sharp, confident executive briefing on Command Grid operations.",
+      "ai_knowledge": "ZONE 07 — MASTER COMMAND GRID (The God View). This is the operational nerve centre — the first screen after login.\n\nWHAT YOU SEE: A responsive card grid showing ALL rooms (typically 30). Each card is a live snapshot of one room.\n\nROOM CARD DETAILS:\n  - Room number prominently displayed\n  - Guest name (if occupied) or 'AVAILABLE'\n  - Current nightly rate from Policy Engine\n  - Folio balance (running total of all charges)\n  - Active issue ticket count badge\n  - VIP YIELD ribbon (gold shimmer) for rooms earning above threshold\n\nROOM STATUS COLOURS:\n  AVAILABLE = grey/dark (click to RESERVE or CHECK-IN)\n  RESERVED = pulsing amber/gold (booking locked, guest expected)\n  IN-HOUSE = neon cyan glow (guest currently staying)\n  DIRTY = purple tint (needs housekeeping before next guest)\n  MAINTENANCE = amber (blocked, under repair)\n  ALARM = red strobe (urgent action needed)\n\nTOP TELEMETRY BAR: Shows count of ALL / ALARMS / DIRTY / MAINTENANCE rooms.\n\nACTIONS ON EACH CARD:\n  CHECK-IN: Opens immediate check-in for walk-in guests\n  RESERVE: Locks room for a future booking\n  ADD CHARGE: Opens POS to add a charge to the guest's folio\n  FOLIO: Opens the guest's full bill/settlement screen (Checkout Zone)\n  RESOLVE FRACTURE / RESOLVE: Opens the Solve portal to action the issue ticket for that room\n  IMPORTANT: When a room is IN-HOUSE and also has active tickets, BOTH the FOLIO button and a RESOLVE button appear SIDE BY SIDE on the same card. The AI must NEVER direct staff to CRM (Guest Loyalty) to view a folio or check revenue. FOLIO always routes to /dashboard/checkout. RESOLVE always routes to /dashboard/solve. They are independent and simultaneous.\n\nGLOBAL ACTIONS:\n  PULSE SYNC DATA: Force-refreshes all cards from PostgreSQL database in real-time\n  SIGN OFF DUTY: Logs the current staff member off their shift\n  DISCONNECT SESSION: Full logout from Miracle OS\n\nDATA FLOW: This grid pulls from asset_grid, active_occupancy, reservations, and solve_missions tables simultaneously.\nDhaka Pulse marquee at the top shows live time across 5 cities.\n\n[EXACT UI BUTTONS: PULSE SYNC DATA, CHECK-IN, RESERVE, PUSH CHECK-IN, ADD CHARGE, FOLIO, RESOLVE FRACTURE, RESOLVE, ASSIGN HK, INSPECT, WORK ORDER, FORCE CLEAR, SIGN OFF DUTY, DISCONNECT SESSION]"
+    },
+    {
+      "id": "Z-05",
+      "name": "Reservations",
+      "path": "/dashboard/reservations",
+      "icon": "📅",
+      "sidebar_label": "RESERVATIONS",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FD",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Direct the guest arrival logistics and booking tape chart with executive precision.",
+      "ai_knowledge": "ZONE 05 — GLOBAL RESERVATION TAPE (Booking Engine).\n\nTAB 1 — LIVE RESERVATIONS (The Tape Chart):\n  A 45-day horizontal Gantt-style chart — rooms on Y-axis, dates on X-axis.\n  Each row is one room. Coloured blocks show existing bookings.\n  Click any EMPTY cell = opens the booking panel for that room and date.\n  BOOKING FORM FIELDS: Guest Name (passport legal name), Phone/WhatsApp, NID/Passport number, Number of Nights, Room.\n  PAYMENT OPTIONS AT BOOKING:\n    RESERVE (future, no payment yet) — creates reservation with RESERVED status\n    QUICK WALK-IN CASH — immediate check-in, cash collected\n    SWIPE VISA / MASTERCARD / AMEX — card payment at terminal\n  Auto-calculates: nightly rate × nights + 10% service charge + 15% VAT = total yield.\n  Overstay detection: red banner appears when a guest's checkout date has passed.\n  WALK-IN SYNC button: backfills any missing in-house guests from the database.\n\nTAB 2 — VIP CRM VAULT:\n  Full searchable database of all registered guests.\n  Each guest record shows: Full Name, VIP Tier (Bronze/Silver/Gold/Platinum), Lifetime Value (LTV), Loyalty Coins, Phone, Email.\n  Actions: WhatsApp push button, Email button, view full booking history.\n  VIRAL GUEST APP DISTRIBUTION: Send APK download link via WhatsApp to any guest.\n\nIMPORTANT: Room BASE RATES are set in Policy Engine (Z-19), not here. This zone uses them for calculation.\n\n[EXACT UI BUTTONS: LIVE RESERVATIONS, VIP CRM VAULT, AUTHORIZE & LOCK GRID (RESERVATION), RESERVE, QUICK WALK-IN CASH, SWIPE VISA/MASTERCARD/AMEX, EXECUTE PHYSICAL CHECK-IN, WALK-IN SYNC]"
+    },
+    {
+      "id": "Z-06",
+      "name": "POS / Retail",
+      "path": "/dashboard/pos",
+      "icon": "🛒",
+      "sidebar_label": "POS / RETAIL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "POS",
+        "SPA",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Advise on revenue optimization and POS commerce with corporate authority.",
+      "ai_knowledge": "ZONE 06 — POS MATRIX (Point of Sale — Restaurant, Spa, Retail).\n\nHOW IT WORKS:\n  1. Staff select a PRODUCT from the scrollable product grid (organized by category)\n  2. Use + / - to set quantity, then ADD TO CART\n  3. Cart shows all items with subtotal, VAT (15%), service charge (10%), and grand total\n  4. Choose payment method:\n     ROOM CHARGE: Posts to the guest's open folio (ONLY works if guest is IN-HOUSE — prevents revenue leakage)\n     CASH / CARD: Direct payment at terminal\n\nPRODUCT CATEGORIES: Food & Beverage, Spa Treatments, Shop items, Minibar.\nBarcode scanning is supported for shop/inventory items.\n\nAUTO-INTEGRATIONS (happens automatically on every sale):\n  → Inventory deducted: Ingredients/items deducted from Inventory Vault (Z-12) instantly\n  → Ledger posted: Double-entry posted to Accounts (Z-11) as CREDIT to F&B Revenue\n  → Folio updated: If room charge, guest's folio balance increases immediately\n\nPOS ADMIN (separate Z-POSADMIN): CDO-only panel to manage product prices, categories, add/remove items.\nTo set product prices, go to Inventory (Z-12) or POS Admin.\n\n[EXACT UI BUTTONS: ROOM CHARGE, ADD TO CART, +, -, VOID CART, NEXT, PREV, PUSHING..., PROCESSING...]"
+    },
+    {
+      "id": "Z-25",
+      "name": "Guest Marketing",
+      "path": "/dashboard/guest-marketing",
+      "icon": "📱",
+      "sidebar_label": "GUEST MARKETING",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Architect the digital bridge between our physical habitat and guest companions.",
+      "ai_knowledge": "ZONE 25 — GUEST MARKETING ENGINE.\n\nPURPOSE: Digital marketing and guest app distribution hub.\n\nFEATURES:\n  APK DISTRIBUTION: The Miracle OS Guest App APK is available at https://miracle.vigilantitsolution.com/downloads/MiracleOS-GuestApp.apk.\n  WhatsApp Blast: Send the APK download link to any guest's WhatsApp in one tap.\n  PROMOTIONAL BROADCASTS: Create and send promotional offers to guest segments (VIP, all guests, specific dates).\n  LOYALTY COIN CAMPAIGNS: Issue bonus coins as promotional incentives.\n  ANALYTICS: View how many guests downloaded the app, engagement rates.\n\nGUEST APP FEATURES (what guests can do in the app):\n  Request room service, order food from the menu, view real-time folio balance,\n  redeem loyalty coins, communicate with front desk, check out.\n  All guest app requests flow directly to Command Grid (Z-07) and Solve Portal (Z-17).\n\n[EXACT UI BUTTONS: EXECUTE PUSH, CONSTRUCT NEW OFFER BROADCAST, PROMOS, DISTRIBUTION, ANALYTICS]"
+    },
+    {
+      "id": "Z-08",
+      "name": "Checkout/Billing",
+      "path": "/dashboard/checkout",
+      "icon": "💳",
+      "sidebar_label": "CHECKOUT/BILLING",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FD",
+        "POS",
+        "SPA",
+        "ACC",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Control final settlements and folio closures with financial dominance.",
+      "ai_knowledge": "ZONE 08 — FINANCIAL SETTLEMENT (Checkout & Billing).\n\nHOW TO CHECK OUT A GUEST:\n  1. Search for the guest by name or room number — their full folio loads\n  2. FOLIO DISPLAY: All itemised charges shown — room nights, F&B, spa, extras, advance deposit\n  3. BALANCE = Total charges - Advance deposit already paid\n  4. Select payment method(s): CASH, VISA, MASTERCARD, AMEX\n  5. Apply discount if authorised (hard rule: discount cannot exceed total bill)\n  6. Split-bill: Can split across multiple payment methods\n  7. Click CHECKOUT & SETTLE FOLIO\n\nWHAT HAPPENS ON CHECKOUT:\n  → Accounts (Z-11): Double-entry posted — credits Advance Deposit liability, debits Cash/Revenue\n  → Room status: Changes to DIRTY automatically, triggering housekeeping\n  → Folio: Locked as SETTLED, history preserved in CRM\n  → Guest loyalty coins: Calculated and added to guest CRM profile\n\nDEEP RE-SYNC: Force-pulls latest folio data from database if display seems stale.\nAWAITING TERMINAL SWIPE: Status indicator when card terminal is processing.\n\nRULE: Cannot checkout if outstanding balance > 0 without a payment method selected.\n\n[EXACT UI BUTTONS: DEEP RE-SYNC, AWAITING TERMINAL SWIPE..., VISA, MASTERCARD, AMEX, CASH, CHECKOUT & SETTLE FOLIO]"
+    },
+    {
+      "id": "Z-16",
+      "name": "Issue Tickets",
+      "path": "/dashboard/issue-tickets",
+      "icon": "📢",
+      "sidebar_label": "ISSUE TICKETS",
+      "permissions": [
+        "ANY"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Dispatch service missions and maintenance tickets with operational authority.",
+      "ai_knowledge": "ZONE 16 — ISSUE TICKETS (Fault Reporting Hub).\n\nPURPOSE: Any staff member can raise a complaint or fault ticket from any zone. This zone is the central view.\n\nHOW TO RAISE A TICKET:\n  Fill in: Room/Area, Department responsible, Subject/Description, Priority (LOW/MEDIUM/HIGH/CRITICAL).\n  Assign to: Specific staff member or department.\n  Submit → Ticket created with unique ID, timestamp, status OPEN.\n\nTICKET STATES: OPEN → IN-PROGRESS → RESOLVED → CLOSED.\nRESOLVE FRACTURE on Command Grid (Z-07) room cards links directly to the ticket for that room.\n\nDATA SOURCE: solve_missions table. SQL: SELECT * FROM solve_missions WHERE status != 'CLOSED' ORDER BY priority DESC.\n\n[EXACT UI BUTTONS: RAISE TICKET, RESOLVE, ASSIGN, FILTER BY PRIORITY, FILTER BY DEPT]"
+    },
+    {
+      "id": "Z-17",
+      "name": "Solve (Staff)",
+      "path": "/dashboard/solve",
+      "icon": "🛠️",
+      "sidebar_label": "SOLVE (STAFF)",
+      "permissions": [
+        "ANY"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Orchestrate the resolution of field missions to preserve habitat integrity.",
+      "ai_knowledge": "ZONE 17 — SOLVE PORTAL (Staff Action Terminal).\n\nPURPOSE: Staff-facing task management. Shows all assigned tickets for the logged-in staff member.\nStaff can: view their assigned tasks, update status to IN-PROGRESS, mark as RESOLVED with notes.\nCDO view: Can see ALL tickets across all departments, override assignments, and close tickets.\nLinked directly to Issue Tickets (Z-16) — same data, different role-filtered view.\n\n[EXACT UI BUTTONS: MARK IN-PROGRESS, RESOLVE WITH NOTES, REASSIGN, VIEW ALL (CDO only)]"
+    },
+    {
+      "id": "Z-20",
+      "name": "Synapse Nexus",
+      "path": "/dashboard/synapse",
+      "icon": "⚡",
+      "sidebar_label": "SYNAPSE NEXUS",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR",
+        "SYNAPSE"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Supreme commander of the Synapse Nexus War Room. Orchestrate directives, communications, and strategic execution.",
+      "ai_knowledge": "ZONE 20 — SOVEREIGN SYNAPSE NEXUS (Strategic Command, Communication & Execution Matrix).\n\nPURPOSE: The enterprise War Room. Combines HR org-chart, strategic task management, real-time P2P video conferencing, and the Corporate Matrix (Synapse Command Grid). Goes beyond Jira and Teams — it physically models the HR hierarchy and links strategic directives directly to field tickets and departmental neon signals.\n\nPANEL 1 — NEURAL TREE (Left): Live HR org-chart built from the Employee registry. CEO > Director > Manager > Operative hierarchy. ON-DUTY staff glow neon green. OFFLINE staff are dimmed. Click any node to open a radial action menu: VIDEO CALL, VOICE LINK, SEND SECURE FILE, ASSIGN DIRECTIVE.\n\nPANEL 2 — WAR ROOM KANBAN & COMMAND GRID (Center): Dual-view matrix. \n  VIEW A (KANBAN): Strategic Directives board with 4 columns: BACKLOG | ACTIVE | REVIEW | SECURED.\n  VIEW B (COMMAND GRID): Large Neon Glass Tiles for every Department (IT, HR, ACCOUNTS) and Corporate Area (POOL, SPA, BOARDROOM). Mimics the Z-07 Room Grid. When a directive node is assigned to a department, the corresponding tile pulses with a Cyan Neon glow and shows a badge (e.g., [3] pending). Multi-department tasks split into Nodes via the AGI Arbitrator, triggering multiple department pulses simultaneously.\n\nPANEL 3 — COMM-LINK (WebRTC): Click VIDEO CALL on any org-chart node to open the Conference Modal — a frosted glass overlay that slides in from the top. Multi-participant video grid. Controls: MUTE, CAM OFF, HANG UP. SOVEREIGN FREQUENCIES: Persistent voice channels (HK Frequency 1, Maintenance Channel, Management Room) — click to jack in.\n\nSECURE FILE EXCHANGE: Drop a PDF/file onto the War Room canvas. It routes to the selected operative's feed as a glowing Data Chip. Full audit trail logged.\n\nDATA SOURCES: /api/synapse/org-chart (HR tree), /api/synapse/directives (Kanban), /api/synapse/webrtc/create-room (conference), WS /ws/synapse/signal/{room_id} (P2P signaling).\n\n[EXACT UI BUTTONS: NEW DIRECTIVE, ASSIGN DIRECTIVE, SPAWN TO Z-16, VIDEO CALL, VOICE LINK, SEND SECURE FILE, HANG UP, MUTE, CAM OFF, JACK IN, RUN PAYROLL, TOGGLE COMMAND GRID]"
+    },
+    {
+      "id": "Z-18",
+      "name": "Biometric Portal",
+      "path": "/dashboard/portal",
+      "icon": "👁️",
+      "sidebar_label": "BIOMETRIC PORTAL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "HR",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Guard the boundaries of the ecosystem with biometric security precision.",
+      "ai_knowledge": "ZONE 18 — BIOMETRIC SECURITY LAYER. Manages staff attendance via biometric sync. Shows login session history including: staff name, login time, logout time, zone accessed, and outcome (SUCCESS or FAILED). Failed login attempts are flagged. Prevents unauthorized access to restricted zones. Biometric shift data feeds directly into HR (Z-09) for payroll calculation — only verified biometric hours count toward salary. The session logs are immutable and feed into the Accounts audit trail (Z-11). [EXACT UI BUTTONS: MAPPING PORT..., VERIFY LOGIN]"
+    },
+    {
+      "id": "Z-12",
+      "name": "Inventory Matrix",
+      "path": "/dashboard/inventory",
+      "icon": "📦",
+      "sidebar_label": "INVENTORY MATRIX",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "POS",
+        "HK",
+        "MN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Custodian of the inventory vault and essential resort resources.",
+      "ai_knowledge": "ZONE 12 — INVENTORY MATRIX (Stock Control Vault).\n\nPURPOSE: Tracks every physical item in the resort — F&B ingredients, spa supplies, minibar items, retail shop products.\n\nWHAT IT SHOWS:\n  Product grid with: Product ID, Name, Category, Department, Current Stock, Minimum Level (reorder point), Purchase Price (PP), Retail Price (RP).\n  LOW STOCK ALERT: Items below minimum level flash red — triggers a predictive reorder warning.\n  ASYNC SYNC INVENTORY: Forces immediate sync from all POS deductions (ensures stock count matches reality after a busy period).\n\nHOW STOCK MOVES:\n  Every POS sale auto-deducts matched ingredients from stock.\n  Manual stock-in: Add received goods manually with quantity and purchase price.\n  Variance: If physical count differs from system count, log discrepancy here.\n\nBOM (Bill of Materials): For F&B items, each menu item has a recipe — when a dish is sold, all ingredient quantities are deducted automatically.\n\nDATA SOURCE: inventory table. SQL: SELECT * FROM inventory WHERE stock < min_level for reorder report.\n\n[EXACT UI BUTTONS: ASYNC SYNC INVENTORY, ADD STOCK, EDIT ITEM, DELETE ITEM, LOW STOCK FILTER]"
+    },
+    {
+      "id": "Z-09",
+      "name": "HR / Personnel",
+      "path": "/dashboard/hr",
+      "icon": "👥",
+      "sidebar_label": "HR / PERSONNEL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "HR",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Curator of human capital, performance, and operational ROI.",
+      "ai_knowledge": "ZONE 09 — HUMAN CAPITAL COMMAND (HR Panel). Full staff lifecycle management.\n\nTABS:\n  TAB: GALLERY — Visual biometric card grid of all staff operatives.\n    Each card shows: Photo/Avatar, Name, Job Title, Status (ON-DUTY/OFFLINE/TERMINATED), ROI score, Efficiency %.\n    Click any card → opens full DOSSIER OVERLAY with all financial and performance data.\n    From dossier: Generate Payslip, Generate Appointment Letter, Update avatar photo.\n\n  TAB: PERFORMANCE — Analytics table showing:\n    Operative name, Base Salary, Revenue Impact (what revenue they generated), Efficiency %, ROI Factor.\n    Data source: /api/hr/performance-matrix endpoint, pulling from employees table.\n\n  TAB: PAYROLL — Payroll execution table:\n    Shows each staff member's Monthly Hours, Total Payout (Base + Commission on revenue).\n    PUSH TO ACCOUNTS & INBOX button: Executes payroll for individual staff — posts to Accounts (Z-11) as DEBIT Payroll Expense and generates payslip document.\n    Total Payroll Liability shown in top-right chip.\n\n  TAB: DOCUMENTS — Document management:\n    DUBAI 5-STAR VAULT: Library of uploaded SOPs, Handbooks, Policies. Upload PDF/DOCX.\n    APPOINTMENT LETTER FORGE: Auto-generates appointment letters for any staff member in the MANTALA WORD MODULE editor.\n    MANTALA WORD MODULE: In-browser rich text editor — edit, save draft, print/export to PDF.\n\n  TAB: ONBOARDING — New staff registration:\n    Form fields: First Name, Last Name, Designation, Department (HK/MN/FD/POS/SPA/IT/AUDIT/SEC), Access Zone (RBAC checkboxes), Base Salary, Commission Rate %.\n    Upload PERSONAL AVATAR (UI display image) and BIOMETRIC SCAN (fingerprint/retina image).\n    On submit: Creates staff record in PostgreSQL, auto-generates username (FirstnameLastname format) and secure password, shows credentials banner.\n\n  TAB: REGISTRY — Surgery-level credential editor:\n    Editable table: Username, Password, Salary, Commission %, Status for every staff member.\n    Direct image upload from this table.\n    AUTHORIZE GLOBAL SYNC: Pushes ALL registry changes to PostgreSQL in one shot.\n\n  TAB: MY_SOP — Department SOP viewer pulled from Policy Engine (Z-19).\n\nDATA SOURCE: /api/hr/performance-matrix, /api/hr/onboard, /api/hr/sync-registry, /api/hr/execute-payroll/{id}\n\n[EXACT UI BUTTONS: GALLERY, PERFORMANCE, PAYROLL, DOCUMENTS, ONBOARDING, REGISTRY, MY_SOP, GENERATE DNA & AUTHORIZE ACCESS, PUSH TO ACCOUNTS & INBOX, AUTHORIZE GLOBAL SYNC, PRINT / PDF EXPORT, LOAD TO EDITOR, GENERATE IN EDITOR]"
+    },
+    {
+      "id": "Z-10",
+      "name": "CRM / Guest Loyalty",
+      "path": "/dashboard/crm",
+      "icon": "🤝",
+      "sidebar_label": "CRM / GUEST LOYALTY",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FD",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Architect of long-term guest bonds and the loyalty ecosystem.",
+      "ai_knowledge": "ZONE 10 — CRM / GUEST LOYALTY ENGINE.\n\nPURPOSE: Full guest relationship management — tracks every guest who has ever stayed.\n\nWHAT IT SHOWS:\n  - Complete guest list with: Full Name, VIP Tier (Bronze/Silver/Gold/Platinum), Total LTV (Lifetime Value in revenue generated), Loyalty Coins balance, Phone, Email, Last Stay date.\n  - Search and filter by name, tier, or date range.\n  - VIP tier automatically upgrades based on total LTV thresholds.\n\nACTIONS PER GUEST:\n  - View full booking history (every stay, every spend)\n  - WhatsApp direct message button\n  - Issue loyalty coins manually\n  - View all folio charges across all stays\n\nLOYALTY COINS: Earned on every checkout (1 coin per currency unit spent). Can be redeemed for discounts on future stays via the Guest App.\n\nDATA SOURCE: guest_crm table, linked to guest_folios and reservations.\nSQL: SELECT * FROM guest_crm ORDER BY total_ltv DESC for top guests.\n\n[EXACT UI BUTTONS: SEARCH, VIEW HISTORY, SEND WHATSAPP, ISSUE COINS]"
+    },
+    {
+      "id": "Z-11",
+      "name": "Accounts & Finance",
+      "path": "/dashboard/accounts",
+      "icon": "📊",
+      "sidebar_label": "ACCOUNTS & FINANCE",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "ACC",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Guardian of wealth and financial health for the Sovereign Kernel.",
+      "ai_knowledge": "ZONE 11 — ACCOUNTS & FINANCE (Sovereign Accounting Kernel — Full Enterprise Finance). This zone IS the financial backbone of Miracle OS. All money flows here automatically.\n\nTABS ON THIS PAGE:\n  TAB 0 — REVENUE VECTOR ANALYSIS: Shows a donut chart of Room Revenue vs F&B vs Other. Data comes from /accounting/ledger/live. Shows Total Net Revenue, Operational Load (COGS + Expenses), Net Margin, and Total Ledger Entries.\n  TAB 1 — ACCUSATIVE ITEM-WISE TRACE: Every single ledger entry — source, amount, timestamp, operator. This is the raw transaction log. Each row shows CREDIT (income) or DEBIT (expense), category, and value.\n  TAB 2 — BURDEN MATRIX: Shows Operational Expenses vs Payroll vs Commissions as visual progress bars. Useful for spotting which cost center is consuming the most.\n  TAB 3 — GL JOURNAL ENTRY: Post double-entry journal entries manually. Requires Account Code (debit & credit), Reference Number, and Description. Data comes from /accounting/coa/list (Chart of Accounts). Click POST TO SOVEREIGN LEDGER to save.\n  TAB 4 — CHART OF ACCOUNTS (COA): Lists all accounts: 1000=Cash, 1100=Advance Deposits, 1200=AR-Guests, 2100=Advance Deposit Liability, 4000=Room Revenue, 4100=F&B Revenue, 5000=Payroll Expense, 5200=Cost of Goods Sold, etc.\n  TAB 5 — AR AGING (Accounts Receivable): Outstanding guest payments by age (0-30 days, 31-60, 61-90, 90+ days). Data from /accounting/ar/aging. Shows guest name, folio ID, balance due, and days outstanding.\n  TAB 6 — AP MODULE (Accounts Payable): Outstanding vendor invoices. Shows vendor list and invoice aging. Data from /accounting/ap/invoices and /accounting/ap/vendors. Can ADD VENDOR and AUTHORIZE DISBURSEMENT.\n  TAB 7 — BANK RECONCILIATION: Match bank statement entries against ledger. Add bank entries, match them, and COMMIT RECEIPT.\n  TAB 8 — NIGHT AUDIT WIZARD: End-of-day 4-step process: (1) Blind Cash Count, (2) Inventory Water Count, (3) FO-HK Discrepancy Check, (4) Final Lock. Click RUN TRIAL BALANCE to verify ledger balance.\n\nDATA SOURCES: Every checkout (Z-08), every POS sale (Z-06), every payroll push (Z-09) auto-posts a double-entry here. The ledger is append-only (immutable). Revenue categories: ROOM_REVENUE, FB_REVENUE, OTHER_REVENUE. Expense categories: EXPENSE_PAYROLL, EXPENSE_COGS, EXPENSE_OPS.\n\nKEY METRICS FROM SQL:\n  Total Revenue: SELECT SUM(amount) FROM accounting_ledger WHERE type='CREDIT' AND category LIKE 'REVENUE%'\n  Net Profit: Revenue - Expenses - (Revenue*0.15 VAT)\n  AR Outstanding: SELECT SUM(balance - advance_paid) FROM guest_folios WHERE status='IN_HOUSE'\n\n[EXACT UI BUTTONS: RUN TRIAL BALANCE, POST TO SOVEREIGN LEDGER, ADD BANK ENTRY, COMMIT RECEIPT, AUTHORIZE DISBURSEMENT, ADD VENDOR TO DIRECTORY, AUTO-FIX, Simulate Discrepancy, PROCEED TO MASTER LOCK]"
+    },
+    {
+      "id": "Z-19",
+      "name": "Policy Engine",
+      "path": "/dashboard/policy",
+      "icon": "⚙️",
+      "sidebar_label": "POLICY ENGINE",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Auditor of immutable laws and architect of system-wide policies.",
+      "ai_knowledge": "ZONE 19 — POLICY ENGINE (Pricing & SOP Control).\n\nPURPOSE: The single source of truth for ALL room pricing and operational SOPs.\n\nWHAT IT CONTROLS:\n  ROOM PRICING: Set base rate per room per night. These rates flow automatically to Reservations (Z-05) and Checkout (Z-08).\n  SEASONAL PRICING: Different rates for peak/off-peak seasons.\n  SERVICE CHARGE: Currently 10% (configurable here).\n  VAT RATE: Currently 15% (configurable here).\n  DEPARTMENT SOPs: Upload and manage Standard Operating Procedures per department. These appear in HR (Z-09) MY_SOP tab.\n  POLICY LOCK: Commit current policy set — locks rates and SOPs so accidental changes don't affect live operations.\n\nIMPORTANT: This is the ONLY place to change room rates. Do not attempt to change rates in Reservations or Checkout — they read from here.\n\n[EXACT UI BUTTONS: SET POLICY, LOCK POLICY, UPLOAD SOP, PROCEED TO MASTER LOCK, LOCKING ARCHIVES...]"
+    },
+    {
+      "id": "Z-21",
+      "name": "Kernel Settings",
+      "path": "/dashboard/settings",
+      "icon": "🔧",
+      "sidebar_label": "KERNEL SETTINGS",
+      "permissions": [
+        "CDO",
+        "GM",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Administrator of the kernel and guardian of system DNA.",
+      "ai_knowledge": "ZONE 21 — KERNEL SETTINGS.\n\nPURPOSE: System-wide configuration for Miracle OS.\nControls: Hotel name, currency settings, language/locale, timezone, system version display.\nAdmin credentials management — change CDO master password.\nDatabase connection status display.\nFeature toggles for experimental modules.\n\n[EXACT UI BUTTONS: SAVE SETTINGS, CHANGE PASSWORD, TEST DB CONNECTION]"
+    },
+    {
+      "id": "Z-23",
+      "name": "Sovereign Infra",
+      "path": "/dashboard/infrastructure",
+      "icon": "☁️",
+      "sidebar_label": "SOVEREIGN INFRA",
+      "permissions": [
+        "CDO",
+        "GM",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Warden of infrastructure and the digital bedrock of the ecosystem.",
+      "ai_knowledge": "ZONE 23 — SOVEREIGN INFRASTRUCTURE (CDO Diagnostics Command Centre).\n\nThis is the most technical zone — for CDO-level system monitoring only.\n\nSECTIONS:\n  1. SERVICE HEALTH GRID: Shows PM2 process status for miracle-backend and miracle-frontend.\n     Status: ONLINE (green) / OFFLINE (red). Memory usage, CPU %, restart count, uptime.\n     Restart button available for both services (requires Master PIN).\n\n  2. LIVE TELEMETRY PILLARS: 5 data pillars auto-refreshing every 5 seconds:\n     FINANCIAL — Revenue KPIs from accounting_ledger\n     OPERATIONAL — Room occupancy, active guests, check-ins today\n     STAFF — On-duty count, efficiency averages\n     GUEST — VIP count, LTV top guests\n     SRE — System health metrics, error rate, response times\n\n  3. LIVE REPLY AUDIT STREAM: Every AI query/response logged with hallucination detection.\n     Status: CLEAN (AI answered correctly) or HALLUCINATION (AI invented data).\n     HALLUCINATION entries auto-correct the AI brain permanently via knowledge injection.\n\n  4. SYSTEM ERROR LOGS (CDO Diagnostics Pipeline):\n     Frontend and backend errors automatically captured here.\n     Each error shows: Source, Error Type, Message, Stack Trace, URL.\n     ANALYZE button: AI deeply diagnoses the error and proposes an exact code fix.\n     DISMISS button: Removes analyzed errors from view (marks as DISMISSED in DB).\n     REFRESH LOGS: Pulls fresh error list from server.\n     DISMISS ANALYZED: Bulk-dismiss all AI-analyzed errors.\n\n  5. SOVEREIGN BRAIN MANIFEST (CDO Injection Gate):\n     Shows all pending AI knowledge rules waiting for CDO approval.\n     APPROVE: Rule becomes active — Miracle learns it permanently.\n     REJECT: Rule discarded — AI behavior unchanged.\n     Filter: ALL / PENDING_INJECTION / ACTIVE / REJECTED.\n\n  6. SRE SCAN ENGINE: Full system-wide diagnostic scan.\n     Checks: DB connectivity, API response times, file integrity, AI pipeline health.\n     INITIATE SOVEREIGN SRE SCAN button triggers a full scan, results shown in log terminal.\n\n  7. LOG TERMINAL: Real-time PM2 logs (backend / frontend / nginx) switchable.\n     Last 50 lines displayed, auto-scrolls to bottom.\n\n[EXACT UI BUTTONS: REFRESH LOGS, ANALYZE, DISMISS, DISMISS ANALYZED, APPROVE, REJECT, INITIATE SOVEREIGN SRE SCAN, AUTHORIZE BRAIN INJECTION & FIX PERMANENTLY, RESTART SERVICE]"
+    },
+    {
+      "id": "Z-14",
+      "name": "Media Lab",
+      "path": "/dashboard/media-lab",
+      "icon": "🎬",
+      "sidebar_label": "MEDIA LAB",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Director of media production and digital asset management.",
+      "ai_knowledge": "ZONE 14 — MEDIA LAB.\n\nPURPOSE: Digital asset management for marketing and property photography.\nUpload, organise, and manage property photos, menu images, staff photos, and promotional content.\nAssets stored here are referenced by the Guest App and website.\n\n[EXACT UI BUTTONS: UPLOAD ASSET, DELETE, PREVIEW, ASSIGN TO ZONE]"
+    },
+    {
+      "id": "Z-GUEST",
+      "name": "Guest Concierge",
+      "path": "/dashboard/guest",
+      "icon": "🏨",
+      "sidebar_label": "GUEST APP",
+      "permissions": [
+        "GUEST"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Strategist of guest experience and the peak of concierge efficiency.",
+      "ai_knowledge": "ZONE GUEST — GUEST CONCIERGE PORTAL (Guest-facing interface).\n\nThis is what guests see when they log into the Miracle OS Guest App or web portal.\n\nAVAILABLE TABS FOR GUESTS:\n  /guest/hub — Main dashboard: Welcome message, current room status, quick actions\n  /guest/folio — View real-time bill: All charges, advance paid, current balance\n  /guest/order — Room service / food ordering from the resort menu\n  /guest/reserve — Extend stay or request future booking\n  /guest/concierge — Message front desk, request services (towels, housekeeping, etc.)\n  /guest/ecommerce — Shop resort merchandise\n  /guest/profile — View loyalty coins, VIP tier, past stays\n\nAll guest requests flow to Z-07 (Command Grid) and Z-17 (Solve Portal) for staff action.\n\n[EXACT UI BUTTONS: ORDER NOW, VIEW MY BILL, REQUEST SERVICE, EXTEND STAY, CHAT WITH FRONT DESK]"
+    },
+    {
+      "id": "Z-LOGIN",
+      "name": "Sales Portal",
+      "path": "/",
+      "icon": "🚪",
+      "sidebar_label": "LOGIN / SALES PORTAL",
+      "permissions": [
+        "PUBLIC"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign Navigator of Miracle OS. Lead capture visionary and ROI consultant for the enterprise.",
+      "ai_knowledge": "THE SALES PORTAL — The public-facing gateway to Miracle OS. AI Persona: Sovereign Navigator. Lead capture fields: Guest/Client Name, Business Name, Employee Count, Contact Number. Demo credentials: Login ID = Visitor, Password = Miracle4U. ROI pitch: One system replaces PMS + POS + Inventory + HR + Accounting + CRM + Guest App. Implementation: 10-25 working days."
+    },
+    {
+      "id": "DEFAULT",
+      "name": "Miracle OS Dashboard",
+      "path": null,
+      "icon": "🌟",
+      "sidebar_label": "SYSTEM",
+      "permissions": [
+        "INTERNAL_AI_ONLY"
+      ],
+      "ai_persona": "British Executive CDO",
+      "ai_greeting_context": "You are the Lead CDO Engineer and Sales Visionary of Miracle OS. Confident, CEO-level professional, British Executive persona.",
+      "ai_knowledge": "COMPLETE MIRACLE OS ZONE DIRECTORY (30 ZONES): Z-07=Command Grid (God view, 30 rooms, real-time status) | Z-05=Reservations (45-day tape chart, booking, walk-in, CRM vault) | Z-06=POS/Retail (point of sale, room charge, F&B, spa, stock auto-deduction) | Z-25=Guest Marketing (APK distribution, WhatsApp blast, loyalty) | Z-08=Checkout/Billing (guest folio settlement, split bill, advance deposit) | Z-16=Issue Tickets (raise maintenance/HK/IT tickets, CRITICAL triggers grid alert) | Z-17=Solve Portal (field mission board, photo proof, CDO override) | Z-18=Biometric Portal (staff attendance, access logs, shift verification) | Z-12=Inventory Matrix (stock vault, PAR levels, Receiving Bay, BOM recipes) | Z-09=HR/Personnel (staff registry, payroll, efficiency ratings, AUTHORIZE SYNC) | Z-10=CRM/Guest Loyalty (guest profiles, LTV, VIP tiers, loyalty coins) | Z-11=Accounts & Finance (P&L, Chart of Accounts, AP/AR, double-entry ledger, payroll disbursements, night audit) | Z-19=Policy Engine (ROOM PRICES HERE — Units tab, Base Rate column; also: Global Laws, Yield Rules, Seasonal Calendar, SOP Matrix, Maintenance Lock, Bulk Seed) | Z-21=Kernel Settings (user accounts, roles, permissions, auth config) | Z-23=Sovereign Infra (VPS monitoring, PM2, DNS, deployment) | Z-14=Media Lab (digital asset management) | Z-20=Synapse Nexus (War Room Kanban, Neural Tree org-chart, AI Directive Decompiler, Video Conf) | Z-26=Wellness & Spa (treatments, therapists, appointments, spa revenue) | Z-27=Boutiques & Retail (product catalog, pricing, image gallery, sales analytics) | Z-28=Fleet & Transport (vehicles, drivers, airport transfers, commission engine) | Z-29=F&B (menu management, dining reservations, kitchen signals, COGS) | Z-30=PMS V2.0 (Sovereign Asset Portfolio Engine: FULL_OWNER/MORTGAGE_BUYER/RENTAL_OWNER/RENTED/AFFILIATED ownership classes, UDI rental pool math, mortgage amortization engine, AI fair rotation dispatcher, 6-axis compliance scan, data integrity scoring, AGI bot /agi commands, Synapse HK automation on checkout, 10 tabs: Portfolio/Gallery/BOM/CardVault/Ledger/OwnerPayouts/MortgageEngine/RentalPools/AICompliance/AIDispatch) | Z-GUEST=Guest App (concierge, ecommerce, folio view, loyalty). KEY RULES: Room prices are set ONLY in Z-19 Policy Engine > Units tab > Base Rate column. Staff logins are created in Z-21. Payroll is in Z-09. Revenue reports are in Z-11. Inventory stock levels are in Z-12. Service Empire (Z-26 to Z-29) revenue all auto-posts to Z-11. PMS mortgage/pool yields auto-post to Z-11 on checkout."
+    },
+    {
+      "id": "Z-26",
+      "name": "Wellness & Spa",
+      "path": "/dashboard/wellness",
+      "icon": "🌿",
+      "sidebar_label": "WELLNESS & SPA",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "SPA",
+        "WELLNESS",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — Sovereign Navigator of Miracle OS. Manage the wellness and spa empire with precision.",
+      "ai_knowledge": "ZONE 26 — WELLNESS & SPA. Full spa management: treatments, therapists, appointment booking, revenue per therapist, commission tracking. Every treatment charge auto-posts to Z-11 Accounts under Spa Revenue. BOM links spa SKUs to inventory ingredients. [EXACT UI BUTTONS: BOOK TREATMENT, ADD THERAPIST, VIEW SCHEDULE, EXPORT REVENUE]"
+    },
+    {
+      "id": "Z-27",
+      "name": "Boutiques & Retail",
+      "path": "/dashboard/boutiques",
+      "icon": "🛍️",
+      "sidebar_label": "BOUTIQUES & RETAIL",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "POS",
+        "BOUTIQUE",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — Sovereign Navigator. Manage the boutique retail empire.",
+      "ai_knowledge": "ZONE 27 — BOUTIQUES & RETAIL. Product catalog management, pricing, image gallery, sales analytics per outlet. All retail sales post to Z-11 Boutique Revenue. Stock syncs with Z-12 Inventory. [EXACT UI BUTTONS: ADD PRODUCT, EDIT ITEM, VIEW SALES, SERVICE ARCHITECT]"
+    },
+    {
+      "id": "Z-28",
+      "name": "Fleet & Transport",
+      "path": "/dashboard/fleet",
+      "icon": "🚗",
+      "sidebar_label": "FLEET & TRANSPORT",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FLEET",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — Sovereign Navigator. Orchestrate the fleet and transport operations.",
+      "ai_knowledge": "ZONE 28 — FLEET & TRANSPORT. Vehicle management, airport transfers, driver scheduling, commission engine, trip logging. Driver commissions auto-sync to Z-09 HR payroll. Revenue net of commission posts to Z-11 Accounts. [EXACT UI BUTTONS: NEW TRIP, ASSIGN DRIVER, MARK COMPLETE, VIEW FLEET]"
+    },
+    {
+      "id": "Z-29",
+      "name": "F & B",
+      "path": "/dashboard/z29-gastronomy",
+      "icon": "🍽️",
+      "sidebar_label": "F & B",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "FB",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — Sovereign Navigator. Command the Food & Beverage empire.",
+      "ai_knowledge": "ZONE 29 — F&B (Food & Beverage Intelligence). Menu management, dining reservations, table management, kitchen signal routing, revenue per outlet, COGS via BOM. Every F&B sale auto-decrements Z-12 Inventory and posts revenue to Z-11. [EXACT UI BUTTONS: MENU ENGINEER, BOOK TABLE, KITCHEN SIGNAL, VIEW REVENUE]"
+    },
+    {
+      "id": "Z-30",
+      "name": "Property Management",
+      "path": "/dashboard/pms",
+      "icon": "🏢",
+      "sidebar_label": "PROPERTY MGMT (PMS)",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "PMS",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign AGI Property Manager of Miracle OS. You are the supreme financial intelligence for every individual property in this portfolio. You oversee ownership accounting, mortgage amortization, rental pool yield distribution, AI-driven fair rotation, compliance monitoring, and Synapse HK automation.",
+      "ai_knowledge": "ZONE 30 — PROPERTY MANAGEMENT SYSTEM (PMS) V2.0: SOVEREIGN ASSET PORTFOLIO ENGINE (Phases 1-8 Complete).\n\nOWNERSHIP CLASSES:\n  FULL_OWNER — Freehold. Yield disbursed net of mgmt fee. GL: Dr 521300 / Cr 113300.\n  MORTGAGE_BUYER — Buying via installment plan. Monthly sweep: Dr 113200 / Cr 100000. Amortization tracked.\n  RENTAL_OWNER — Hotel rents room from owner. GL: Dr 521200 / Cr 200300 Lease Payable.\n  RENTED — Hotel leases from landlord (hotel is tenant). GL: Dr 520000 / Cr 200300.\n  AFFILIATED — Franchise/managed. Commission: Dr 521000 / Cr 200400.\n\nDATA ENGINE: AssetGrid has 20 new columns: owner_type, pool_category, currency_code, mortgage_total, mortgage_monthly_payment, mortgage_paid_to_date, mortgage_interest_rate, mortgage_due_day, mortgage_balance, lease_fixed_rent, linked_employee_id, ytd_gross_yield, ytd_net_yield, management_fee_pct, nights_occupied_ytd, last_override_by, last_override_reason, last_override_at.\n\nRENTAL POOLS (Z-30 TAB: Rental Pools):\n  UDI Formula: Share% = (Room SqFt / Total Pool SqFt) x 100.\n  Each pool has: pool_name, category, management_fee_pct, hk_granularity.\n  Pool revenue distributed proportionally to each room's sqft share.\n  API: GET /api/pms/pools/status, POST /api/pms/pools/configure, POST /api/pms/pools/assign-room.\n\nMORTGAGE ENGINE (Z-30 TAB: Mortgage Engine):\n  GET /api/mortgage/schedule/{room_id} — Full amortization table with payoff date.\n  POST /api/mortgage/sweep — Monthly netting sweep (all MORTGAGE_BUYER rooms). Supports dry_run=True.\n  GET /api/mortgage/owner-statement/{room_id} — Full P&L: yield + mortgage + ledger history.\n  POST /api/mortgage/manual-adjust — CDO balance correction (requires 10-char reason).\n  ATOMIC: Each room uses SAVEPOINT — partial failure safe.\n  IDEMPOTENCY: Key format MORTGAGE_DEBIT-{ROOM_ID}-{MMYYYY} — never double-sweeps.\n\nAI FAIR ROTATION DISPATCHER (Z-30 TAB: AI Dispatch):\n  AI selects room with MINIMUM nights_occupied_ytd in requested category.\n  Ensures equal wear-and-tear and yield distribution across all co-owners.\n  Manual override: Requires override_reason (min 5 chars). Stamped to audit trail.\n  API: POST /api/pms/dispatch/assign-room, GET /api/pms/dispatch/equity-log.\n\nCOMPLIANCE ENGINE (Z-30 TAB: AI Compliance):\n  6 check types: MORTGAGE_OVERDUE, YIELD_DEFICIT, NEGATIVE_MORTGAGE_BALANCE, MISSING_OVERRIDE_REASON, ORPHAN_POOL_ASSIGNMENT, MISSING_GL_LINKAGE.\n  Data integrity score 0-100 with verdict: CLEAN / WARNING / CRITICAL.\n  API: GET /api/pms/alerts/compliance-scan, GET /api/pms/alerts/ai-data-integrity.\n  DAEMON: POST /api/pms/alerts/trigger-daemon-sweep (runs scan + sweep + snapshot).\n  Schedule: cron 0 6 1 * * (1st of month, 06:00 UTC).\n\nAGI BOT COMMANDS (type in MiracleBot on Z-30):\n  /agi pms-help — Full command reference\n  /agi owner-statement {room_id} — P&L: yield, mortgage, ledger\n  /agi rotation-status [{category}] — Equity log by category\n  /agi pool-status — All pools with UDI shares\n  /agi compliance-scan — Instant compliance report\n  /agi integrity-check — Data integrity score\n  /agi dispatch-room {category} [manual:{id}] [reason:{text}] — AI or manual dispatch\n  /agi mortgage-sweep [dry] — Live or simulation sweep\n  /agi monthly-snapshot [{MMYYYY}] — Monthly P&L snapshot\n  RBAC: CDO, GM, ADMIN, ACC roles only.\n\nCHECKOUT INTEGRATION:\n  On every guest checkout, Z-30 engine auto-fires:\n  1. Owner yield disbursement (UDI-based, ACID double-entry)\n  2. nights_occupied_ytd increment (AI rotation counter)\n  3. Synapse HK directive (PER_ROOM + PER_FLOOR + PER_WING based on pool hk_granularity)\n  4. HR revenue credit for processing operative\n\nSOVEREIGN WEALTH & LOOPHOLE INTEGRATIONS:\n  1. Step-by-Step Operator Guidance: Create Asset -> Link Owner -> Sign Digital Covenant (LEASE_AGREEMENT/RENTAL_POOL_DEED/MORTGAGE_NOTE) -> Register Stripe ACH/SEPA Mandate -> Configure UDI Pool -> Monthly Sweep -> SolveMission MACRS Capitalization -> WHT Treaty Optimization.\n  2. Mathematical Solutions: UDI Share = (Room SqFt / Total Pool SqFt) * 100; Occupancy-Indexed Mortgage Interest rate: R = R_base + alpha * (Occ_Actual - Occ_Target); WHT Treaty Netting: WHT = max(0, WHT_Local - Delta_Treaty); Cross-Property portfolio sweep calculations.\n  3. Loophole Deed Audit: Bot checks for missing canvas signatures, inactive mandates, and high repair costs, recommending MACRS CapEx capitalization overrides.\n  4. ROI Forecast: Bot projects cumulative yield vs. initial asset value to calculate the break-even year, rendering dynamic line/bar charts via json_chart.\n\nTABS: (1) Portfolio Grid — Property cards, OWNED/RENTED/AFFILIATED filter. (2) Asset Gallery. (3) BOM Builder. (4) Card Vault. (5) Financial Ledger. (6) Owner Payouts. (7) Mortgage Engine. (8) Rental Pools. (9) AI Compliance. (10) AI Dispatch.\n\n[EXACT UI BUTTONS: MORTGAGE ENGINE, RENTAL POOLS, AI COMPLIANCE, AI DISPATCH, RUN COMPLIANCE SCAN, AI AUTO-DISPATCH, MANUAL OVERRIDE DISPATCH, SIMULATE SWEEP, EXECUTE MONTHLY SWEEP, LOAD SCHEDULE, REFRESH]"
+    },
+    {
+      "id": "Z-31",
+      "name": "Owner Bridge",
+      "path": "/dashboard/pms?tab=requests",
+      "icon": "📬",
+      "sidebar_label": "OWNER BRIDGE (Z-31)",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "ACC",
+        "STAFF",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Navigator",
+      "ai_greeting_context": "You are Miracle — the Sovereign AGI Property Intake Coordinator. You manage the Property Owner Bridge Z-31.",
+      "ai_knowledge": "ZONE 31 - PROPERTY OWNER BRIDGE (B2B Property Intake Portal). Connects international property owners to the Miracle OS ecosystem. Handles lead intake, dynamic calculations, regional policies control, and approval routing.\n\nREGIONAL POLICIES:\n  - Configured via 'sgpe_region_policies' database table for regions: BD, UAE, US, UK, SG, MV, SA, and fallback '_'.\n  - Parameters include: Cap Rate, Lease Yield, Signing Bonus, Management Fee %, Land Location Discount, Road Access Premium, and VAT Tax %.\n  - Post-Tax Yield: All calculations automatically deduct the regional VAT Tax % (e.g. 15% for BD, 5% for UAE) from JV annual yields, fixed leases, and rental pool yields.\n\nAGI AI VALUATION APPRAISAL:\n  - Invokes Gemini underwriter (via POST /api/properties/request/{id}/ai-analyze) to generate detailed location risk, structural, and market valuation reports.\n  - Analysis is formatted in markdown and cached directly in the database to prevent redundant LLM calls.\n\nDEBT RESCUE SIMULATOR:\n  - Simulates using fractional sales sweeps to accelerate mortgage loan paydown.\n  - Sweeps target percentage (e.g. 80%) of share sales directly to principal loan reduction.\n  - Projects years saved, total interest saved, and year-by-year balance schedules in dual currencies (USD and regional native currency like BDT).\n\nUI WORKFLOW & ACTIONS:\n  - Toggle sub-tabs: 'Pipeline Requests' (review submissions) and '⚙️ Dynamic Policies Control Panel' (edit policy parameters).\n  - Admin Details Panel: Offers proposals overview, Override Valuation & Clarification Notes (NID/deed documents list), Simulate Contact (Email/Call/WhatsApp), AGI Appraisal, and Debt Payoff Simulator.\n  - Finalize & Approve Deal: Creates portfolio asset, owner profile, double-entry GL journal, and initiates first payout.\n  - Cancel/Reject: Rejects lead. Reopen: Restores to Pending.\n[EXACT UI BUTTONS: PIPELINE REQUESTS, DYNAMIC POLICIES CONTROL PANEL, RUN APPRAISAL, RUN RESCUE SIMULATION, SAVE OFFER DETAILS, FINALIZE & APPROVE DEAL, CANCEL / REJECT REQUEST, REOPEN REQUEST, SAVE ALL POLICIES]"
+    },
+    {
+      "id": "Z-PROP",
+      "name": "Miracle Properties",
+      "path": "/properties",
+      "icon": "🏗️",
+      "sidebar_label": "MIRACLE PROPERTIES",
+      "permissions": [
+        "CDO",
+        "GM",
+        "ADMIN",
+        "VISITOR"
+      ],
+      "ai_persona": "Sovereign Real Estate Advisor",
+      "ai_greeting_context": "You are Miracle — the Sovereign Real Estate Advisor. Assist the user in listing, buying, leasing, or renting high-end properties with precise investment insights.",
+      "ai_knowledge": "ZONE Z-PROP — MIRACLE PROPERTIES MARKETPLACE (Real Estate Engine).\n\nPURPOSE: The public-facing and backoffice gateway for property capitalisation, listing, and investment.\n\nHOW TO LIST A PROPERTY:\n  1. Navigate to the '/properties' page.\n  2. Step 1: Your Identity: Enter Full Name, Email, Phone/WhatsApp, NID/Passport Number, and Address.\n  3. Step 2: Property Details: Provide Unit Name, Category (VILLA, PENTHOUSE, SUITE, APARTMENT, CRUISE, STANDARD), Size (sqft), Location, and Carousel Images.\n  4. Step 3: Deal Proposals: System automatically calculates and presents proposed joint venture (JV) share, lease details, and rental pool configurations.\n  5. Click submit to send the listing request to the CDO/Admin for review.\n\nADMIN APPROVAL WORKFLOW:\n  - Property listing requests are managed in Z-30 (Property Management) under the 'Owner Requests' tab.\n  - Admin/CDO can view the request, run an AI Analysis, simulate client contact, and approve the deal.\n  - Upon approval, the listing is automatically synchronized to the Z-PROP marketplace and registered in the PMS database under `asset_grid`.\n\nINVESTMENT BLUEPRINTS:\n  - Joint Ventures: Co-owners can buy fractional shares in high-yield assets.\n  - Rental Pools: Rooms are grouped by category into rental pools. Revenue is distributed based on UDI (Unit undivided interest) shares.\n  - Mortgage buyback: Co-owners can choose mortgage buyout options with simulated amortization schedules.\n\n[EXACT UI BUTTONS: Continue, Back, Submit Request, Select Deal, AI Analyze, Approve Listing, Settle Deal]"
+    }
+  ],
+  "features": {
+    "voice_enabled": true,
+    "matchstick_trigger": true,
+    "biometric_sync": false
+  },
+  "system_architecture": {
+    "role_permissions": {
+      "CDO": "God Mode. Can access all 30 zones. Only role that can override missions, access Z-21 Kernel Settings, and Z-23 Infra. Full P&L, audit, HR, inventory, and accounts access.",
+      "GM": "General Manager. Can access all 30 operational zones including Z-11 Accounts, Z-05 Reservations, Z-26 Wellness, Z-27 Boutiques, Z-28 Fleet, Z-29 F&B, Z-30 PMS. Cannot access Z-23 Infra config or Z-21 Master Passwords.",
+      "ADMIN": "System Admin. Can manage HR, inventory, accounts, and all 30 zones. Can view all logs and audit records.",
+      "FD": "Front Desk. Access limited to Z-05 Reservations, Z-07 Command Grid, Z-08 Checkout, Z-10 CRM.",
+      "POS": "Point of Sale / Retail. Access limited to Z-06 POS, Z-12 Inventory (view), Z-27 Boutiques.",
+      "HR": "Human Resources. Access limited to Z-09 HR Engine, Z-18 Biometric Portal.",
+      "ACC": "Accounts. Access limited to Z-11 Accounts & Finance, Z-08 Checkout.",
+      "SPA": "Spa & Wellness Operative. Access to Z-06 POS, Z-26 Wellness & Spa.",
+      "WELLNESS": "Wellness Staff. Access to Z-26 Wellness & Spa booking and scheduling.",
+      "BOUTIQUE": "Boutique Staff. Access to Z-27 Boutiques & Retail product management and sales.",
+      "FLEET": "Fleet & Transport Staff. Access to Z-28 Fleet & Transport trip management and driver scheduling.",
+      "FB": "F&B Staff. Access to Z-29 Food & Beverage menu, orders, and kitchen signals.",
+      "PMS": "Property Management Staff. Access to Z-30 PMS portfolio management.",
+      "SYNAPSE": "Synapse Operative. Access to Z-20 Synapse Nexus for directives and team communications.",
+      "HK/MN/IT": "Field Operatives. Access limited to Z-17 Solve Portal, Z-16 Issue Tickets, Z-12 Inventory."
+    },
+    "database_schema": {
+      "miracle_sessions": [
+        "id",
+        "session_id",
+        "user_id",
+        "zone",
+        "role",
+        "content",
+        "created_at"
+      ],
+      "feature_requests": [
+        "id",
+        "reference",
+        "user_id",
+        "zone",
+        "request_text",
+        "status",
+        "created_at",
+        "resolved_at"
+      ],
+      "sales_leads": [
+        "id",
+        "lead_name",
+        "enterprise_name",
+        "enterprise_size",
+        "contact_details",
+        "status",
+        "created_at"
+      ],
+      "login_session_log": [
+        "id",
+        "operative",
+        "role",
+        "outcome",
+        "ip_address",
+        "user_agent",
+        "session_token",
+        "login_at",
+        "logout_at",
+        "duration_min"
+      ],
+      "access_credentials": [
+        "id",
+        "label",
+        "username",
+        "password",
+        "role",
+        "description",
+        "updated_at"
+      ],
+      "miracle_knowledge": [
+        "id",
+        "source_role",
+        "category",
+        "insight",
+        "business_context",
+        "importance_score",
+        "created_at"
+      ],
+      "system_settings": [
+        "id",
+        "auth_expiry_minutes",
+        "ip_whitelist",
+        "sync_pulse_interval",
+        "biometric_threshold",
+        "stripe_live_mode",
+        "system_log_level",
+        "auto_backup",
+        "master_pin_hash",
+        "financial_laws"
+      ],
+      "users": [
+        "id",
+        "username",
+        "hashed_password",
+        "role",
+        "is_active",
+        "created_at"
+      ],
+      "employees": [
+        "id",
+        "user_id",
+        "full_name",
+        "last_name",
+        "position",
+        "dept",
+        "status",
+        "joined_date",
+        "avatar_url",
+        "base_salary",
+        "commission_rate",
+        "revenue_impact",
+        "monthly_hours",
+        "missions_secured",
+        "efficiency_rating"
+      ],
+      "reservations": [
+        "id",
+        "room_id",
+        "guest_crm_id",
+        "guest_name",
+        "start_date",
+        "nights",
+        "status",
+        "nightly_rate",
+        "total_yield",
+        "vault_token",
+        "created_at"
+      ],
+      "guest_dna": [
+        "id",
+        "full_name",
+        "passport_nid",
+        "preferences",
+        "last_stay"
+      ],
+      "guest_crm": [
+        "id",
+        "full_name",
+        "phone",
+        "email",
+        "passport_nid",
+        "social_id",
+        "social_provider",
+        "total_ltv",
+        "total_stays",
+        "vip_tier",
+        "preferences",
+        "coins"
+      ],
+      "guest_offers": [
+        "id",
+        "category",
+        "title",
+        "description",
+        "image_url",
+        "price_tag",
+        "is_active",
+        "is_featured",
+        "created_at"
+      ],
+      "active_occupancy": [
+        "room_number",
+        "guest_crm_id",
+        "folio_id",
+        "check_in_timestamp"
+      ],
+      "guest_folios": [
+        "id",
+        "room_number",
+        "guest_crm_id",
+        "guest_name",
+        "status",
+        "balance",
+        "rate",
+        "advance_paid",
+        "ref_staff",
+        "check_in_date",
+        "last_updated",
+        "payment_network",
+        "gateway_txn_id",
+        "last_4_digits"
+      ],
+      "folio_charges": [
+        "id",
+        "folio_id",
+        "item_name",
+        "category",
+        "amount",
+        "qty",
+        "timestamp",
+        "transaction_id"
+      ],
+      "inventory": [
+        "product_id",
+        "name",
+        "type",
+        "dept",
+        "cat",
+        "margin",
+        "min_level",
+        "s_unit",
+        "p_unit",
+        "factor",
+        "desc",
+        "img",
+        "barcode",
+        "pp",
+        "rp",
+        "stock",
+        "bom",
+        "created_at"
+      ],
+      "pos_transactions": [
+        "id",
+        "terminal_id",
+        "cashier_pin",
+        "guest_type",
+        "guest_ref",
+        "payment_method",
+        "subtotal",
+        "total_cogs",
+        "discount",
+        "vat",
+        "sc",
+        "grand_total",
+        "true_profit",
+        "timestamp"
+      ],
+      "pos_order_items": [
+        "id",
+        "transaction_id",
+        "product_id",
+        "name",
+        "type",
+        "qty",
+        "rp",
+        "cogs",
+        "is_foc"
+      ],
+      "solve_missions": [
+        "id",
+        "room_no",
+        "dept",
+        "subject",
+        "priority",
+        "status",
+        "sop_steps",
+        "assigned_to",
+        "operator_id",
+        "raised_at",
+        "picked_up_at",
+        "secured_at",
+        "proof_image_url"
+      ],
+      "accounts": [
+        "id",
+        "code",
+        "name",
+        "type"
+      ],
+      "journal_entries": [
+        "id",
+        "timestamp",
+        "reference_type",
+        "description",
+        "verification_status"
+      ],
+      "ledger_lines": [
+        "id",
+        "journal_id",
+        "account_id",
+        "debit",
+        "credit"
+      ],
+      "accounting_ledger": [
+        "id",
+        "transaction_ref",
+        "type",
+        "category",
+        "amount",
+        "balance_after",
+        "description",
+        "operator_id",
+        "timestamp",
+        "payment_network",
+        "gateway_txn_id",
+        "last_4_digits"
+      ],
+      "asset_grid": [
+        "room_id",
+        "category",
+        "base_rate",
+        "floor",
+        "is_active",
+        "current_status",
+        "current_guest"
+      ],
+      "policy_sop": [
+        "id",
+        "dept",
+        "task_list",
+        "last_updated"
+      ],
+      "audit_logs": [
+        "id",
+        "action",
+        "operator",
+        "target",
+        "timestamp"
+      ],
+      "vendors": [
+        "id",
+        "name",
+        "contact",
+        "tax_id",
+        "payment_terms_days",
+        "created_at"
+      ],
+      "ap_invoices": [
+        "id",
+        "vendor_id",
+        "invoice_ref",
+        "description",
+        "amount",
+        "due_date",
+        "status",
+        "journal_id",
+        "created_at"
+      ],
+      "ar_receivables": [
+        "id",
+        "client_name",
+        "ota_type",
+        "folio_id",
+        "reservation_id",
+        "amount",
+        "due_date",
+        "status",
+        "journal_id",
+        "created_at"
+      ]
+    },
+    "api_endpoints": [
+      "POST /api/policy/lock",
+      "POST /api/auth/token",
+      "POST /api/billing/checkout/{guest_ref}",
+      "POST /api/accounting/journal/manual",
+      "POST /api/frontdesk_engine/commit",
+      "POST /api/reservation_engine/ota-ingest",
+      "GET /api/frontdesk_engine/reservations",
+      "GET /api/accounting_engine/status",
+      "GET /api/settings/live",
+      "GET /api/bot/sales-leads",
+      "GET /api/guest_api/folio/{room}",
+      "POST /api/frontdesk_engine/sync-offline-queue",
+      "GET /api/billing/status",
+      "POST /api/infra/backup",
+      "GET /api/accounting_engine/ar/aging",
+      "GET /api/bot/alerts",
+      "GET /api/accounting_engine/balance-sheet",
+      "POST /api/accounting/init-balances",
+      "GET /api/accounting_engine/trial-balance",
+      "POST /api/accounting_engine/ap/vendors",
+      "GET /api/guest_api/catalog",
+      "GET /api/accounting_engine/pnl",
+      "POST /api/solve/force-resolve/{mission_id}",
+      "POST /api/frontdesk_engine/quick-walk-in",
+      "GET /api/guest_api/offers",
+      "POST /api/accounting/ar/reconcile/{id}",
+      "POST /api/frontdesk_engine/sync-walkins",
+      "POST /api/accounting/ap/pay/{id}",
+      "POST /api/guest_api/login",
+      "POST /api/accounting_engine/voucher/dispatch",
+      "POST /api/hr/sync-registry",
+      "GET /api/guest_api/profile/{crm_id}",
+      "POST /api/accounting_engine/ar/reconcile/{receivable_id}",
+      "GET /api/infra/services",
+      "POST /api/frontdesk_engine/force-available/{room_id}",
+      "GET /api/accounting/ap/invoices",
+      "GET /api/pos/status",
+      "POST /api/accounting/voucher/dispatch",
+      "GET /api/hr/biometric/{filename}",
+      "GET /api/infra/logs/{service_name}",
+      "POST /api/settings/sync",
+      "GET /api/frontdesk_engine/live-grid",
+      "POST /api/guest_api/crm-assign",
+      "GET /api/settings/diagnostics",
+      "POST /api/inventory_engine/bulk-register",
+      "POST /api/hr/onboard",
+      "GET /api/accounting/ar/aging",
+      "POST /api/bot/feature-request",
+      "GET /api/bot/feature-requests",
+      "POST /api/settings/credentials/update",
+      "DELETE /api/policy/offers/{offer_id}",
+      "GET /api/auth/session-history",
+      "POST /api/guest_api/reserve",
+      "POST /api/frontdesk_engine/force-sync",
+      "POST /api/billing/folio/{guest_ref}/add-charge",
+      "GET /api/guest_api/stats",
+      "GET /api/policy/current-lock",
+      "POST /api/policy/yield-rules",
+      "GET /api/accounting/ap/vendors",
+      "POST /api/guest_api/ecommerce/cashout",
+      "GET /api/solve/status",
+      "GET /api/solve/active",
+      "POST /api/pos/checkout",
+      "GET /api/frontdesk_engine/folios",
+      "GET /api/accounting_engine/ledger/live",
+      "POST /api/frontdesk_engine/checkout/{room_id}",
+      "GET /api/hr/performance-matrix",
+      "POST /api/guest_api/ecommerce/order",
+      "GET /api/solve/pulse",
+      "GET /api/solve/operative-stats/{username}",
+      "GET /api/accounting/ledger/live",
+      "POST /api/accounting/ap/vendors",
+      "GET /api/inventory_engine/live",
+      "POST /api/guest_api/concierge/ticket",
+      "GET /api/solve/operative-load/{dept}",
+      "GET /api/accounting_engine/ap/invoices",
+      "POST /api/policy/offers",
+      "GET /api/frontdesk_engine/crm-profiles",
+      "GET /api/guest_api/app-version",
+      "POST /api/policy/gm-bulk-seed",
+      "POST /api/frontdesk_engine/checkin/{res_id}",
+      "POST /api/bot/query",
+      "POST /api/accounting_engine/ap/pay/{invoice_id}",
+      "POST /api/solve/register",
+      "GET /api/guest_api/crm-profiles",
+      "GET /api/settings/kernel",
+      "POST /api/policy/spawn-ticket",
+      "POST /api/solve/secure/{mission_id}",
+      "POST /api/accounting_engine/journal/manual",
+      "GET /api/frontdesk_engine/active-in-house",
+      "POST /api/policy/maintenance-lock",
+      "GET /api/policy/yield-rules",
+      "GET /api/policy/offers",
+      "POST /api/guest_api/social-login",
+      "GET /api/accounting/trial-balance",
+      "POST /api/frontdesk_engine/extend/{res_id}",
+      "POST /api/guest_api/register-device",
+      "GET /api/accounting_engine/ap/vendors",
+      "GET /api/bot/status",
+      "POST /api/infra/action",
+      "POST /api/guest_api/push-notification",
+      "POST /api/hr/execute-payroll/{staff_id}",
+      "GET /api/settings/credentials",
+      "GET /api/billing/folio/{guest_ref}/invoice",
+      "GET /api/accounting_engine/coa/list",
+      "GET /api/infra/telemetry",
+      "POST /api/infra/browser-error",
+      "GET /api/guest_api/my-tickets",
+      "GET /api/accounting/status",
+      "GET /api/accounting/coa/list"
+    ]
+  }
+}

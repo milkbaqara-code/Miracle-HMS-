@@ -1,0 +1,209 @@
+[TAILING] Tailing last 100 lines for [miracle-frontend] process (change the value with --lines option)
+/root/.pm2/logs/miracle-frontend-out.log last 100 lines:
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+10|miracle | 
+10|miracle | > web@0.1.0 start
+10|miracle | > next start
+10|miracle | 
+10|miracle | ▲ Next.js 16.1.6
+10|miracle | - Local:         http://localhost:3000
+10|miracle | - Network:       http://23.88.50.87:3000
+10|miracle | 
+10|miracle | ✓ Starting...
+
+/root/.pm2/logs/miracle-frontend-error.log last 100 lines:
+10|miracle |   code: 'EADDRINUSE',
+10|miracle |   errno: -98,
+10|miracle |   syscall: 'listen',
+10|miracle |   address: '::',
+10|miracle |   port: 3000
+10|miracle | }
+10|miracle | ⨯ Failed to start server
+10|miracle | Error: listen EADDRINUSE: address already in use :::3000
+10|miracle |     at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
+10|miracle |     at new Promise (<anonymous>) {
+10|miracle |   code: 'EADDRINUSE',
+10|miracle |   errno: -98,
+10|miracle |   syscall: 'listen',
+10|miracle |   address: '::',
+10|miracle |   port: 3000
+10|miracle | }
+10|miracle | ⨯ Failed to start server
+10|miracle | Error: listen EADDRINUSE: address already in use :::3000
+10|miracle |     at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
+10|miracle |     at new Promise (<anonymous>) {
+10|miracle |   code: 'EADDRINUSE',
+10|miracle |   errno: -98,
+10|miracle |   syscall: 'listen',
+10|miracle |   address: '::',
+10|miracle |   port: 3000
+10|miracle | }
+10|miracle | ⨯ Failed to start server
+10|miracle | Error: listen EADDRINUSE: address already in use :::3000
+10|miracle |     at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
+10|miracle |     at new Promise (<anonymous>) {
+10|miracle |   code: 'EADDRINUSE',
+10|miracle |   errno: -98,
+10|miracle |   syscall: 'listen',
+10|miracle |   address: '::',
+10|miracle |   port: 3000
+10|miracle | }
+10|miracle | ⨯ Failed to start server
+10|miracle | Error: listen EADDRINUSE: address already in use :::3000
+10|miracle |     at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
+10|miracle |     at new Promise (<anonymous>) {
+10|miracle |   code: 'EADDRINUSE',
+10|miracle |   errno: -98,
+10|miracle |   syscall: 'listen',
+10|miracle |   address: '::',
+10|miracle |   port: 3000
+10|miracle | }
+10|miracle | ⨯ Failed to start server
+10|miracle | Error: listen EADDRINUSE: address already in use :::3000
+10|miracle |     at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
+10|miracle |     at new Promise (<anonymous>) {
+10|miracle |   code: 'EADDRINUSE',
+10|miracle |   errno: -98,
+10|miracle |   syscall: 'listen',
+10|miracle |   address: '::',
+10|miracle |   port: 3000
+10|miracle | }
+10|miracle | ⨯ Failed to start server
+10|miracle | Error: listen EADDRINUSE: address already in use :::3000
+10|miracle |     at <unknown> (Error: listen EADDRINUSE: address already in use :::3000)
+10|miracle |     at new Promise (<anonymous>) {
+10|miracle |   code: 'EADDRINUSE',
+10|miracle |   errno: -98,
+10|miracle |   syscall: 'listen',
+10|miracle |   address: '::',
+10|miracle |   port: 3000
+10|miracle | }
+10|miracle | Killed
+10|miracle | Killed
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+10|miracle | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+10|miracle |     at ignore-listed frames
+
+
+
+--- STDERR ---
+

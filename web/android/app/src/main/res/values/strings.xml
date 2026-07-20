@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Miracle Super App</string>
+    <string name="title_activity_main">Miracle Super App</string>
+    <string name="package_name">com.miracle.guestapp</string>
+    <string name="custom_url_scheme">com.miracle.guestapp</string>
+</resources>

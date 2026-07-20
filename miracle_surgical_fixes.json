@@ -1,0 +1,184 @@
+[
+  {
+    "id": "FIX_001",
+    "category": "INFRA",
+    "match": ["500", "internal server error", "connection refused"],
+    "fix": "The kernel has encountered a 500. Start the DB terminal and verify uvicorn is running on port 8090. Check the .env for connection string integrity.",
+    "severity": "CRITICAL"
+  },
+  {
+    "id": "FIX_002",
+    "category": "INFRA",
+    "match": ["port 8000", "address already in use"],
+    "fix": "Port collision detected. Run `netstat -ano | findstr :8090` and terminate the conflicting process. Then restart the backend via PM2.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_003",
+    "category": "DB",
+    "match": ["relation does not exist", "missing table"],
+    "fix": "A required database table is absent. The Genesis Sequence should auto-create tables on boot. Trigger a hard restart of miracle-backend via PM2.",
+    "severity": "CRITICAL"
+  },
+  {
+    "id": "FIX_004",
+    "category": "DB",
+    "match": ["sequence", "duplicate key value"],
+    "fix": "PostgreSQL sequence desync. Run SQL: `SELECT setval('table_id_seq', max(id)) FROM table;` to realign the auto-increment.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_005",
+    "category": "INFRA",
+    "match": ["cors", "blocked by cors policy"],
+    "fix": "CORS policy rejection. Add the frontend domain to `allow_origins` in FastAPI `main.py`. Ensure `miracle.vigilantitsolution.com` is listed.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_006",
+    "category": "API",
+    "match": ["pydantic", "validation_error", "field required"],
+    "fix": "Pydantic validation failed. Check the Network tab — a required field in the request payload is missing or mistyped.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_007",
+    "category": "DB",
+    "match": ["sqlalchemy.exc.integrityerror", "foreign key constraint"],
+    "fix": "ORM Integrity breach. You are attaching a child record to a parent ID that does not exist. Verify the parent record first.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_008",
+    "category": "AUTH",
+    "match": ["jwt", "expired signature", "unauthorized"],
+    "fix": "Session expired silently. The token has lapsed. Log out and log back in to generate a fresh authorization key.",
+    "severity": "LOW"
+  },
+  {
+    "id": "FIX_009",
+    "category": "INV",
+    "match": ["bom", "recipe", "cost = 0", "factor=0"],
+    "fix": "BOM zero-divide error. A RAW ingredient has Factor = 0. Go to Inventory, find the RAW asset, and set Factor >= 1 to resolve.",
+    "severity": "CRITICAL"
+  },
+  {
+    "id": "FIX_010",
+    "category": "INV",
+    "match": ["stock not updating", "vault static"],
+    "fix": "Vault direct edit detected. Use the RECEIVING BAY to log deliveries — never type stock numbers directly. The factor multiplier will not fire otherwise.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_011",
+    "category": "INV",
+    "match": ["negative margin", "cogs > rp"],
+    "fix": "Margin collapse. The Retail Price is below COGS. Increase RP in the Vault or renegotiate the Purchase Price with the vendor.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_012",
+    "category": "INV",
+    "match": ["shrinkage", "missing items"],
+    "fix": "Physical stock variance. Compare Theoretical Stock in Inventory to the physical count. The delta is shrinkage — theft, spoilage, or over-portioning.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_013",
+    "category": "INV",
+    "match": ["min_level", "red row in vault"],
+    "fix": "PAR level breach. Stock has fallen below the minimum threshold. Contact the vendor immediately and raise a Purchase Order.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_014",
+    "category": "POS",
+    "match": ["room_charge", "folio missing"],
+    "fix": "Ghost folio charge. You cannot charge to a room unless the guest is IN-HOUSE. Verify the room status in the Command Grid first.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_015",
+    "category": "POS",
+    "match": ["pos revenue 0", "sales not showing"],
+    "fix": "Double-entry bounce. The POS sale completed visually but failed to post to the accounting ledger. Check FastAPI logs for a missing category field mapping.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_016",
+    "category": "BILL",
+    "match": ["checkout failed", "advance deposit"],
+    "fix": "Settlement imbalance. The checkout logic failed to clear the Advance Deposit liability account. Run the checkout patch script to zero it before closing the folio.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_017",
+    "category": "BILL",
+    "match": ["discount exceeds total"],
+    "fix": "Predatory discount applied. The discount exceeds the folio total. The system blocked it to prevent negative revenue. Adjust the discount downward.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_018",
+    "category": "HR",
+    "match": ["ghost staff", "wrong load"],
+    "fix": "Operative load desync. Click AUTHORIZE GLOBAL SYNC in HR to force the system to overwrite the frontend cache with live database state.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_019",
+    "category": "HR",
+    "match": ["commission cap", "roi zero"],
+    "fix": "ROI multiplier failure. Update the COMM% for this operative in the HR Registry and sync. The revenue impact factor will recalculate.",
+    "severity": "LOW"
+  },
+  {
+    "id": "FIX_020",
+    "category": "HR",
+    "match": ["payroll accounting error"],
+    "fix": "Liability posting rejected. Ensure the Payroll Expense account exists in the Chart of Accounts before pushing payroll.",
+    "severity": "HIGH"
+  },
+  {
+    "id": "FIX_021",
+    "category": "WS",
+    "match": ["grid not updating", "websocket closed"],
+    "fix": "WebSocket silent drop. Refresh the Command Grid to re-establish the ws/grid-sync connection. If it persists, scale the ASGI worker count on the VPS.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_022",
+    "category": "WS",
+    "match": ["ghost guest", "tape mismatch"],
+    "fix": "Grid out of sync with DB. Force-pull /api/frontdesk/live-grid to wipe the frontend cache and reload from the physical database.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_023",
+    "category": "DNS",
+    "match": ["empty grid", "grids empty", "offline", "ai unavailable"],
+    "fix": "Check DNS first. Run `nslookup api.vigilantitsolution.com` — it must resolve to 23.88.50.87. If not, restore the A Records in cPanel Zone Editor.",
+    "severity": "CRITICAL"
+  },
+  {
+    "id": "FIX_024",
+    "category": "DNS",
+    "match": ["dns", "domain not resolving", "not found"],
+    "fix": "DNS outage detected. Log in to cPanel at 148.251.78.240:2083, navigate to Zone Editor, and verify A Records point to 23.88.50.87.",
+    "severity": "CRITICAL"
+  },
+  {
+    "id": "FIX_025",
+    "category": "SOLVE",
+    "match": ["ticket stuck", "force resolve failed"],
+    "fix": "Mission resolution deadlock. Only CDO can Force Resolve. Go to the Solve Portal and press the CDO override button.",
+    "severity": "MEDIUM"
+  },
+  {
+    "id": "FIX_026",
+    "category": "POLICY",
+    "match": ["maintenance lock failed", "room still bookable"],
+    "fix": "Maintenance chrono leak. The lock was saved in Policy but not synced to the reservation engine. Ensure AssetGrid.current_status is updated.",
+    "severity": "HIGH"
+  }
+]

@@ -1,0 +1,437 @@
++==================================================================+
+|   MIRACLE OS MASTER BRAIN ROUTER (V4.0) -- DUAL SYSTEM          |
+|   This folder manages TWO sovereign systems. Read this first.    |
++==================================================================+
+
+🌐 UNIVERSAL METHODOLOGY (READ FIRST — ANY PROJECT, ANY MODEL):
+   Global:  C:\Users\USER\Documents\miracle_directive\MIRACLE_DIRECTIVE.md
+   Repo:    MIRACLE_DIRECTIVE.md (root of this workspace)
+   Covers: SaaS ERP, Android APK, Dual-OS Web Build, Security, Agent Delegation
+
+📖 PROJECT-SPECIFIC RULES: This file (.antigravityrules) contains project variables only.
+   AGENT BIBLE: ANTIGRAVITY_AGENT_BIBLE.md for Miracle OS-specific absolute truth.
+
+🔌 SOVEREIGN SYSTEM PORT REGISTRY (DEV CONFUSION BARRIER):
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │              LOCAL DEV PORTS (Windows Machine)                      │
+   ├───────┬────────────────────────────────────────────────────────────┤
+   │ 8090  │ Miracle OS FastAPI Backend (local dev)                      │
+   │ 3000  │ Miracle OS ERP Frontend (Next.js local)                     │
+   │ 3001  │ Vigilant Marketing Website (Next.js local)                  │
+   │ 3003  │ Miracle Web Builder Editor (Next.js local)                  │
+   │ 3005  │ Miracle POS Frontend (Next.js local, D:\Miracle POS)        │
+   │ 3002  │ Miracle HMS Frontend (Next.js local, D:\Miracle_HMS\web)    │
+   └───────┴────────────────────────────────────────────────────────────┘
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │         VPS PRODUCTION PORTS (23.88.50.87 — Hetzner)               │
+   ├───────┬──────────────────────────────────┬────────────────────────┤
+   │ PORT  │ SERVICE / PM2 NAME               │ NGINX PROXY TARGET     │
+   ├───────┼──────────────────────────────────┼────────────────────────┤
+   │ 8090  │ miracle-backend (Miracle OS API)  │ api.vigilantitsolution  │
+   │ 8091  │ ops-sentinel worker (Miracle OS)  │ internal only          │
+   │ 8095  │ miracle-hms-backend (HMS API)     │ hms.vigilantitsolution  │
+   │ 3000  │ miracle-frontend (Miracle OS UI)  │ miracle.vigilantits..  │
+   │ 3001  │ vigilant-website (Marketing)      │ www.vigilantitsolution  │
+   │ 3002  │ miracle-hms-frontend (HMS UI)     │ hms.vigilantitsolution  │
+   │ 3005  │ miracle-pos (POS UI)              │ pos-app.vigilantits..  │
+   └───────┴──────────────────────────────────┴────────────────────────┘
+   CRITICAL: Port 8091 is OWNED by Miracle OS (ops-sentinel/worker).
+             HMS backend MUST use 8095. NEVER assign HMS to 8091.
+   DO NOT let these ports collide. Remap any new service before starting.
+
+DO NOT GUESS SYSTEM ARCHITECTURE.
+DO NOT READ MASSIVE BACKUP FILES.
+
+⚠️  NEXT.JS BUILD RULES (READ CAREFULLY — TWO DIFFERENT SYSTEMS):
+  MIRACLE OS (web/)          → BUILD LOCALLY on Windows, deploy .next to VPS.
+  VIGILANT WEBSITE (vigilant_website/) → BUILD ON VPS ONLY (Iron Law W-1).
+  NEVER swap these rules. Windows Turbopack hash differences break the website.
+  MIRACLE OS build command: cd web && npm run build (then deploy with patient deploy)
+
+=== SYSTEM 1: MIRACLE OS (Enterprise SaaS) ===
+URL:      https://miracle.vigilantitsolution.com
+Local:    D:\Vigilant IT Solutions\Miracle_Os_Master\web\
+Remote:   /home/vigilantitsolution-miracle/htdocs/miracle.vigilantitsolution.com
+PM2:      miracle-frontend (port 3000)
+Deploy:   python scripts\sovereign_patient_deploy.py [all|frontend|backend]
+Docs:     SOVEREIGN_DEPLOYMENT_DIRECTIVE.md
+          SOVEREIGN_SYSTEM_MAP.md
+          SOVEREIGN_ENGINEERING_DIRECTIVE.md
+          SOVEREIGN_ACCOUNTING_DIRECTIVE.md  (NEW — read for ANY accounting feature)
+          MIRACLE_ACCOUNTING_BIBLE.md        (NEW — financial doctrine & business logic)
+
+=== SYSTEM 2: VIGILANT WEBSITE (Marketing Site) ===
+URL:      https://www.vigilantitsolution.com
+Local:    D:\Vigilant IT Solutions\Miracle_Os_Master\vigilant_website\
+Remote:   /home/vigilantitsolution-www/htdocs/vigilantitsolution.com
+PM2:      vigilant-website (port 3001)
+Deploy:   python scripts\sovereign_website_deploy.py [--force]
+Docs:     SOVEREIGN_WEBSITE_DEPLOY_DIRECTIVE.md
+
+=== VPS SHARED INFRASTRUCTURE ===
+VPS IP:   23.88.50.87 (Hetzner)
+SSH Key:  ~/.ssh/miracle_os_key
+Nginx:    /etc/nginx/sites-enabled/ (both sites configured)
+SSL:      Let's Encrypt (auto-renew)
+Helper:   python scripts\vps_cmd.py "any shell command"
+
+=== MIRACLE BRAIN NODES (read when needed) ===
+- [UI & CSS Rules]      -> miracle_brain/01_BUILD.md
+- [Backend/Python/DB]   -> miracle_brain/02_DEVELOP.md
+- [Auth/APK/Zones]      -> miracle_brain/03_SYNC.md
+- [Deployment/PM2]      -> miracle_brain/04_DEPLOY.md
+- [Logs & Errors]       -> miracle_brain/05_DEBUG.md
+- [AI Rules & Persona]  -> miracle_brain/06_FIX.md
+
+=== ZONE REGISTRY (31 ZONES — CURRENT AS OF 2026-06-15) ===
+Z-07  Command Grid          /dashboard             ALL roles
+Z-30  Sovereign PMS         /dashboard/pms         ALL roles
+Z-05  Reservations          /dashboard/reservations ALL roles
+Z-06  POS / Retail          /dashboard/pos         ALL roles
+Z-26  Fleet & Aviation      /dashboard/fleet       ALL roles
+Z-27  Med-Spa & Wellness    /dashboard/wellness    ALL roles
+Z-28  Luxury Boutiques      /dashboard/boutiques   ALL roles
+Z-29  F & B                 /dashboard/z29-gastronomy ALL roles
+Z-3B  Asset Rentals (NEW)   /dashboard/rental      ALL roles
+Z-25  Guest Marketing       /dashboard/guest-marketing ALL roles
+Z-08  Checkout / Billing    /dashboard/checkout    ALL roles
+Z-16  Issue Tickets         /dashboard/issue-tickets ANY
+Z-17  Solve (Staff)         /dashboard/solve       ANY
+Z-14  Media Lab             /dashboard/media-lab   ALL roles
+Z-18  Biometric Portal      /dashboard/portal      ALL roles
+Z-12  Inventory Matrix      /dashboard/inventory   ALL roles
+Z-09  HR / Personnel        /dashboard/hr          ALL roles
+Z-2B  AGI Recruiting (NEW)  /dashboard/hr?tab=AGI_RECRUIT GM/ADMIN/HR/STAFF
+Z-10  CRM / Guest Loyalty   /dashboard/crm         ALL roles
+Z-19  CORE PMS              /dashboard/policy      ALL roles
+Z-20  Synapse Nexus         /dashboard/synapse     ALL roles
+Z-11  Accounts & Audit      /dashboard/accounts    GM/ADMIN/ACC
+Z-1B  Ledger Auth Gateway   /dashboard/accounts?tab=25 GM/ADMIN/ACC  [DEPT VAULT APPROVAL LAYER]
+Z-11B Accounting AGI        /dashboard/agi-accounts GM/ADMIN/ACC
+Z-11C Sovereign Finance     /dashboard/sovereign-finance GM/ADMIN/ACC
+
+=== ACCOUNTING ENGINE ZONES (NEW — 2026-06-20) ===
+  Each Revenue Zone has a DEPARTMENT VAULT (Layer 1 Primary Ledger):
+  Z-06 POS         → DEPT_POS     (till + expense catalog + batch consent)
+  Z-27 Wellness    → DEPT_WELLNESS (till + expense catalog + batch consent)
+  Z-30 PMS         → DEPT_PMS     (till + OTA commissions + batch consent)
+  Z-29 F&B         → DEPT_FB      (till + expense catalog + batch consent)
+  Z-28 Boutique    → DEPT_BOUTIQUE (till + expense catalog + batch consent)
+  Z-26 Fleet       → DEPT_FLEET   (till + expense catalog + batch consent)
+  Z-3B Rentals     → DEPT_RENTAL  (till + lease payments + batch consent)
+  Gateway (Z-1B)   → Layer 2 approval before Master Ledger posting
+  Docs: SOVEREIGN_ACCOUNTING_DIRECTIVE.md | MIRACLE_ACCOUNTING_BIBLE.md
+Z-21  Kernel Settings       /dashboard/settings    CDO/GM/ADMIN
+Z-23  Sovereign Infra       /dashboard/infrastructure CDO/GM/ADMIN
+Z-GUEST Guest Concierge (NEW) /guest               ALL roles
+Z-WEB  Public Website (NEW) /web                   ALL roles
+Z-OWNER Owner Portal (NEW)  /owner                 ALL roles
+Z-PROP  Miracle Properties (NEW) /properties       ALL roles
+
+PERMISSIONS SOURCE OF TRUTH: web/app/kernel.ts → ZONE_PERMISSIONS
+To add/remove role from zone: edit ZONE_PERMISSIONS[zone_id] array.
+Staff can be demoted to specific zones via HR Registry (Z-09).
+
+=== ACTIVE IRON LAWS ===
+
+[RED] IRON LAW 0: DIRECTIVE ANALYSIS PROTOCOL
+When this rules file (@.antigravityrules) is loaded, the agent MUST inspect the active developer prompt and classify the task target:
+- ERP Code/UI fix -> Refer to and follow SOVEREIGN_ENGINEERING_DIRECTIVE.md
+- ERP VPS Deployment/PM2 -> Refer to and follow SOVEREIGN_DEPLOYMENT_DIRECTIVE.md
+- Marketing Web or Web Builder edit/deploy -> Refer to and follow SOVEREIGN_WEBSITE_DEPLOY_DIRECTIVE.md
+- General Ecosystem / Port alignment -> Refer to and follow MIRACLE_DIRECTIVE.md & SOVEREIGN_SYSTEM_MAP.md
+- ANY accounting/ledger/till/vault/expense/P&L feature -> MUST READ SOVEREIGN_ACCOUNTING_DIRECTIVE.md + MIRACLE_ACCOUNTING_BIBLE.md FIRST
+The agent MUST output a 1-line "GOVERNING DIRECTIVE: [File Name]" stamp at the start of its response.
+
+[RED] IRON LAW 39: GREETING ANTI-AUTO-PILOT
+If user says "hello", "hi", or "continue": STOP. Ask what the user
+needs TODAY. Do not auto-resume old tasks.
+
+[RED] IRON LAW 26: PURE SQL DELEGATION
+Never hallucinate business data. Use EXECUTE_SQL.
+
+[RED] IRON LAW 47: ANTI-FAIL2BAN / NO INFINITE SSH LOOPS
+NEVER write scripts that loop infinitely trying to connect via SSH.
+A rapid retry loop will trigger Fail2Ban and BAN the IP instantly.
+If connection fails: fail gracefully and STOP.
+
+[RED] IRON LAW 48: THE ENTERPRISE SERVICE KERNEL
+Any new Guest Service MUST follow the Single Kernel Loop:
+1. GUEST REQUEST -> specific module table
+2. SIGNAL GRID -> spawn SolveMission for Z-07 pulse
+3. STAFF ACTION -> Z-17 Radar visual proof + Secure
+4. BILLING SYNC -> resolving mission hits GuestFolio
+
+[RED] IRON LAW 49: PATIENT DEPLOY ENGINE ONLY (Miracle OS)
+For Miracle OS: NEVER use zip/tar deploys. Use sovereign_patient_deploy.py.
+File-by-file upload ONLY.
+
+[RED] IRON LAW 50: THIN-CLIENT ARCHITECTURE (Android APK)
+The Android Guest App is a Capacitor thin client. NEVER bundle the
+Next.js static output (800MB) inside the APK. Max APK size: 64MB.
+
+[RED] IRON LAW 53: MIRACLE KERNEL SYNC
+root miracle_kernel.json MUST be synced to backend_api/ before deploy.
+Failure causes Zone Blindness in the frontend sidebar.
+
+[RED] IRON LAW W-1: WEBSITE BUILD ON VPS ONLY
+NEVER build vigilantitsolution.com locally on Windows then upload .next.
+Windows Turbopack chunk hashes differ from Linux -> MODULE_NOT_FOUND.
+Build MUST happen on VPS: rm -rf .next && npm run build on the server.
+
+[RED] IRON LAW W-2: VIGILANT WEBSITE PM2 START COMMAND IS LOCKED
+The ONLY correct PM2 command for vigilant-website is:
+  pm2 start 'npx next start -p 3001' --name vigilant-website
+Never use: npm start / next start / cluster mode.
+
+[RED] IRON LAW W-3: DELETE .next BEFORE EVERY VPS BUILD
+Always run: rm -rf .next BEFORE npm run build on the VPS.
+Old turbopack chunks leave ghost modules causing MODULE_NOT_FOUND.
+
+[RED] IRON LAW W-4: WINDOWS ASCII-SAFE OUTPUT
+All Python scripts running on Windows: encode all remote SSH output
+as ASCII before printing. PM2 outputs box-drawing Unicode chars that
+crash Python's print() on Windows cp1252:
+  print(output.encode('ascii','replace').decode(), flush=True)
+
+[RED] IRON LAW W-5: THREE-POINT HEALTH CHECK
+Never declare site live without ALL THREE passing:
+  curl http://localhost:3001/                                 -> 200
+  curl https://www.vigilantitsolution.com/                   -> 200
+  curl https://www.vigilantitsolution.com/_next/static/...   -> 200
+
+[RED] IRON LAW W-6: WEB BUILDER LAYOUT INTEGRITY
+Web Builder edits page content dynamically and writes to 'lib/layout.json'.
+When deploying the website to the VPS, the latest 'lib/layout.json' configuration MUST be bundled and pushed to ensure content changes are preserved. Never overwrite remote layout with stale default configs.
+
+=== KEY SUBSYSTEMS BUILT (2026-06-15 CURRENT) ===
+
+[SGPE] Sovereign Global Policy Engine — backend_api/app/routers/sgpe.py
+  5 sub-engines: FDI/Immigration, Escrow Vault, Tax Shield (MACRS/1031),
+  Subsidy Credits (LIHTC), Bangladesh JV Resort Share-Selling Engine.
+  7 auto-seeded sovereign policy configs (UAE, Turkey, Greece, US, BD).
+  Frontend: /dashboard/sovereign-finance → SGPE tab.
+
+[MIRACLE PROPERTIES] Property Marketplace — /properties (Z-PROP)
+  Buy/sell/lease/rent listings. Shah Marine Resort seeded (7 listings #34-40).
+  Dynamic variable system: scripts/shah_marine_params.json → auto-recalculates
+  pricing when land area, sqft, or interest rates change.
+  Seed script: scripts/seed_shah_marine_properties.py
+
+[SHAH MARINE B2B INVESTMENT]
+  300 decimal (3-acre) riverfront resort in Bangladesh.
+  Trust Bank 45 Cr BDT loan, 11% interest from Month 6.
+  Directors: Maksuda Afroz Chowdhury (50%) + Shah Mominul Islam (50%).
+  Phase 0 Waterfall (pre-Sept 2026): 30/60/10 split on first 12.5Cr sales.
+  Phase 1 Waterfall: 80/10/10 split. Full loan cleared in 12 months.
+  Plan: /brain/*/shah_marine_investment_plan.md
+
+=== PHASE 1-8 PMS ENGINE IRON LAWS ===
+
+[RED] IRON LAW 54: UDI POOL MATH (UNIT DENSITY INDEX)
+All rental pool yield distributions MUST use UDI formula:
+  UDI% = (Room Sq Ft / Total Active Pool Sq Ft) x 100
+NEVER use flat equal-share splits. Every room's sqft must
+be recorded in AssetGrid.size_sqft before pool assignment.
+Pool recalculate is triggered on every room assignment change.
+
+[RED] IRON LAW 55: MANUAL OVERRIDE AUDIT TRAIL
+ANY manual room override or AI dispatch override MUST:
+  1. Supply override_reason (minimum 5 characters) OR reject HTTP 400
+  2. Stamp: AssetGrid.last_override_by, last_override_reason, last_override_at
+  3. Mark PMSOwnerLedger.is_manual_override = True
+  4. Log AuditLog entry type="MANUAL_OVERRIDE"
+This is non-negotiable. The system selling point is that EVERY
+manual action has a human-accountable reason on record.
+
+[RED] IRON LAW 56: MORTGAGE SWEEP ATOMICITY
+The monthly mortgage sweep (POST /api/mortgage/sweep) MUST:
+  1. Use db.begin_nested() (SAVEPOINT) PER ROOM
+  2. If one room fails -> ROLLBACK that room only, continue others
+  3. Idempotency key format: MORTGAGE_DEBIT-{ROOM_ID}-{MMYYYY}
+  4. Check idempotency_key BEFORE posting -- never double-sweep
+  5. Always support dry_run=True for simulation (no DB writes)
+NEVER run a bulk sweep inside a single outer transaction --
+a single failure would roll back ALL rooms.
+
+[RED] IRON LAW 57: DAEMON SCHEDULER SAFE INVOCATION
+The PMS Daemon (POST /api/pms/alerts/trigger-daemon-sweep) runs:
+  STEP 1: Compliance scan (log CRITICAL count)
+  STEP 2: Monthly mortgage sweep (per-room SAVEPOINT)
+  STEP 3: Monthly snapshot generation
+Schedule: cron 0 6 1 * * (1st of month, 06:00 UTC)
+NEVER call the daemon sweep more than once per period.
+The idempotency key on PMSOwnerLedger prevents double-posting
+but the daemon log should be checked before re-triggering.
+
+[RED] IRON LAW 58: AGI BOT PMS RBAC
+The /agi pms-* command set in bot_router_v2.py is restricted
+to roles: CDO, GM, ADMIN, ACC.
+All other roles receive ACCESS DENIED response (HTTP 200).
+The /agi dispatch-room command with manual:{id} REQUIRES reason:{text}.
+Missing reason = rejection at bot interceptor level before DB touch.
+This enforces Iron Law 55 at the conversational UI layer.
+
+[RED] IRON LAW 59: DIRECT-DEBIT SWEEP AND SIGNATURE LOCK
+Direct debit sweeps for mortgage or repair deficits are prohibited
+unless a valid, ACTIVE PMSDirectDebitAuth mandate is stored.
+Covenant contracts must be digitally signed with a valid SHA-256
+hash and Base64 signature canvas data on record before payouts can occur.
+
+[RED] IRON LAW 60: OWNER PORTAL WHT AND FEES
+All yield credits calculated for properties must deduct a management
+fee (e.g. 20%) before posting as net yield.
+AI bot responses summarizing yields or calculating payouts must strictly
+adhere to the values present in PMSOwnerLedger.
+
+[RED] IRON LAW 61: SOVEREIGN DEV PORT INTEGRITY
+All local developments must bind strictly to the Port Registry:
+  LOCAL:
+  - 8090: Miracle OS FastAPI Backend
+  - 3000: Miracle OS ERP Frontend
+  - 3001: Vigilant Marketing Website
+  - 3002: Miracle HMS Frontend (web/)
+  - 3003: Miracle Web Builder Editor
+  - 3005: Miracle POS Frontend
+  VPS PRODUCTION (23.88.50.87):
+  - 8090: miracle-backend   (Miracle OS API)     → nginx: api.vigilantitsolution.com
+  - 8091: ops-sentinel      (Miracle OS Worker)  → INTERNAL ONLY — DO NOT PROXY HMS HERE
+  - 8095: miracle-hms-backend (HMS FastAPI)      → nginx: hms.vigilantitsolution.com/api/
+  - 3000: miracle-frontend  (Miracle OS UI)      → nginx: miracle.vigilantitsolution.com
+  - 3001: vigilant-website  (Marketing)          → nginx: www.vigilantitsolution.com
+  - 3002: miracle-hms-frontend (HMS UI)          → nginx: hms.vigilantitsolution.com
+  - 3005: miracle-pos       (POS UI)             → nginx: pos-app.vigilantitsolution.com
+Never bind any dev service to an occupied port. Remap new services before starting.
+
+[RED] IRON LAW 62: TOUR TOKEN SIZE BOUNDS AND CROSS-DOMAIN HANDOFF
+Cross-domain redirection tokens from the corporate domain to the guest-tour subdomain must be minimized. The database `tour_token` column in `sales_leads` is strictly constrained to 128 characters.
+  - Payload Model: The token payload MUST contain ONLY `{ lead_id, issued_at }` (Unix timestamp) to produce a short base64 string (~50 characters).
+  - Profile Storage: Do NOT encode rich visitor configuration profile details in the token. Update these in the database via the internal loopback API `/api/visitor/enrich-lead` instead.
+  - Network Route: Local backend requests between services on the VPS must utilize the internal loopback path (`http://localhost:8090`) to bypass DNS lookups and SSL bouncer overhead.
+
+[RED] IRON LAW 63: AGI ACCOUNTING INFLOW CLASSIFICATION MANDATE
+The AGI CoA Engine MUST always check for CASH INFLOW signals BEFORE running
+the classification rule list. This is the INFLOW PRE-PASS GUARDIAN.
+
+INFLOW SIGNALS (money coming IN = always an ASSET or LIABILITY, never an EXPENSE):
+  - Keywords: "received", "deposited", "transfer in", "cash in", "fund received",
+    "capital injection", "equity injection", "owner fund", "operational fund",
+    "bank credit", "wire received", "payment received", "loan received"
+  - Pattern: Any sentence where money is described as ARRIVING at the hotel/account
+
+CORRECT DOUBLE-ENTRY FOR INFLOWS:
+  Dr  Cash/Bank (ASSET 100000)    [money increases in bank]
+  Cr  Owner's Contribution (EQUITY 300000)  [or Loan Payable if a debt]
+
+FORBIDDEN: Never classify a cash receipt as "Miscellaneous Expense".
+FALLBACK: If no rule matches, classify as "Unclassified - Requires Review" (not Expense).
+FILE: backend_api/app/routers/agi_coa_engine.py
+FUNCTIONS: _classify_transaction(), INFLOW_VERBS[], CLASSIFICATION_RULES[] Priority 0 Block
+
+[RED] IRON LAW 64: EXPENSE CATALOG ENFORCEMENT (ACCOUNTING ENGINE)
+ALL expense transactions in the dept till MUST reference a valid category_id from
+expense_categories table. Backend returns HTTP 422 for any expense without catalog category.
+NEVER accept freeform expense descriptions. Only UUID category_id is valid.
+File: backend_api/app/routers/dept_accounting.py
+
+[RED] IRON LAW 65: 20-TX BATCH CONSENT GATE
+System MUST block further till entries when batch reaches 20 transactions AND is PENDING_CONSENT.
+Block lifts ONLY when dept head PIN consent is recorded. No admin bypass exists for this gate.
+File: backend_api/app/routers/dept_accounting.py — batch_consent() endpoint.
+
+[RED] IRON LAW 66: MASTER LEDGER IMMUTABILITY
+The master_ledger table is APPEND-ONLY. ZERO UPDATE or DELETE queries are permitted.
+Corrections MUST be new contra entries. Any agent writing UPDATE/DELETE to master_ledger
+has violated financial law. Audit the code before deploy.
+File: backend_api/app/routers/dept_accounting.py
+
+[RED] IRON LAW 67: VOID DOUBLE-AUTHORIZATION
+A void MUST have BOTH: (a) dept head approval AND (b) accounts elimination.
+Dept-head-only approved voids remain in Gateway void panel until Accounts eliminates.
+Single-party void clearance is PROHIBITED.
+
+[RED] IRON LAW 68: NEGATIVE TILL BLOCK
+Backend MUST verify: current_till_balance - expense_amount >= 0 before any EXPENSE_CASH
+or CASH_DROP entry. Negative till balance is a system integrity failure.
+Return HTTP 409: "Insufficient till balance" — never allow negative till.
+
+[RED] IRON LAW 69: DOUBLE-ENTRY ATOMICITY
+Every till_transaction INSERT must be wrapped in a DB transaction with its matching
+dept_ledger_entry INSERT. If ledger entry fails -> ROLLBACK the till transaction.
+Orphaned till transactions without ledger entries are a financial disaster.
+
+[RED] IRON LAW 70: CROSS-DEPT TRANSACTION MARKING
+Transactions by staff outside their assigned department MUST carry is_cross_dept=True
+and cross_dept_token_id referencing GM-issued override token. Expired tokens = HTTP 403.
+
+[RED] IRON LAW 71: ACCOUNTS ROLE CANNOT ENTER TRANSACTIONS
+The ACCOUNTS role is REVIEWER and APPROVER only. Backend MUST reject any till revenue
+or expense POST from role=ACCOUNTS. Accounts posts only through the Gateway.
+
+[RED] IRON LAW 72: DEPARTMENT ISOLATION GUARANTEE (PLUG & PLAY)
+Every department is a fully self-contained economic entity. These laws MUST hold:
+  1. No accounting table may create a foreign key from one dept_id to another dept_id
+     in a way that creates a cascade dependency between departments.
+  2. Cross-dept transactions (e.g. room charges billed from Wellness to PMS folio) are
+     handled via is_cross_dept=True marker on the RECEIVING department's till_transaction.
+     The two department records do NOT reference each other's IDs in a blocking way.
+  3. DEACTIVATION SAFETY GUARDS (backend enforces before setting active=0):
+     a. Block if any tx_batch for dept has status IN ('OPEN','PENDING_CONSENT','CONSENTED','SUBMITTED','QUERIED')
+     b. Block if computed till balance > 0
+     Both checks must return HTTP 409 with clear message before deactivation proceeds.
+  4. REACTIVATION: Any deactivated department can be reactivated at any time by CDO.
+     All historical ledger data, batches, and transactions remain fully intact.
+  5. PRICE PLAN GATING:
+     BASIC      -> active depts: DEPT_POS, DEPT_PMS only
+     PRO        -> active depts: DEPT_POS, DEPT_PMS, DEPT_FB, DEPT_WELLNESS
+     ENTERPRISE -> active depts: all 7 standard + any custom zones
+     CUSTOM     -> CDO assigns dept list per-client at onboarding
+  6. UI GATE: Frontend checks departments?active_only=true before rendering DeptTillPanel.
+     If dept is inactive or not in price plan, panel is simply absent — no error, no blank widget.
+File: backend_api/app/routers/dept_accounting.py -> update_department() deactivation guard.
+
+[RED] IRON LAW 73: THE 3-TIER ENTERPRISE ECOSYSTEM MANDATE
+Every single new development, module, feature, or service built in this system MUST be implemented across the following three mandatory tiers. Overlooking or combining these tiers is a critical system architecture violation.
+  1. CLIENT-FACING PRESENTATION LAYER (End-User UI):
+     - Scope: Web apps, mobile thin-client APKs, iOS interfaces, or public desktop UIs.
+     - Rule: Multi-platform accessible portals designed for public end-users. All client-facing interfaces must validate inputs and route actions via POS checkout gateways.
+  2. BACK-OFFICE OPERATIONS LAYER (Operational Admin Console / Zones):
+     - Scope: Command Grid (Z-07) tiles, Staff Radar (Z-17), and specific zone consoles (F&B KDS, Dispatch, POS tills).
+     - Rule: Operation managers must have full administrative dashboards to view requests, execute state updates, check balances, and control inventories.
+  3. KERNEL & INFRASTRUCTURE LAYER (Core Backend Logic, Data, and Hardware):
+     - Scope: Python service routers, SQL schemas, background worker daemons, CPU/GPU compute schedules, and loopback networking.
+     - Rule: Underpinning everything must be database transaction constraints, stock/BOM deductions, double-entry general ledger records, and hardware resource isolation rules.
+
+[RED] IRON LAW 74: VPS PORT OWNERSHIP — NEVER REASSIGN
+The VPS port map is FROZEN. Each port belongs to exactly one service. Violating this
+causes a service to silently serve WRONG data from a different system's backend.
+
+FROZEN VPS PORT MAP (23.88.50.87 — Hetzner):
+  8090 → miracle-backend         (Miracle OS FastAPI — OWNED by Miracle OS FOREVER)
+  8091 → ops-sentinel/worker     (Miracle OS Worker  — OWNED by Miracle OS FOREVER)
+  8095 → miracle-hms-backend     (HMS FastAPI        — OWNED by Miracle HMS FOREVER)
+  3000 → miracle-frontend        (Miracle OS Next.js — OWNED by Miracle OS FOREVER)
+  3001 → vigilant-website        (Marketing Next.js  — OWNED by Vigilant Website)
+  3002 → miracle-hms-frontend    (HMS Next.js        — OWNED by Miracle HMS FOREVER)
+  3005 → miracle-pos             (POS Next.js        — OWNED by Miracle POS FOREVER)
+
+HMS STARTUP LAW (NEVER CHANGE):
+  CWD:        /home/vigilantitsolution-hms/.../backend_api/
+  PYTHONPATH: /home/vigilantitsolution-hms/.../backend_api/
+  CMD:        .venv/bin/python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8095
+  PM2 name:   miracle-hms-backend
+  Script:     start_hms_backend.sh (in REMOTE_ROOT)
+
+HMS nginx /api proxy MUST point to 127.0.0.1:8095 — NEVER 8090 or 8091.
+If you see hotel rooms (LTR-01, RESIDENCES, CRUISE) on hms.vigilantitsolution.com,
+it means nginx is routing HMS to port 8090/8091 (Miracle OS). Check immediately.
+
+ROOT CAUSE HISTORY: On 2026-06-30, HMS showed hotel room data because nginx
+proxied /api to 8091 (Miracle OS worker). HMS backend was crashing because it
+also tried to bind 8091. Fix: HMS moved to 8095, nginx updated.
+
+DATABASE OWNERSHIP:
+  Miracle OS:  miracle_os_master.db    (hotel/hospitality data)
+  Miracle HMS: miracle_hms_master.db   (hospital ward/bed data — WARD/ICU/CABIN/ER/OT)
+  Miracle POS: pos_master.db           (retail transaction data)
+NEVER let these databases cross-contaminate. Each backend reads its own DB only.

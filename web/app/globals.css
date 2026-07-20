@@ -1,0 +1,1837 @@
+/* ==========================================
+   MIRACLE HMS — SOVEREIGN DESIGN SYSTEM v4.1
+   "Fluid Integrity" (Consolidated)
+
+   INDEX / TABLE OF CONTENTS:
+   1. PRIMARY ARCHITECTURAL IMPORTS
+   2. TAILWIND CORE ENGINE
+   3. SOVEREIGN ROOT TOKENS (:root)
+   4. SOVEREIGN BODY RESET
+   5. SOVEREIGN SCROLLBAR ARCHITECTURE
+   6. KINETIC ANIMATION ENGINES
+   7. DOMAIN COMPONENTS (Pulse, Vortex, Marquee)
+   8. ENTERPRISE HEADING COMPRESSION (Desktop/Tablet)
+   9. SOVEREIGN MOBILE KERNEL (max-width: 767px)
+      - Shell & Main Content
+      - Mobile Dock & Navigation
+      - Mobile HUD & Headings
+      - Grid Reflow & Tables
+      - Zone-Specific UI (POS, Res, etc.)
+   10. PRINT MEDIA
+   ========================================== */
+
+/* 1. PRIMARY ARCHITECTURAL IMPORTS (MUST BE FIRST) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* 2. TAILWIND CORE ENGINE */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   3. SOVEREIGN ROOT TOKENS (CSS Custom Properties)
+   Fluid scaling via clamp() — adapts to ANY viewport
+   ========================================== */
+:root {
+  /* Fluid spacing scale (Tightened for Enterprise Density) */
+  --space-xs: clamp(3px, 0.4vw, 5px);
+  --space-sm: clamp(6px, 0.8vw, 10px);
+  --space-md: clamp(10px, 1.2vw, 16px);
+  --space-lg: clamp(16px, 2vw, 24px);
+  --space-xl: clamp(24px, 3vw, 36px);
+
+  /* Fluid typography scale (Enterprise Standard) */
+  --text-xs: clamp(8px, 0.6vw + 5px, 10px);
+  --text-sm: clamp(10px, 0.7vw + 6px, 12px);
+  --text-md: clamp(12px, 0.8vw + 8px, 14px);
+  --text-lg: clamp(14px, 1vw + 10px, 18px);
+  --text-xl: clamp(18px, 1.2vw + 12px, 24px);
+  --text-hero: clamp(22px, 1.5vw + 14px, 32px);
+
+  /* Touch targets — 44px minimum per Apple HIG */
+  --touch-min: 44px;
+
+  /* Neon palette */
+  --neon-cyan: #00F2FF;
+  --neon-green: #39FF14;
+  --neon-gold: #D4AF37;
+  --neon-red: #FF3131;
+  --neon-purple: #9D00FF;
+  --neon-burgundy: #D70F64;
+  --surface-dark: #050505;
+  --surface-glass: rgba(15, 15, 15, 0.7);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Safe areas (Capacitor/Android notch) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+/* ==========================================
+   4. SOVEREIGN BODY RESET
+   Fixed: Removed overflow:hidden and zoom:1.0
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: radial-gradient(ellipse at 50% 0%, #0a0f16 0%, #000000 60%) !important;
+  color: #F5F5F5;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  /* Ensure default text is readable */
+  font-size: var(--text-md);
+}
+
+/* 🛡️ DEFAULT MOBILE ELEMENT HIDING (DESKTOP STATE) */
+.miracle-mobile-dock,
+.miracle-mobile-menu,
+.miracle-mobile-topbar {
+  display: none !important;
+}
+
+/* ==========================================
+   5. SOVEREIGN SCROLLBAR ARCHITECTURE
+   ========================================== */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.25);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-gold);
+  box-shadow: 0 0 10px var(--neon-gold);
+}
+
+/* Make scrollbars thinner on mobile but do not hide completely for usability */
+@media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none !important;
+}
+.hide-scroll {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* ==========================================
+   6. KINETIC ANIMATION ENGINES
+   Rule 9: Hardware-accelerated only (transform, opacity, filter)
+   ========================================== */
+@keyframes scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Ken Burns — slow cinematic zoom + gentle pan, makes still photos feel alive */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1.0) translate(0%, 0%);
+  }
+  25% {
+    transform: scale(1.06) translate(-1.5%, 0.5%);
+  }
+  50% {
+    transform: scale(1.1) translate(-1%, 1%);
+  }
+  75% {
+    transform: scale(1.06) translate(1%, 0.5%);
+  }
+  100% {
+    transform: scale(1.0) translate(1.5%, 0%);
+  }
+}
+
+/* Shimmer — soft diagonal light sweep across the image */
+@keyframes shimmer-sweep {
+  0%   { background-position: -200% center; opacity: 0; }
+  30%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { background-position: 200% center; opacity: 0; }
+}
+
+
+@keyframes pulse-glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.9));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.4));
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ==========================================
+   7. DUAL-MARQUEE TELEMETRY ENGINE
+   ========================================== */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 150s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ==========================================
+   8. ZONE 07: OMNI-SPECTRUM PULSE ARCHITECTURE
+   ========================================== */
+
+/* SINGLE TICKET PULSES */
+@keyframes pulse-purple {
+  0% {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.2), inset 0 0 5px rgba(168, 85, 247, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.8), inset 0 0 15px rgba(168, 85, 247, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.2), inset 0 0 5px rgba(168, 85, 247, 0.1);
+  }
+}
+
+.pulse-hk {
+  animation: pulse-purple 2s infinite ease-in-out !important;
+  box-shadow: 0 0 15px #a855f7 !important;
+  border: 1px solid #a855f7 !important;
+}
+
+@keyframes pulse-orange {
+  0% {
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.2), inset 0 0 5px rgba(249, 115, 22, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.8), inset 0 0 15px rgba(249, 115, 22, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.2), inset 0 0 5px rgba(249, 115, 22, 0.1);
+  }
+}
+
+.pulse-mn {
+  animation: pulse-orange 2s infinite ease-in-out !important;
+  box-shadow: 0 0 15px #f97316 !important;
+  border: 1px solid #f97316 !important;
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.2), inset 0 0 5px rgba(34, 197, 94, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.8), inset 0 0 15px rgba(34, 197, 94, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.2), inset 0 0 5px rgba(34, 197, 94, 0.1);
+  }
+}
+
+.pulse-it {
+  animation: pulse-green 2s infinite ease-in-out !important;
+  box-shadow: 0 0 15px #22c55e !important;
+  border: 1px solid #22c55e !important;
+}
+
+@keyframes pulse-yellow {
+  0% {
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.2), inset 0 0 5px rgba(234, 179, 8, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(234, 179, 8, 0.8), inset 0 0 15px rgba(234, 179, 8, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.2), inset 0 0 5px rgba(234, 179, 8, 0.1);
+  }
+}
+
+.pulse-rs {
+  animation: pulse-yellow 2s infinite ease-in-out !important;
+  box-shadow: 0 0 15px #eab308 !important;
+  border: 1px solid #eab308 !important;
+}
+
+/* CRITICAL STROBE (THE AMBULANCE) */
+@keyframes strobe-red {
+
+  0%,
+  100% {
+    background-color: rgba(239, 68, 68, 0.05);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+  }
+
+  50% {
+    background-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 0 40px rgba(239, 68, 68, 1);
+  }
+}
+
+.pulse-critical {
+  animation: strobe-red 0.5s infinite ease-in-out !important;
+  box-shadow: 0 0 25px #ef4444 !important;
+  border: 2px solid #ef4444 !important;
+}
+
+/* MULTI-TICKET VORTEX (MODERN MASKED BORDER) */
+@property --vortex-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-vortex {
+  0% {
+    --vortex-angle: 0deg;
+  }
+
+  100% {
+    --vortex-angle: 360deg;
+  }
+}
+
+.pulse-vortex {
+  position: relative;
+}
+
+.pulse-vortex::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--vortex-angle),
+      rgba(168, 85, 247, 0.1) 0%,
+      #a855f7 15%,
+      rgba(249, 115, 22, 0.1) 25%,
+      #f97316 40%,
+      rgba(34, 197, 94, 0.1) 50%,
+      #22c55e 65%,
+      rgba(234, 179, 8, 0.1) 75%,
+      #eab308 90%,
+      rgba(168, 85, 247, 0.1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: spin-vortex 4s linear infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.pulse-vortex::after {
+  display: none;
+}
+
+/* 8.5 ENTERPRISE HEADING COMPRESSION (Desktop) */
+/* Removed aggressive !important overrides to let page-level JSX typography breathe */
+
+/* Tablet: Adjust column layouts */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .paper-reveal {
+    padding: var(--space-lg) !important;
+  }
+}
+
+/* =======================================================
+   9. MOBILE SOVEREIGN LAYOUT — 9:16 ONLY (max-width: 767px)
+   ⚠️  RULE: ZERO CHANGES TO DESKTOP OR TABLET ABOVE 768px
+   ======================================================= */
+@media (max-width: 767px) {
+
+  /* --- SHELL: Full-screen, vertical flex column on mobile --- */
+  .miracle-shell {
+    flex-direction: column !important;
+    height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  /* --- SIDEBAR: Hidden on mobile --- */
+  .miracle-shell>aside {
+    display: none !important;
+  }
+
+  /* --- MAIN: Full width, scrolling handled gracefully --- */
+  .miracle-shell>main,
+  .miracle-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* --- MARQUEE: Hide on mobile (too cluttered) --- */
+  .miracle-shell .marquee,
+  .miracle-shell>main>div:first-of-type {
+    display: none !important;
+  }
+
+  /* --- MAIN CONTENT: Full width, scrollable, bottom-padded for dock --- */
+  .miracle-main-content {
+    width: 100% !important;
+    max-width: 100vw !important;
+    flex: 1 !important;
+    padding-bottom: 80px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* --- PAGE PADDING: Tighter on mobile --- */
+  .miracle-main-content>div {
+    padding: 16px !important;
+  }
+
+  /* --- BOTTOM NAV DOCK --- */
+  .miracle-mobile-dock {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 64px !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+    background: rgba(8, 8, 8, 0.97) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    z-index: 9999 !important;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .miracle-dock-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 6px 10px !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    transition: background 0.2s ease !important;
+    cursor: pointer !important;
+  }
+
+  .miracle-dock-item.active {
+    background: rgba(0, 242, 255, 0.1) !important;
+  }
+
+  .miracle-dock-item .dock-icon {
+    font-size: 20px !important;
+    line-height: 1 !important;
+  }
+
+  .miracle-dock-item .dock-label {
+    font-size: 8px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.5px !important;
+    color: #555 !important;
+    text-transform: uppercase !important;
+  }
+
+  .miracle-dock-item.active .dock-label {
+    color: #00F2FF !important;
+  }
+
+  /* Hamburger button for full menu */
+  .miracle-dock-menu-btn {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 3px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    justify-content: center !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 6px !important;
+  }
+
+  .miracle-dock-menu-btn span {
+    width: 20px !important;
+    height: 2px !important;
+    background: #555 !important;
+    border-radius: 2px !important;
+    display: block !important;
+  }
+
+  /* --- MOBILE FULL MENU OVERLAY --- */
+  .miracle-mobile-menu {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.97) !important;
+    z-index: 99999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 60px 24px 100px !important;
+    overflow-y: auto !important;
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .miracle-mobile-menu-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 16px !important;
+    border-radius: 16px !important;
+    text-decoration: none !important;
+    margin-bottom: 4px !important;
+    min-height: 56px !important;
+    transition: background 0.15s ease !important;
+  }
+
+  .miracle-mobile-menu-item:active {
+    background: rgba(0, 242, 255, 0.08) !important;
+  }
+
+  .miracle-mobile-menu-item .menu-icon {
+    font-size: 22px !important;
+    width: 40px !important;
+    text-align: center !important;
+  }
+
+  .miracle-mobile-menu-item .menu-text {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #ccc !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* --- GRID REFLOW: All grids → single column on mobile --- */
+  [style*="grid-template-columns"],
+  [class*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- TABLES: Horizontal scroll wrapper --- */
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* --- MIRACLE BOT: Full-screen bottom sheet on mobile --- */
+  .miracle-bot-container {
+    position: fixed !important;
+    z-index: 999999 !important;
+    width: auto !important;
+    height: auto !important;
+    pointer-events: auto !important;
+  }
+
+  .miracle-bot-container.open {
+    bottom: 72px !important;
+    right: 12px !important;
+    left: 12px !important;
+    max-width: calc(100vw - 24px) !important;
+    transform: none !important;
+  }
+
+  /* --- CARDS: Full width, no fixed widths --- */
+  [style*="minWidth"],
+  [style*="min-width"] {
+    min-width: unset !important;
+    width: 100% !important;
+  }
+
+  /* --- HEADINGS: Scale down for mobile --- */
+  h1 {
+    font-size: clamp(18px, 5vw, 28px) !important;
+  }
+
+  h2 {
+    font-size: clamp(15px, 4vw, 22px) !important;
+  }
+
+  h3 {
+    font-size: clamp(13px, 3.5vw, 18px) !important;
+  }
+
+  /* --- PAPER REVEAL --- */
+  .paper-reveal {
+    padding: var(--space-md) !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  /* --- MOBILE TOP BAR: Inside main flow, no position:sticky needed --- */
+  .miracle-mobile-topbar {
+    height: 56px !important;
+    min-height: 56px !important;
+    background: rgba(5, 5, 5, 0.98) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 16px !important;
+    flex-shrink: 0 !important;
+    z-index: 100 !important;
+    width: 100% !important;
+  }
+
+  /* --- Mobile Dock & Topbar (Merged) --- */
+  .miracle-mobile-dock {
+    display: flex !important;
+  }
+
+  .miracle-mobile-topbar {
+    display: flex !important;
+  }
+
+  /* ── VISITOR BANNER: Collapse to a single slim pill ── */
+  .vm-banner {
+    padding: 6px 12px !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    min-height: 0 !important;
+  }
+
+  .vm-banner>span:first-child {
+    /* the lock emoji */
+    font-size: 13px !important;
+  }
+
+  .vm-banner>div>div:first-child {
+    /* "VISITOR VIEW-ONLY ACCESS" */
+    font-size: 9px !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .vm-banner>div>div:last-child {
+    /* description text — hide on mobile */
+    display: none !important;
+  }
+
+  .vm-banner>div:last-child {
+    /* READ ONLY badge */
+    padding: 3px 10px !important;
+    font-size: 8px !important;
+  }
+
+  /* ── HUD HEADER: Compress zone title into a compact chip bar ── */
+  .hud-header {
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .hud-title {
+    font-size: 14px !important;
+    letter-spacing: 1px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 55vw !important;
+  }
+
+  .hud-subtitle {
+    font-size: 8px !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 55vw !important;
+  }
+
+  .hud-actions {
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    margin-left: auto !important;
+  }
+
+  /* Make action buttons icon-only chips on mobile */
+  .hud-actions .refresh-btn,
+  .hud-actions .sync-hub-btn {
+    padding: 8px 10px !important;
+    font-size: 9px !important;
+    letter-spacing: 0 !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  .hud-actions .network-status {
+    padding: 6px 10px !important;
+    font-size: 9px !important;
+    border-radius: 20px !important;
+  }
+
+  /* ── PAGE CONTAINERS: Tight padding on mobile ── */
+  .pos-app-container,
+  [class*="zone-container"],
+  [class*="page-container"] {
+    padding: 10px 10px 90px !important;
+    /* bottom pad for dock */
+    height: auto !important;
+    min-height: 100dvh !important;
+  }
+
+  /* ── LAYOUT GRIDS: Force single column on phone ── */
+  .layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    overflow: visible !important;
+  }
+
+  /* Right folio panel becomes a bottom drawer style section */
+  .right-folio-panel {
+    border-radius: 20px !important;
+    padding: 16px !important;
+  }
+
+  /* ── PRODUCT GRID: 2-column on mobile (not 4) ── */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    min-height: 0 !important;
+  }
+
+  .premium-product-card {
+    height: 220px !important;
+  }
+
+  .card-img-area {
+    height: 110px !important;
+  }
+
+  .product-title {
+    font-size: 11px !important;
+  }
+
+  .floating-price {
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+  }
+
+  /* ── TERMINAL TABS: Smaller, compact scrollable row ── */
+  .terminal-scroll {
+    gap: 6px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .ecommerce-tab {
+    padding: 8px 14px !important;
+    font-size: 10px !important;
+    border-radius: 8px !important;
+  }
+
+  /* ── SEARCH BAR: Full width, shorter height ── */
+  .search-input {
+    height: 42px !important;
+    font-size: 13px !important;
+    border-radius: 12px !important;
+  }
+
+  .search-container {
+    margin-bottom: 12px !important;
+  }
+
+  /* ── LEFT PANEL: scrollable, not overflowing ── */
+  .left-panel {
+    height: auto !important;
+    overflow: visible !important;
+    padding-right: 0 !important;
+  }
+
+  /* ── ZONE-SPECIFIC ZONE HEADER PATTERNS (Reservations, HR, etc) ── */
+  /* Generic large zone headings across all pages */
+  [style*="fontSize: '28px'"],
+  [style*="fontSize: '32px'"],
+  [style*="fontSize: '36px'"],
+  [style*="fontSize: '40px'"] {
+    font-size: 15px !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Zone sub-descriptions — collapse to one line */
+  [style*="letterSpacing: '3px'"],
+  [style*="letterSpacing: '4px'"] {
+    letter-spacing: 0.5px !important;
+    font-size: 9px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 90vw !important;
+  }
+
+  /* ── RESERVATION CALENDAR: Make table scroll horizontally ── */
+  .reservation-grid,
+  [class*="calendar-grid"] {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* ── GLOBAL FORM INPUTS: Bigger touch targets ── */
+  input,
+  select,
+  textarea {
+    min-height: 44px !important;
+    font-size: 14px !important;
+  }
+
+  /* ── BUTTONS: Comfortable 44px touch target ── */
+  button {
+    min-height: 36px !important;
+  }
+
+  /* ── MARQUEE BAR: Hide on mobile (already handled above but enforce) ── */
+  .marquee {
+    display: none !important;
+  }
+
+  /* ── DHAKA PULSE bar: Make it slim on mobile ── */
+  [style*="minWidth: '220px'"] {
+    min-width: 0 !important;
+    padding: 0 12px !important;
+  }
+
+  /* ── MIRACLE AI BOT: Scale down on mobile ── */
+  .miracle-chat-panel {
+    scale: 0.75 !important;
+    transform-origin: bottom right !important;
+  }
+
+  .miracle-flame-wrapper {
+    scale: 0.65 !important;
+    transform-origin: bottom right !important;
+  }
+}
+
+/* ==========================================
+   10. PRINT MEDIA (Tax Invoice Print)
+   ========================================== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #FFF !important;
+    color: #000 !important;
+  }
+}
+
+/* ==========================================
+   11. MIRACLE AI ANIMATIONS
+   ========================================== */
+@keyframes sovereignPulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px rgba(212,175,55,0.2); }
+  50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(212,175,55,0.6); }
+  100% { transform: scale(1); box-shadow: 0 0 10px rgba(212,175,55,0.2); }
+}
+
+@keyframes mirSpark1 {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-20px) scale(0); opacity: 0; }
+}
+
+@keyframes mirSpark2 {
+  0% { transform: translateY(0) scale(1) translateX(0); opacity: 0; }
+  50% { opacity: 1; transform: translateY(-10px) translateX(5px); }
+  100% { transform: translateY(-25px) scale(0) translateX(10px); opacity: 0; }
+}
+
+@keyframes mirSpark3 {
+  0% { transform: translateY(0) scale(1) translateX(0); opacity: 0; }
+  50% { opacity: 1; transform: translateY(-15px) translateX(-5px); }
+  100% { transform: translateY(-30px) scale(0) translateX(-10px); opacity: 0; }
+}
+
+/* --- SOVEREIGN WATCHDOG FLAME ANIMATIONS --- */
+@keyframes mirFlameAlert {
+  0%   { transform: scale(1) translateY(0) rotate(-1deg); filter: brightness(1.2); }
+  50%  { transform: scale(1.15) translateY(-3px) rotate(2deg); filter: brightness(1.5); }
+  100% { transform: scale(0.95) translateY(2px) rotate(-2deg); filter: brightness(1.1); }
+}
+
+@keyframes mirAlertBadgePulse {
+  0%   { transform: scale(1); box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), inset 0 2px 4px rgba(255,255,255,0.4); }
+  50%  { transform: scale(1.15); box-shadow: 0 0 20px rgba(255, 0, 0, 1), inset 0 2px 8px rgba(255,255,255,0.6); }
+  100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), inset 0 2px 4px rgba(255,255,255,0.4); }
+}
+
+.flame-rage {
+  animation: rageShake 0.15s infinite;
+}
+
+@keyframes rageShake {
+  0% { transform: translateX(-1px) }
+  50% { transform: translateX(1px) }
+  100% { transform: translateX(-1px) }
+}
+/* ------------------------------------------- */
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ==========================================
+   12. KINETIC WISP ENGINE — SOVEREIGN NAVIGATOR V10.1
+   The Wisp is light that separates from the candle and guides the user.
+   It is a floating orb that moves across the screen to highlight elements.
+   ========================================== */
+
+/* The Wisp orb itself — fixed position, moved by JS via wispStyle */
+.miracle-wisp {
+  position: fixed;
+  z-index: 999999;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+  /* Default: invisible at candle position */
+  opacity: 0;
+  /* Sovereign Blue Light */
+  background: radial-gradient(circle at 40% 35%,
+    rgba(180, 230, 255, 0.98) 0%,
+    rgba(0, 170, 255, 0.88) 35%,
+    rgba(0, 80, 200, 0.65) 65%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 8px  rgba(0, 170, 255, 0.95),
+    0 0 18px rgba(0, 120, 255, 0.75),
+    0 0 40px rgba(0, 80, 200, 0.4),
+    inset 0 0 6px rgba(180, 230, 255, 0.6);
+  animation: wispFloat 2.4s ease-in-out infinite;
+  /* Transform origin at center for scale animations */
+  transform-origin: center center;
+}
+
+/* When wisp is active (opacity > 0), add a trailing ring at destination */
+.miracle-wisp[style*="opacity: 1"]::after,
+.miracle-wisp[style*="opacity:1"]::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 170, 255, 0.7);
+  animation: wispRing 1.4s ease-out infinite;
+  pointer-events: none;
+}
+
+/* Wisp floating idle animation — organic, non-mechanical */
+@keyframes wispFloat {
+  0%   { transform: translate(-50%, -50%) translateY(0px)   scale(1);    }
+  25%  { transform: translate(-50%, -50%) translateY(-4px)  scale(1.08); }
+  50%  { transform: translate(-50%, -50%) translateY(-7px)  scale(1);    }
+  75%  { transform: translate(-50%, -50%) translateY(-3px)  scale(0.95); }
+  100% { transform: translate(-50%, -50%) translateY(0px)   scale(1);    }
+}
+
+/* Pulsing ring at destination element */
+@keyframes wispRing {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  60%  { transform: scale(1.8); opacity: 0;   }
+  100% { transform: scale(1.8); opacity: 0;   }
+}
+
+/* Wisp birth animation — orb grows from candle origin */
+@keyframes wispBirth {
+  0%   { transform: translate(-50%, -50%) scale(0.1); opacity: 0;   filter: blur(4px); }
+  50%  { transform: translate(-50%, -50%) scale(1.3); opacity: 1;   filter: blur(0px); }
+  100% { transform: translate(-50%, -50%) scale(1);   opacity: 0.95; filter: blur(0px); }
+}
+
+/* When candle has given light to the Wisp — it dims slightly */
+.miracle-flame-wrapper.wisp-active {
+  filter: drop-shadow(0 0 10px rgba(0, 170, 255, 0.6)) brightness(0.72) !important;
+  transition: filter 0.8s ease;
+}
+
+/* Sidebar & Shell — global definitions (Iron Law 19: single CSS source) */
+.miracle-sidebar {
+  background: linear-gradient(180deg, #0a0a0f 0%, #050508 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(0,242,255,0.08);
+  box-shadow: 4px 0 40px rgba(0,0,0,0.8), inset -1px 0 0 rgba(0,242,255,0.04);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  position: relative;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow: hidden;
+  /* Force hardware-accelerated clipping so child labels never bleed during transition */
+  clip-path: inset(0);
+  will-change: width;
+}
+
+/* Desktop 20/60/20 ratio */
+@media (min-width: 769px) {
+  .sidebar-header-section { height: 120px !important; flex-direction: column; justify-content: center; border-bottom: 1px solid rgba(212,175,55,0.3) !important; }
+  .sidebar-nav-container   { height: calc(100vh - 280px) !important; }
+  .sidebar-bottom-anchor   { height: 160px !important; overflow: visible !important; display: flex; flex-direction: column; justify-content: flex-end; padding: 0.5rem 0 !important; }
+}
+
+.sidebar-nav-container {
+  transform: translateZ(0);
+  -webkit-overflow-scrolling: touch;
+  will-change: transform, scroll-position;
+}
+
+.sidebar-header-section { height: 5rem; display: flex; align-items: center; padding: 0 1.25rem; border-bottom: 1px solid rgba(212,175,55,0.2); transition: height 0.3s; }
+.sidebar-header-text    { margin-top: 0.5rem; }
+.nav-label-container    { margin-left: 0.6rem; flex: 1; min-width: 0; }
+
+.sidebar-bottom-anchor {
+  padding: 0.5rem 6px;
+  border-top: 1px solid rgba(0,242,255,0.06);
+  background: rgba(5,5,10,0.9);
+  backdrop-filter: blur(10px);
+  transition: height 0.3s;
+  position: relative;
+  z-index: 100;
+}
+
+.sidebar-egress-section { display: flex; flex-direction: column; gap: 4px; margin-bottom: 0.5rem; padding: 0 6px; }
+.egress-btn-compact {
+  width: 100%; padding: 7px 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px; font-size: 9px; font-weight: 800; cursor: pointer;
+  display: flex; align-items: center; gap: 8px; color: #666;
+  transition: all 0.25s ease; letter-spacing: 0.8px; text-transform: uppercase;
+}
+.egress-cyan-hover:hover { border-color: rgba(0,242,255,0.5) !important; color: #00F2FF !important; background: rgba(0,242,255,0.06) !important; }
+.egress-red-hover:hover  { border-color: rgba(255,49,49,0.5) !important;  color: #FF5555 !important;  background: rgba(255,49,49,0.06) !important; }
+
+.sidebar-item {
+  position: relative; display: flex; align-items: center;
+  margin: 2px 6px; padding: 0 8px; height: 42px;
+  flex-shrink: 0;
+  text-decoration: none; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.015);
+  transition: all 0.22s cubic-bezier(0.16,1,0.3,1);
+  /* overflow hidden prevents label text from bleeding outside collapsed sidebar */
+  overflow: hidden;
+  /* Still allow the active LED bar (::before) to show via clip-path on parent */
+}
+.sidebar-item:hover {
+  background: rgba(0,242,255,0.05); border-color: rgba(0,242,255,0.25);
+  box-shadow: 0 0 16px rgba(0,242,255,0.08), inset 0 0 12px rgba(0,242,255,0.03);
+  transform: translateX(1px);
+}
+.sidebar-item.active {
+  background: rgba(0,242,255,0.07); border-color: rgba(0,242,255,0.4);
+  box-shadow: 0 0 20px rgba(0,242,255,0.12), inset 0 0 16px rgba(0,242,255,0.04), 0 0 0 1px rgba(0,242,255,0.1);
+}
+.sidebar-item.active::before {
+  content: ''; position: absolute; left: 0px; top: 50%;
+  transform: translateY(-50%); width: 3px; height: 60%;
+  background: #00F2FF; border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 12px #00F2FF, 0 0 24px rgba(0,242,255,0.5);
+  animation: led-bar-pulse 2.5s ease-in-out infinite;
+}
+
+.sidebar-icon-box {
+  transition: transform 0.22s ease, filter 0.22s ease;
+  display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; font-size: 18px; flex-shrink: 0;
+}
+.sidebar-zone-badge {
+  font-size: 7.5px; font-weight: 900; letter-spacing: 0.8px;
+  color: #8B1A2A; text-shadow: 0 0 6px rgba(139,26,42,0.8);
+  transition: color 0.22s, text-shadow 0.22s;
+  font-family: 'Courier New', monospace; white-space: nowrap;
+}
+.sidebar-label-main {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.6px;
+  color: #999; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: color 0.22s, text-shadow 0.22s;
+  font-family: 'Rajdhani', 'Inter', sans-serif;
+}
+.acrylic-logo { animation: acrylic-pulse 4s infinite ease-in-out; background: rgba(10,10,15,0.8); backdrop-filter: blur(10px); border-radius: 12px; border: 2px solid transparent; }
+.acrylic-text { background: linear-gradient(135deg, #800020 0%, #00F2FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; filter: drop-shadow(0 0 10px rgba(0,242,255,0.5)); }
+
+@keyframes acrylic-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,242,255,0.4); border-color: rgba(0,242,255,0.4); }
+  50% { box-shadow: 0 0 25px rgba(128,0,32,0.9); border-color: rgba(128,0,32,0.9); }
+}
+@keyframes led-bar-pulse { 0%,100%{box-shadow:0 0 8px #00F2FF, 0 0 16px rgba(0,242,255,0.4)} 50%{box-shadow:0 0 20px #00F2FF, 0 0 40px rgba(0,242,255,0.7)} }
+.signoff-dot      { width:8px; height:8px; background:#FF3131; border-radius:50%; box-shadow:0 0 10px #FF3131; animation:strobe 2s infinite; flex-shrink:0; }
+.signoff-dot-mini { width:5px; height:5px; background:#FF3131; border-radius:50%; box-shadow:0 0 8px #FF3131;  animation:strobe 2s infinite; flex-shrink:0; }
+@keyframes strobe     { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes auth-pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+.auth-pulse { animation: auth-pulse 2s infinite; }
+.compact-switcher-grid { margin-bottom:0.5rem; transform:scale(0.85); transform-origin:left; }
+.sidebar-footer-section { display:flex; align-items:center; padding:0.4rem 6px; border-top:1px solid rgba(255,255,255,0.04); }
+.sidebar-icon-stack { display:flex; flex-direction:column; align-items:center; justify-content:center; width:26px; }
+.sidebar-zone-badge-collapsed {
+  display:block; font-size:6.5px; font-weight:900; color:#8B1A2A;
+  text-shadow:0 0 5px rgba(139,26,42,0.9); text-align:center;
+  letter-spacing:0.5px; font-family:'Courier New',monospace; line-height:1; margin-top:1px;
+}
+.sidebar-item.active .sidebar-zone-badge-collapsed { color:#00F2FF; text-shadow:0 0 8px rgba(0,242,255,0.9); }
+.sidebar-item.active .sidebar-zone-badge { color:#00F2FF !important; text-shadow:0 0 10px rgba(0,242,255,0.9); }
+.sidebar-item.active .sidebar-label-main { color:#fff !important; text-shadow:0 0 10px rgba(255,255,255,0.4); }
+.sidebar-item:hover .sidebar-icon-box { filter:drop-shadow(0 0 6px rgba(0,242,255,0.6)); transform:scale(1.12); }
+.sidebar-item:hover .sidebar-zone-badge { color:#00F2FF; text-shadow:0 0 8px rgba(0,242,255,0.7); }
+.miracle-mobile-menu { position:fixed; inset:0; background:rgba(2,2,8,0.97); z-index:99999; padding:40px 24px; overflow-y:auto; }
+.miracle-mobile-menu-item { display:flex; align-items:center; gap:16px; padding:18px 0; border-bottom:1px solid #111; cursor:pointer; text-decoration:none; }
+.miracle-mobile-menu-item .menu-icon { font-size:24px; width:36px; text-align:center; }
+.miracle-mobile-menu-item .menu-text { color:#ccc; font-size:13px; font-weight:700; letter-spacing:1px; }
+
+/* ==========================================
+   13. SOVEREIGN VAULT ANIMATIONS
+   ========================================== */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ==========================================
+   14. IRON LAW 45: SYNAPSE COMMAND GRID (PHASE 26)
+   ========================================== */
+.synapse-dept-tile {
+    background: rgba(10, 15, 30, 0.6);
+    border: 1px solid rgba(0, 251, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+.synapse-dept-tile.has-active-nodes {
+    box-shadow: 0 0 20px rgba(0, 251, 255, 0.5);
+    animation: synapsePulseCyan 2s infinite;
+}
+.synapse-dept-tile.has-critical-nodes {
+    border-color: #ff003c;
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.6);
+    animation: synapsePulseRed 1.5s infinite;
+}
+@keyframes synapsePulseCyan {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 251, 255, 0.3), inset 0 0 5px rgba(0, 251, 255, 0.15); }
+  50% { box-shadow: 0 0 25px rgba(0, 251, 255, 0.8), inset 0 0 15px rgba(0, 251, 255, 0.4); }
+}
+@keyframes synapsePulseRed {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 60, 0.3), inset 0 0 5px rgba(255, 0, 60, 0.15); }
+  50% { box-shadow: 0 0 25px rgba(255, 0, 60, 0.8), inset 0 0 15px rgba(255, 0, 60, 0.4); }
+}
+
+/* ==========================================
+   11. SOVEREIGN PHASE 2: KINETIC & DATA GRID
+   ========================================== */
+
+
+/* Sync Flash Effect */
+.grid-sync-flash::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 242, 255, 0.03);
+    pointer-events: none;
+    z-index: 9991;
+    animation: syncFlash 1.5s ease-out forwards;
+}
+@keyframes syncFlash {
+    0% { opacity: 1; background: rgba(0, 242, 255, 0.08); }
+    100% { opacity: 0; background: transparent; }
+}
+
+/* 🍎 Kinetic Sidebar (Mac OS Dock Physics) */
+.kinetic-dock-item {
+    transition: transform 0.1s cubic-bezier(0.2, 0.8, 0.2, 1), border-radius 0.1s ease, box-shadow 0.1s ease, background 0.2s ease !important;
+    transform-origin: left center; /* Scale outward from the left edge */
+    will-change: transform, border-radius;
+    border: none !important; /* Fix side border issue */
+}
+
+/* 📅 Neon Calendar Widget */
+.neon-calendar-btn {
+    width: 44px;
+    height: 44px;
+    background: rgba(15, 15, 15, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+}
+.neon-calendar-btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 49, 49, 0.2), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.neon-calendar-header {
+    height: 14px;
+    background: linear-gradient(180deg, #FF3131 0%, #D70F64 100%);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    padding: 0 8px;
+}
+.neon-calendar-hole {
+    width: 4px;
+    height: 4px;
+    background: #050505;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.8), 0 1px 0 rgba(255,255,255,0.3);
+}
+.neon-calendar-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 100%);
+}
+.neon-calendar-date {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #FFF;
+    text-shadow: 0 0 10px #FF8C00, 0 0 20px #FF3131, 0 0 30px #FF3131;
+    letter-spacing: -1px;
+}
+
+/* ==========================================
+   11. CULINARY GALLERY & SOVEREIGN GLASS CARDS
+   ========================================== */
+.sovereign-card-glass {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+.sovereign-card-glass:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+}
+.recipe-bom-list {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid rgba(0, 242, 255, 0.1);
+}
+.recipe-bom-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #CCC;
+    padding: 4px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.recipe-bom-item:last-child {
+    border-bottom: none;
+}
+.recipe-bom-toggle {
+    width: 100%;
+    padding: 8px;
+    background: rgba(212, 175, 55, 0.1);
+    color: #D4AF37;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+.recipe-bom-toggle:hover {
+    background: rgba(212, 175, 55, 0.2);
+}
+
+/* ============================================================
+   11. SOVEREIGN DESIGN SYSTEM V5.0 — GLASSMORPHIC KERNEL
+   THE SINGLE SOURCE OF TRUTH FOR ALL UI COMPONENTS.
+   ============================================================ */
+
+/* --- COMPATIBILITY LAYER (Maps legacy classes to Sovereign Tokens) --- */
+.glass-panel, .glass-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.glass-panel:hover, .glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.neon-btn, .modern-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--zone-color, #00F2FF);
+  background: color-mix(in srgb, var(--zone-color, #00F2FF) 12%, transparent);
+  color: var(--zone-color, #00F2FF);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--zone-color, #00F2FF) 10%, transparent);
+}
+.neon-btn:hover, .modern-btn:hover {
+  background: color-mix(in srgb, var(--zone-color, #00F2FF) 22%, transparent);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--zone-color, #00F2FF) 25%, transparent);
+  transform: translateY(-1px);
+}
+
+
+/* --- SOVEREIGN PANEL (glass card container) --- */
+.s-panel {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.s-panel:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.s-panel--glow {
+  box-shadow: 0 0 40px var(--zone-color, rgba(0,242,255,0.08)), 0 8px 32px rgba(0,0,0,0.4);
+  border-color: var(--zone-color, rgba(0,242,255,0.15));
+}
+
+/* --- SOVEREIGN INPUT --- */
+.s-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.s-input:focus {
+  border-color: var(--zone-color, #00F2FF);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--zone-color, #00F2FF) 15%, transparent);
+}
+.s-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- SOVEREIGN LABEL --- */
+.s-label {
+  display: block;
+  font-size: 10px;
+  color: #555;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* --- SOVEREIGN BUTTON (primary neon action) --- */
+.s-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--zone-color, #00F2FF);
+  background: color-mix(in srgb, var(--zone-color, #00F2FF) 12%, transparent);
+  color: var(--zone-color, #00F2FF);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--zone-color, #00F2FF) 10%, transparent);
+}
+.s-btn:hover {
+  background: color-mix(in srgb, var(--zone-color, #00F2FF) 22%, transparent);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--zone-color, #00F2FF) 25%, transparent);
+  transform: translateY(-1px);
+}
+.s-btn:active {
+  transform: translateY(0);
+}
+.s-btn:disabled {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.06);
+  color: #444;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* --- SOVEREIGN BUTTON (ghost / secondary) --- */
+.s-btn--ghost {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  color: #666;
+  box-shadow: none;
+}
+.s-btn--ghost:hover {
+  border-color: rgba(255,255,255,0.15);
+  color: #AAA;
+  background: rgba(255,255,255,0.06);
+  box-shadow: none;
+  transform: none;
+}
+
+/* --- SOVEREIGN BUTTON (danger / delete) --- */
+.s-btn--danger {
+  background: rgba(255, 49, 49, 0.1);
+  border: 1px solid rgba(255, 49, 49, 0.25);
+  color: #FF3131;
+  box-shadow: none;
+}
+.s-btn--danger:hover {
+  background: rgba(255, 49, 49, 0.22);
+  box-shadow: 0 0 20px rgba(255,49,49,0.2);
+}
+
+/* --- SOVEREIGN TAB BAR --- */
+.s-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.s-tab {
+  padding: 9px 18px;
+  border-radius: 9px;
+  font-weight: 900;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #555;
+}
+.s-tab.active {
+  background: color-mix(in srgb, var(--zone-color, #00F2FF) 12%, transparent);
+  border-color: var(--zone-color, #00F2FF);
+  color: var(--zone-color, #00F2FF);
+}
+.s-tab:hover:not(.active) {
+  border-color: rgba(255,255,255,0.12);
+  color: #888;
+}
+
+/* --- SOVEREIGN METRIC CARD --- */
+.s-metric {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.s-metric::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--zone-color, #00F2FF), transparent);
+}
+.s-metric:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--zone-color, #00F2FF) 12%, transparent);
+  border-color: color-mix(in srgb, var(--zone-color, #00F2FF) 20%, transparent);
+}
+.s-metric__label {
+  font-size: 9px;
+  color: #555;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.s-metric__value {
+  font-size: 26px;
+  font-weight: 900;
+  font-family: 'Courier New', monospace;
+  color: var(--zone-color, #00F2FF);
+  text-shadow: 0 0 20px color-mix(in srgb, var(--zone-color, #00F2FF) 40%, transparent);
+}
+.s-metric__sub {
+  font-size: 10px;
+  color: #444;
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+/* --- SOVEREIGN DATA ROW (table-style list row) --- */
+.s-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.015);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 12px;
+  margin-bottom: 6px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.s-row:hover {
+  border-color: color-mix(in srgb, var(--zone-color, #00F2FF) 20%, transparent);
+  background: color-mix(in srgb, var(--zone-color, #00F2FF) 4%, transparent);
+}
+
+/* --- SOVEREIGN BADGE --- */
+.s-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #666;
+}
+.s-badge--success { background: rgba(0,255,136,0.1); border-color: rgba(0,255,136,0.25); color: #00FF88; }
+.s-badge--warning { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.25); color: #F59E0B; }
+.s-badge--danger  { background: rgba(255,49,49,0.1);  border-color: rgba(255,49,49,0.25);  color: #FF3131; }
+.s-badge--zone    { background: color-mix(in srgb, var(--zone-color, #00F2FF) 10%, transparent); border-color: color-mix(in srgb, var(--zone-color, #00F2FF) 25%, transparent); color: var(--zone-color, #00F2FF); }
+
+/* --- SOVEREIGN NEON DIVIDER --- */
+.s-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  border: none;
+  margin: 20px 0;
+}
+
+/* --- SOVEREIGN MODAL OVERLAY --- */
+.s-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: sovereignFadeIn 0.2s ease;
+}
+.s-modal {
+  background: rgba(8, 8, 8, 0.97);
+  border: 1px solid color-mix(in srgb, var(--zone-color, #00F2FF) 20%, transparent);
+  border-radius: 20px;
+  padding: 36px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 0 60px color-mix(in srgb, var(--zone-color, #00F2FF) 10%, transparent), 0 20px 60px rgba(0,0,0,0.8);
+  animation: sovereignSlideUp 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* --- SOVEREIGN PROGRESS BAR --- */
+.s-progress-track {
+  height: 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.s-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--zone-color, #00F2FF);
+  box-shadow: 0 0 10px var(--zone-color, #00F2FF);
+  transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* --- SOVEREIGN PULSE DOT --- */
+.s-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--zone-color, #00FF88);
+  box-shadow: 0 0 8px var(--zone-color, #00FF88);
+  animation: sovereignPulse 2s ease-in-out infinite;
+}
+/* --- AGI ENGINE LOADING SPINNER --- */
+@keyframes agiSpin {
+  to { transform: rotate(360deg); }
+}
+.agi-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(212, 175, 55, 0.1);
+  border-top-color: #D4AF37;
+  border-radius: 50%;
+  animation: agiSpin 0.8s linear infinite;
+}
+.agi-pulse-green {
+  background: #00FF88 !important;
+  box-shadow: 0 0 10px #00FF88 !important;
+}
+.agi-pulse-red {
+  background: #FF3131 !important;
+  box-shadow: 0 0 10px #FF3131 !important;
+}
+
+/* --- ZONE COLOUR UTILITIES (use on parent, children inherit via var) --- */
+.zone-cyan    { --zone-color: #00F2FF; }
+.zone-purple  { --zone-color: #9D00FF; }
+.zone-gold    { --zone-color: #D4AF37; }
+.zone-amber   { --zone-color: #F59E0B; }
+.zone-green   { --zone-color: #00FF88; }
+.zone-red     { --zone-color: #FF3131; }
+.zone-pink    { --zone-color: #FF6B9D; }
+.zone-orange  { --zone-color: #FF8C00; }
+
+/* --- ARCHITECT ENGINE HEADER PATTERN --- */
+.s-arch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.s-arch-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #FFF;
+  letter-spacing: 1px;
+}
+.s-arch-subtitle {
+  font-size: 10px;
+  color: #444;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+/* --- SOVEREIGN ANIMATIONS --- */
+@keyframes sovereignFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes sovereignSlideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes sovereignPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--zone-color, #00FF88); }
+  50%       { opacity: 0.5; box-shadow: 0 0 3px var(--zone-color, #00FF88); }
+}
+@keyframes sovereignBarGrow {
+  from { width: 0; }
+}
+@keyframes sovereignCountUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   12. FINANCIAL INTELLIGENCE WAR ROOM (Z-11C)
+   ========================================== */
+
+/* --- CYBER GRID BACKGROUND --- */
+.fin-intel-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(212, 175, 55, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridDrift 20s linear infinite;
+}
+@keyframes gridDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+/* --- SCANNING LINE (loading state) --- */
+@keyframes scanSweep {
+  0%   { top: 0; opacity: 1; }
+  80%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+.fin-scan-line {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D4AF37, #FFE57A, #D4AF37, transparent);
+  box-shadow: 0 0 20px #D4AF3788, 0 0 60px #D4AF3744;
+  z-index: 100;
+  animation: scanSweep 2s linear infinite;
+  pointer-events: none;
+}
+
+/* --- LIVE JOURNAL FEED ENTRY ANIMATION --- */
+@keyframes feedSlideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.live-entry {
+  animation: feedSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* --- BENFORD BAR CHART ELEMENTS --- */
+@keyframes benfordReveal {
+  from { transform: scaleY(0); transform-origin: bottom; }
+  to   { transform: scaleY(1); transform-origin: bottom; }
+}
+.benford-bar-fill {
+  animation: benfordReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* --- ANOMALY STROBE (for CRITICAL Benford state) --- */
+@keyframes anomalyStrobe {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 49, 49, 0.4); }
+  50%       { box-shadow: 0 0 30px rgba(255, 49, 49, 0.9), 0 0 60px rgba(255, 49, 49, 0.4); }
+}
+.anomaly-strobe {
+  animation: anomalyStrobe 1.2s ease-in-out infinite;
+}
+
+/* --- TREASURY BAR PROJECTION --- */
+@keyframes treasuryGrow {
+  from { width: 0; }
+}
+.treasury-bar-inflow {
+  background: linear-gradient(90deg, #00FF8888, #00FF88);
+  animation: treasuryGrow 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.treasury-bar-outflow {
+  background: linear-gradient(90deg, #FF313188, #FF3131);
+  animation: treasuryGrow 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ==========================================================================
+   11. GLOBAL DROPDOWN SELECT & OPTION STYLING
+   Fixes unreadable white-on-white dropdown options in dark mode browsers
+   ========================================================================== */
+select option {
+  background-color: #0d0d14 !important; /* Dark charcoal/black background */
+  color: #ffffff !important; /* Crisp white text */
+}
+
+select {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}

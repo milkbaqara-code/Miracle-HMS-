@@ -1,0 +1,205 @@
+[TAILING] Tailing last 100 lines for [miracle-backend] process (change the value with --lines option)
+/root/.pm2/logs/miracle-backend-out.log last 100 lines:
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/alerts?zone=Z-23 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/settings/kernel HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/settings/kernel HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/settings/kernel HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/telemetry HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/settings/kernel HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/logs/backend?lines=50 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/log?limit=30 HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/surgical-fixes/status HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/audit/stats HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/infra/immune HTTP/1.1" 200 OK
+3|miracle- | INFO:     103.81.104.154:0 - "GET /api/bot/v2/brain/manifest?status=PENDING_INJECTION&limit=50 HTTP/1.1" 200 OK
+
+/root/.pm2/logs/miracle-backend-error.log last 100 lines:
+3|miracle- | 2026-05-08 18:03:56 | 🛡️ KERNEL | ERROR | GROQ API ERROR: {'error': {'message': 'Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01kpjvpmvqefyv9ztsgv6ayjs6` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Used 4348, Requested 5105. Please try again in 34.53s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+3|miracle- | 2026-05-08 18:03:56 | 🛡️ KERNEL | ERROR | [V2 SYNTHESIS] Failure: 503: Miracle AI is momentarily unavailable. Re-syncing kernel...
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | [FIREWALL] CLEARED: Query passed semantic validation.
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | [V2 QUERY] Zone: Z-23 | Role: CDO | Query: [SYSTEM_PROMPT] The user has just entered Infrastructure. Deliver a single punch
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | [V2 PILLAR] 'get_system_health' executed. Pillar: ANALYTICS_SRE
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCjlZ-fUsvKWY8U0cT6GLHDp7n5LADySdo "HTTP/1.1 404 Not Found"
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#1 / gemini-1.5-flash-latest no candidates: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCjlZ-fUsvKWY8U0cT6GLHDp7n5LADySdo "HTTP/1.1 429 Too Many Requests"
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#1 exhausted. Rotating to next key.
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDMS_ZXCUBm6WzbtrlWaZyBjQE_AuvD4T0 "HTTP/1.1 404 Not Found"
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#2 / gemini-1.5-flash-latest no candidates: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDMS_ZXCUBm6WzbtrlWaZyBjQE_AuvD4T0 "HTTP/1.1 429 Too Many Requests"
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#2 exhausted. Rotating to next key.
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDIfes6wbWtzuqbhR-qcfxY517hOUb8jBk "HTTP/1.1 404 Not Found"
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#3 / gemini-1.5-flash-latest no candidates: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDIfes6wbWtzuqbhR-qcfxY517hOUb8jBk "HTTP/1.1 429 Too Many Requests"
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#3 exhausted. Rotating to next key.
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyB4NMozAys4BdGOE-Ko9KdjwmoXrqsM72g "HTTP/1.1 404 Not Found"
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#4 / gemini-1.5-flash-latest no candidates: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyB4NMozAys4BdGOE-Ko9KdjwmoXrqsM72g "HTTP/1.1 429 Too Many Requests"
+3|miracle- | 2026-05-08 18:08:11 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#4 exhausted. Rotating to next key.
+3|miracle- | 2026-05-08 18:08:12 | 🛡️ KERNEL | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+3|miracle- | 2026-05-08 18:08:12 | 🛡️ KERNEL | INFO | [SOVEREIGN VAULT] Groq safety net fired — all 4 Gemini keys exhausted.
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | INFO | [FIREWALL] CLEARED: Query passed semantic validation.
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | INFO | [V2 QUERY] Zone: Z-23 | Role: CDO | Query: [SYSTEM_PROMPT] The user has just entered Infrastructure. Deliver a single punch
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | INFO | [V2 PILLAR] 'get_system_health' executed. Pillar: ANALYTICS_SRE
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCjlZ-fUsvKWY8U0cT6GLHDp7n5LADySdo "HTTP/1.1 404 Not Found"
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#1 / gemini-1.5-flash-latest no candidates: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCjlZ-fUsvKWY8U0cT6GLHDp7n5LADySdo "HTTP/1.1 429 Too Many Requests"
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#1 exhausted. Rotating to next key.
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDMS_ZXCUBm6WzbtrlWaZyBjQE_AuvD4T0 "HTTP/1.1 404 Not Found"
+3|miracle- | 2026-05-08 18:11:41 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#2 / gemini-1.5-flash-latest no candidates: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDMS_ZXCUBm6WzbtrlWaZyBjQE_AuvD4T0 "HTTP/1.1 429 Too Many Requests"
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#2 exhausted. Rotating to next key.
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDIfes6wbWtzuqbhR-qcfxY517hOUb8jBk "HTTP/1.1 404 Not Found"
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#3 / gemini-1.5-flash-latest no candidates: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDIfes6wbWtzuqbhR-qcfxY517hOUb8jBk "HTTP/1.1 429 Too Many Requests"
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#3 exhausted. Rotating to next key.
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyB4NMozAys4BdGOE-Ko9KdjwmoXrqsM72g "HTTP/1.1 404 Not Found"
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#4 / gemini-1.5-flash-latest no candidates: models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyB4NMozAys4BdGOE-Ko9KdjwmoXrqsM72g "HTTP/1.1 429 Too Many Requests"
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | WARNING | [SOVEREIGN VAULT] Key#4 exhausted. Rotating to next key.
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | INFO | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+3|miracle- | 2026-05-08 18:11:42 | 🛡️ KERNEL | INFO | [SOVEREIGN VAULT] Groq safety net fired — all 4 Gemini keys exhausted.
+3|miracle- | INFO:     127.0.0.1:33618 - "WebSocket /ws/grid-sync" [accepted]
+3|miracle- | 2026-05-08 18:11:43 | 🛡️ KERNEL | INFO | 📡 WEBSOCKET CONNECTED: Total Nodes: 1
+3|miracle- | INFO:     connection open
+3|miracle- | 2026-05-08 19:02:51 | 🛡️ KERNEL | INFO | 🔌 WEBSOCKET DISCONNECTED: Total Nodes: 0
+3|miracle- | INFO:     connection closed
+3|miracle- | INFO:     127.0.0.1:34612 - "WebSocket /ws/grid-sync" [accepted]
+3|miracle- | 2026-05-08 19:14:22 | 🛡️ KERNEL | INFO | 📡 WEBSOCKET CONNECTED: Total Nodes: 1
+3|miracle- | INFO:     connection open
+3|miracle- | INFO:     Started server process [360696]
+3|miracle- | INFO:     Waiting for application startup.
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | =========================================================
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO |    VIGILANT MASTER OS - BACKEND KERNEL [CDO CONTROL]     
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO |    STATUS: INITIATING SOVEREIGN HANDSHAKE                
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | =========================================================
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | 🛡️ KERNEL: Executing Master Genesis Sequence...
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | 🛡️ KERNEL: INITIATING MASTER GENESIS SEQUENCE...
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | Step 1: Reflecting Blueprints and building Physical Vaults...
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | ✅ Physical Vaults Verified and Surgically Patched.
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | Step 2: Auditing Master Ledger Integrity...
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | Step 3: Verifying Administrative Credentials...
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | Step 4: Seeding Physical Asset Grid (30 Rooms)...
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | ✨ GENESIS: Physical Asset Grid already locked.
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | 👑 GENESIS COMPLETE: MASTER OS IS OPERATIONAL.
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | ✅ GENESIS COMPLETE: Asset Grid & System Config Locked.
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | 🏛️ ACCOUNTING KERNEL: Chart of Accounts Synchronized.
+3|miracle- | INFO:     Application startup complete.
+3|miracle- | INFO:     Uvicorn running on http://0.0.0.0:8090 (Press CTRL+C to quit)
+3|miracle- | INFO:     Shutting down
+3|miracle- | INFO:     Waiting for application shutdown.
+3|miracle- | 2026-05-08 19:53:31 | 🛡️ KERNEL | INFO | INITIATING CLEAN SHUTDOWN: Severing Vault links.
+3|miracle- | INFO:     Application shutdown complete.
+3|miracle- | INFO:     Finished server process [360696]
+3|miracle- | INFO:     Started server process [360756]
+3|miracle- | INFO:     Waiting for application startup.
+3|miracle- | 2026-05-08 19:53:40 | 🛡️ KERNEL | INFO | =========================================================
+3|miracle- | 2026-05-08 19:53:40 | 🛡️ KERNEL | INFO |    VIGILANT MASTER OS - BACKEND KERNEL [CDO CONTROL]     
+3|miracle- | 2026-05-08 19:53:40 | 🛡️ KERNEL | INFO |    STATUS: INITIATING SOVEREIGN HANDSHAKE                
+3|miracle- | 2026-05-08 19:53:40 | 🛡️ KERNEL | INFO | =========================================================
+3|miracle- | 2026-05-08 19:53:40 | 🛡️ KERNEL | INFO | 🛡️ KERNEL: Executing Master Genesis Sequence...
+3|miracle- | 2026-05-08 19:53:40 | 🛡️ KERNEL | INFO | 🛡️ KERNEL: INITIATING MASTER GENESIS SEQUENCE...
+3|miracle- | 2026-05-08 19:53:40 | 🛡️ KERNEL | INFO | Step 1: Reflecting Blueprints and building Physical Vaults...
+3|miracle- | 2026-05-08 19:53:41 | 🛡️ KERNEL | INFO | ✅ Physical Vaults Verified and Surgically Patched.
+3|miracle- | 2026-05-08 19:53:41 | 🛡️ KERNEL | INFO | Step 2: Auditing Master Ledger Integrity...
+3|miracle- | 2026-05-08 19:53:41 | 🛡️ KERNEL | INFO | Step 3: Verifying Administrative Credentials...
+3|miracle- | 2026-05-08 19:53:41 | 🛡️ KERNEL | INFO | Step 4: Seeding Physical Asset Grid (30 Rooms)...
+3|miracle- | 2026-05-08 19:53:41 | 🛡️ KERNEL | INFO | ✨ GENESIS: Physical Asset Grid already locked.
+3|miracle- | 2026-05-08 19:53:41 | 🛡️ KERNEL | INFO | 👑 GENESIS COMPLETE: MASTER OS IS OPERATIONAL.
+3|miracle- | 2026-05-08 19:53:41 | 🛡️ KERNEL | INFO | ✅ GENESIS COMPLETE: Asset Grid & System Config Locked.
+3|miracle- | 2026-05-08 19:53:41 | 🛡️ KERNEL | INFO | 🏛️ ACCOUNTING KERNEL: Chart of Accounts Synchronized.
+3|miracle- | INFO:     Application startup complete.
+3|miracle- | INFO:     Uvicorn running on http://0.0.0.0:8090 (Press CTRL+C to quit)
+3|miracle- | INFO:     127.0.0.1:59284 - "WebSocket /ws/grid-sync" [accepted]
+3|miracle- | 2026-05-08 19:53:46 | 🛡️ KERNEL | INFO | 📡 WEBSOCKET CONNECTED: Total Nodes: 1
+3|miracle- | INFO:     connection open
+3|miracle- | 2026-05-08 20:10:29 | 🛡️ KERNEL | INFO | 🔌 WEBSOCKET DISCONNECTED: Total Nodes: 0
+3|miracle- | INFO:     connection closed
+

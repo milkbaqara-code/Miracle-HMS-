@@ -1,0 +1,108 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+
+# =========================
+# PYTHON & VIRTUALENVS
+# =========================
+__pycache__/
+venv/
+.venv/
+env/
+*.pyc
+.pytest_cache/
+
+# =========================
+# NEXT.JS & NODE
+# =========================
+node_modules/
+.next/
+out/
+build/
+
+# =========================
+# SECRETS & DATABASES
+# =========================
+*.db
+*.sqlite3
+.env
+.env.*
+!.env.example
+
+# =========================
+# DEPLOYMENT ARCHIVES (NEVER COMMIT)
+# =========================
+*.tar.gz
+*.zip
+!web/android/**/*.zip
+
+# =========================
+# DEBUG & TEMP FILES
+# =========================
+*.log
+debug_out.txt
+.sync_ledger.json
+tmp_*.py
+tmp_*.sql
+tmp/
+
+# =========================
+# TOOL ARTIFACTS
+# =========================
+.pyre/
+.pyre_configuration
+scratch/
+
+# Binary APKs (Too large for GitHub)
+*.apk
+
+# =========================
+# VIGILANT WEBSITE (subfolder)
+# Source code is tracked. Build artifacts are not.
+# =========================
+vigilant_website/node_modules/
+vigilant_website/.next/
+vigilant_website/out/
+vigilant_website/tsconfig.tsbuildinfo
+vigilant_website/*.zip
+vigilant_website/vigilant_deploy_v4*/
+vigilant_website/web\ images/
